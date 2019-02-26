@@ -20,5 +20,5 @@ export const requestAllUsers = () => dispatch => (
 
 export const requestUser = id => dispatch => (
   UsersAPIUtils.getUser(id)
-    .then(user => dispatch(requestUser(user)))
+    .then(user => dispatch(receiveUser(user)))
 );
