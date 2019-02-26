@@ -120,3 +120,762 @@ Migrating to CreateUsers (20190226201344)
   ↳ bin/rails:9
   [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
   ↳ /Users/mesona/.rbenv/versions/2.5.1/bin/annotate:23
+Started GET "/" for 127.0.0.1 at 2019-02-26 12:30:44 -0800
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/mesona/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Processing by StaticPagesController#root as HTML
+Completed 406 Not Acceptable in 102ms (ActiveRecord: 0.0ms)
+
+
+
+ActionController::UnknownFormat - StaticPagesController#root is missing a template for this request format and variant.
+
+request.formats: ["text/html"]
+request.variant: []
+
+NOTE! For XHR/Ajax or API requests, this action would normally respond with 204 No Content: an empty white screen. Since you're loading it in a web browser, we assume that you expected to actually render a template, not nothing, so we're showing an error to be extra-clear. If you expect 204 No Content, carry on. That's what you'll get from an XHR or API request. Give it a shot.:
+
+Started POST "/__better_errors/6eb156f1c7fdf32e/variables" for 127.0.0.1 at 2019-02-26 12:30:45 -0800
+Started GET "/" for 127.0.0.1 at 2019-02-26 12:30:49 -0800
+Processing by StaticPagesController#root as HTML
+Completed 406 Not Acceptable in 106ms (ActiveRecord: 0.0ms)
+
+
+
+ActionController::UnknownFormat - StaticPagesController#root is missing a template for this request format and variant.
+
+request.formats: ["text/html"]
+request.variant: []
+
+NOTE! For XHR/Ajax or API requests, this action would normally respond with 204 No Content: an empty white screen. Since you're loading it in a web browser, we assume that you expected to actually render a template, not nothing, so we're showing an error to be extra-clear. If you expect 204 No Content, carry on. That's what you'll get from an XHR or API request. Give it a shot.:
+
+Started POST "/__better_errors/3b3b0cd48d090a41/variables" for 127.0.0.1 at 2019-02-26 12:30:49 -0800
+Started GET "/" for 127.0.0.1 at 2019-02-26 12:31:03 -0800
+Processing by StaticPagesController#root as HTML
+Completed 406 Not Acceptable in 100ms (ActiveRecord: 0.0ms)
+
+
+
+ActionController::UnknownFormat - StaticPagesController#root is missing a template for this request format and variant.
+
+request.formats: ["text/html"]
+request.variant: []
+
+NOTE! For XHR/Ajax or API requests, this action would normally respond with 204 No Content: an empty white screen. Since you're loading it in a web browser, we assume that you expected to actually render a template, not nothing, so we're showing an error to be extra-clear. If you expect 204 No Content, carry on. That's what you'll get from an XHR or API request. Give it a shot.:
+
+Started POST "/__better_errors/f43dedeeb17e0737/variables" for 127.0.0.1 at 2019-02-26 12:31:04 -0800
+Started GET "/" for 127.0.0.1 at 2019-02-26 12:31:04 -0800
+Processing by StaticPagesController#root as HTML
+Completed 406 Not Acceptable in 104ms (ActiveRecord: 0.0ms)
+
+
+
+ActionController::UnknownFormat - StaticPagesController#root is missing a template for this request format and variant.
+
+request.formats: ["text/html"]
+request.variant: []
+
+NOTE! For XHR/Ajax or API requests, this action would normally respond with 204 No Content: an empty white screen. Since you're loading it in a web browser, we assume that you expected to actually render a template, not nothing, so we're showing an error to be extra-clear. If you expect 204 No Content, carry on. That's what you'll get from an XHR or API request. Give it a shot.:
+
+Started POST "/__better_errors/6d8b91d3441c8bec/variables" for 127.0.0.1 at 2019-02-26 12:31:05 -0800
+Started GET "/" for 127.0.0.1 at 2019-02-26 12:31:15 -0800
+Processing by StaticPagesController#root as HTML
+Completed 406 Not Acceptable in 102ms (ActiveRecord: 0.0ms)
+
+
+
+ActionController::UnknownFormat - StaticPagesController#root is missing a template for this request format and variant.
+
+request.formats: ["text/html"]
+request.variant: []
+
+NOTE! For XHR/Ajax or API requests, this action would normally respond with 204 No Content: an empty white screen. Since you're loading it in a web browser, we assume that you expected to actually render a template, not nothing, so we're showing an error to be extra-clear. If you expect 204 No Content, carry on. That's what you'll get from an XHR or API request. Give it a shot.:
+
+Started POST "/__better_errors/512d7ece8d1199ae/variables" for 127.0.0.1 at 2019-02-26 12:31:15 -0800
+Started GET "/" for 127.0.0.1 at 2019-02-26 12:32:08 -0800
+Processing by StaticPagesController#root as HTML
+Completed 406 Not Acceptable in 106ms (ActiveRecord: 0.0ms)
+
+
+
+ActionController::UnknownFormat - StaticPagesController#root is missing a template for this request format and variant.
+
+request.formats: ["text/html"]
+request.variant: []
+
+NOTE! For XHR/Ajax or API requests, this action would normally respond with 204 No Content: an empty white screen. Since you're loading it in a web browser, we assume that you expected to actually render a template, not nothing, so we're showing an error to be extra-clear. If you expect 204 No Content, carry on. That's what you'll get from an XHR or API request. Give it a shot.:
+
+Started POST "/__better_errors/5b830f1495b3a66a/variables" for 127.0.0.1 at 2019-02-26 12:32:08 -0800
+Started GET "/" for 127.0.0.1 at 2019-02-26 12:32:09 -0800
+Processing by StaticPagesController#root as HTML
+Completed 406 Not Acceptable in 107ms (ActiveRecord: 0.0ms)
+
+
+
+ActionController::UnknownFormat - StaticPagesController#root is missing a template for this request format and variant.
+
+request.formats: ["text/html"]
+request.variant: []
+
+NOTE! For XHR/Ajax or API requests, this action would normally respond with 204 No Content: an empty white screen. Since you're loading it in a web browser, we assume that you expected to actually render a template, not nothing, so we're showing an error to be extra-clear. If you expect 204 No Content, carry on. That's what you'll get from an XHR or API request. Give it a shot.:
+
+Started POST "/__better_errors/26fe8c827c4027ae/variables" for 127.0.0.1 at 2019-02-26 12:32:09 -0800
+Started GET "/" for 127.0.0.1 at 2019-02-26 12:33:33 -0800
+Processing by StaticPagesController#root as HTML
+Completed 406 Not Acceptable in 107ms (ActiveRecord: 0.0ms)
+
+
+
+ActionController::UnknownFormat - StaticPagesController#root is missing a template for this request format and variant.
+
+request.formats: ["text/html"]
+request.variant: []
+
+NOTE! For XHR/Ajax or API requests, this action would normally respond with 204 No Content: an empty white screen. Since you're loading it in a web browser, we assume that you expected to actually render a template, not nothing, so we're showing an error to be extra-clear. If you expect 204 No Content, carry on. That's what you'll get from an XHR or API request. Give it a shot.:
+
+Started POST "/__better_errors/544f59da92097950/variables" for 127.0.0.1 at 2019-02-26 12:33:33 -0800
+Started GET "/" for 127.0.0.1 at 2019-02-26 12:33:34 -0800
+Processing by StaticPagesController#root as HTML
+Completed 406 Not Acceptable in 102ms (ActiveRecord: 0.0ms)
+
+
+
+ActionController::UnknownFormat - StaticPagesController#root is missing a template for this request format and variant.
+
+request.formats: ["text/html"]
+request.variant: []
+
+NOTE! For XHR/Ajax or API requests, this action would normally respond with 204 No Content: an empty white screen. Since you're loading it in a web browser, we assume that you expected to actually render a template, not nothing, so we're showing an error to be extra-clear. If you expect 204 No Content, carry on. That's what you'll get from an XHR or API request. Give it a shot.:
+
+Started POST "/__better_errors/d5e3e3c910aa27a9/variables" for 127.0.0.1 at 2019-02-26 12:33:34 -0800
+Started GET "/api/" for 127.0.0.1 at 2019-02-26 12:34:17 -0800
+  
+ActionController::RoutingError (No route matches [GET] "/api"):
+  
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2019-02-26 12:34:20 -0800
+Processing by StaticPagesController#root as HTML
+Completed 406 Not Acceptable in 101ms (ActiveRecord: 0.0ms)
+
+
+
+ActionController::UnknownFormat - StaticPagesController#root is missing a template for this request format and variant.
+
+request.formats: ["text/html"]
+request.variant: []
+
+NOTE! For XHR/Ajax or API requests, this action would normally respond with 204 No Content: an empty white screen. Since you're loading it in a web browser, we assume that you expected to actually render a template, not nothing, so we're showing an error to be extra-clear. If you expect 204 No Content, carry on. That's what you'll get from an XHR or API request. Give it a shot.:
+
+Started POST "/__better_errors/491513b87fdef72d/variables" for 127.0.0.1 at 2019-02-26 12:34:20 -0800
+Started GET "/" for 127.0.0.1 at 2019-02-26 12:35:04 -0800
+Processing by StaticPagesController#root as HTML
+Completed 406 Not Acceptable in 102ms (ActiveRecord: 0.0ms)
+
+
+
+ActionController::UnknownFormat - StaticPagesController#root is missing a template for this request format and variant.
+
+request.formats: ["text/html"]
+request.variant: []
+
+NOTE! For XHR/Ajax or API requests, this action would normally respond with 204 No Content: an empty white screen. Since you're loading it in a web browser, we assume that you expected to actually render a template, not nothing, so we're showing an error to be extra-clear. If you expect 204 No Content, carry on. That's what you'll get from an XHR or API request. Give it a shot.:
+
+Started POST "/__better_errors/d6639acc2a9f7fa5/variables" for 127.0.0.1 at 2019-02-26 12:35:05 -0800
+Started GET "/" for 127.0.0.1 at 2019-02-26 12:35:05 -0800
+Processing by StaticPagesController#root as HTML
+Completed 406 Not Acceptable in 103ms (ActiveRecord: 0.0ms)
+
+
+
+ActionController::UnknownFormat - StaticPagesController#root is missing a template for this request format and variant.
+
+request.formats: ["text/html"]
+request.variant: []
+
+NOTE! For XHR/Ajax or API requests, this action would normally respond with 204 No Content: an empty white screen. Since you're loading it in a web browser, we assume that you expected to actually render a template, not nothing, so we're showing an error to be extra-clear. If you expect 204 No Content, carry on. That's what you'll get from an XHR or API request. Give it a shot.:
+
+Started POST "/__better_errors/fc7fd4033353e814/variables" for 127.0.0.1 at 2019-02-26 12:35:06 -0800
+Started GET "/" for 127.0.0.1 at 2019-02-26 12:36:21 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html within layouts/application
+  Rendered static_pages/root.html within layouts/application (0.3ms)
+Completed 200 OK in 1381ms (Views: 1379.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-02-26 12:36:30 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html within layouts/application
+  Rendered static_pages/root.html within layouts/application (0.3ms)
+Completed 200 OK in 225ms (Views: 222.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-02-26 13:14:08 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html within layouts/application
+  Rendered static_pages/root.html within layouts/application (0.3ms)
+Completed 200 OK in 257ms (Views: 254.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-02-26 13:14:37 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html within layouts/application
+  Rendered static_pages/root.html within layouts/application (0.3ms)
+Completed 200 OK in 21ms (Views: 19.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-02-26 13:14:39 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html within layouts/application
+  Rendered static_pages/root.html within layouts/application (0.3ms)
+Completed 200 OK in 23ms (Views: 20.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-02-26 13:14:40 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html within layouts/application
+  Rendered static_pages/root.html within layouts/application (0.2ms)
+Completed 200 OK in 21ms (Views: 19.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-02-26 13:14:55 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html within layouts/application
+  Rendered static_pages/root.html within layouts/application (0.3ms)
+Completed 200 OK in 252ms (Views: 249.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-02-26 13:14:56 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html within layouts/application
+  Rendered static_pages/root.html within layouts/application (0.3ms)
+Completed 200 OK in 27ms (Views: 25.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-02-26 13:15:18 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html within layouts/application
+  Rendered static_pages/root.html within layouts/application (0.2ms)
+Completed 200 OK in 291ms (Views: 288.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-02-26 13:15:19 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html within layouts/application
+  Rendered static_pages/root.html within layouts/application (0.2ms)
+Completed 200 OK in 19ms (Views: 17.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-02-26 13:15:47 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html within layouts/application
+  Rendered static_pages/root.html within layouts/application (0.2ms)
+Completed 200 OK in 18ms (Views: 16.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-02-26 13:16:00 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html within layouts/application
+  Rendered static_pages/root.html within layouts/application (0.4ms)
+Completed 200 OK in 227ms (Views: 225.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-02-26 13:17:05 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html within layouts/application
+  Rendered static_pages/root.html within layouts/application (0.3ms)
+Completed 200 OK in 239ms (Views: 237.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-02-26 13:17:07 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html within layouts/application
+  Rendered static_pages/root.html within layouts/application (0.3ms)
+Completed 200 OK in 21ms (Views: 19.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-02-26 13:17:13 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html within layouts/application
+  Rendered static_pages/root.html within layouts/application (0.3ms)
+Completed 200 OK in 24ms (Views: 21.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-02-26 13:17:31 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html within layouts/application
+  Rendered static_pages/root.html within layouts/application (0.3ms)
+Completed 200 OK in 242ms (Views: 238.8ms | ActiveRecord: 0.0ms)
+
+
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3517668663626772375)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to AddPasswordDigestToUsers (20190226213044)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (45.3ms)[0m  [1m[35mALTER TABLE "users" ADD "password_digest" character varying NOT NULL[0m
+  ↳ db/migrate/20190226213044_add_password_digest_to_users.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190226213044"]]
+  ↳ bin/rails:9
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(3517668663626772375)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (4.2ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "session_token", "created_at", "updated_at", "password_digest") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["username", "mesona"], ["email", "kylemesona@gmail.com"], ["session_token", "CH61sQ7TMF0uA9UIodLh-A"], ["created_at", "2019-02-26 21:31:35.277629"], ["updated_at", "2019-02-26 21:31:35.277629"], ["password_digest", "$2a$10$XrafQ0IIiuDDO6NV.tuwrOyi9aIFFt4bUvtFRzMG.JHN23QIlevgu"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/" for 127.0.0.1 at 2019-02-26 13:39:51 -0800
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/mesona/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html within layouts/application
+  Rendered static_pages/root.html within layouts/application (0.2ms)
+Completed 200 OK in 241ms (Views: 239.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-02-26 13:40:16 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html within layouts/application
+  Rendered static_pages/root.html within layouts/application (0.5ms)
+Completed 200 OK in 285ms (Views: 283.4ms | ActiveRecord: 0.0ms)
+
+
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Started GET "/" for 127.0.0.1 at 2019-02-26 13:50:19 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html within layouts/application
+  Rendered static_pages/root.html within layouts/application (0.2ms)
+Completed 200 OK in 234ms (Views: 231.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-02-26 14:01:55 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html within layouts/application
+  Rendered static_pages/root.html within layouts/application (0.2ms)
+Completed 200 OK in 280ms (Views: 278.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signup" for 127.0.0.1 at 2019-02-26 14:01:59 -0800
+  
+ActionController::RoutingError (No route matches [GET] "/signup"):
+  
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/api/signup" for 127.0.0.1 at 2019-02-26 14:02:06 -0800
+  
+ActionController::RoutingError (No route matches [GET] "/api/signup"):
+  
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2019-02-26 14:02:14 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html within layouts/application
+  Rendered static_pages/root.html within layouts/application (0.3ms)
+Completed 200 OK in 28ms (Views: 25.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-02-26 14:03:00 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html within layouts/application
+  Rendered static_pages/root.html within layouts/application (0.3ms)
+Completed 200 OK in 266ms (Views: 264.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-02-26 14:16:52 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html within layouts/application
+  Rendered static_pages/root.html within layouts/application (0.4ms)
+Completed 200 OK in 289ms (Views: 287.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-02-26 14:18:42 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html within layouts/application
+  Rendered static_pages/root.html within layouts/application (0.2ms)
+Completed 200 OK in 23ms (Views: 21.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-02-26 14:29:03 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html within layouts/application
+  Rendered static_pages/root.html within layouts/application (0.2ms)
+Completed 200 OK in 275ms (Views: 272.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-02-26 14:29:48 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html within layouts/application
+  Rendered static_pages/root.html within layouts/application (0.2ms)
+Completed 200 OK in 334ms (Views: 332.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-02-26 14:29:52 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html within layouts/application
+  Rendered static_pages/root.html within layouts/application (0.2ms)
+Completed 200 OK in 18ms (Views: 15.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-02-26 14:30:10 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html within layouts/application
+  Rendered static_pages/root.html within layouts/application (0.2ms)
+Completed 200 OK in 284ms (Views: 282.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-02-26 14:30:50 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html within layouts/application
+  Rendered static_pages/root.html within layouts/application (0.2ms)
+Completed 200 OK in 19ms (Views: 16.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-02-26 14:30:51 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html within layouts/application
+  Rendered static_pages/root.html within layouts/application (0.2ms)
+Completed 200 OK in 20ms (Views: 18.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-02-26 14:30:53 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html within layouts/application
+  Rendered static_pages/root.html within layouts/application (0.2ms)
+Completed 200 OK in 19ms (Views: 16.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-02-26 14:31:25 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html within layouts/application
+  Rendered static_pages/root.html within layouts/application (0.2ms)
+Completed 200 OK in 272ms (Views: 270.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-02-26 14:32:34 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html within layouts/application
+  Rendered static_pages/root.html within layouts/application (0.2ms)
+Completed 200 OK in 281ms (Views: 279.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-02-26 14:33:19 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html within layouts/application
+  Rendered static_pages/root.html within layouts/application (0.2ms)
+Completed 200 OK in 286ms (Views: 284.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-02-26 14:34:31 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html within layouts/application
+  Rendered static_pages/root.html within layouts/application (0.7ms)
+Completed 200 OK in 19ms (Views: 16.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-02-26 14:37:35 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html within layouts/application
+  Rendered static_pages/root.html within layouts/application (0.2ms)
+Completed 200 OK in 286ms (Views: 284.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-02-26 14:38:49 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html within layouts/application
+  Rendered static_pages/root.html within layouts/application (0.2ms)
+Completed 200 OK in 344ms (Views: 341.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-02-26 14:41:31 -0800
+  [1m[35m (42.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/mesona/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html within layouts/application
+  Rendered static_pages/root.html within layouts/application (1.4ms)
+Completed 200 OK in 975ms (Views: 973.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-02-26 14:42:56 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html within layouts/application
+  Rendered static_pages/root.html within layouts/application (0.3ms)
+Completed 500 Internal Server Error in 26ms (ActiveRecord: 0.0ms)
+
+
+
+Sprockets::FileNotFound - couldn't find file 'jquery' with type 'application/javascript'
+Checked in these paths: 
+  /Users/mesona/Documents/AppAcademy/fullStack/app/assets/config
+  /Users/mesona/Documents/AppAcademy/fullStack/app/assets/images
+  /Users/mesona/Documents/AppAcademy/fullStack/app/assets/javascripts
+  /Users/mesona/Documents/AppAcademy/fullStack/app/assets/stylesheets
+  /Users/mesona/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /Users/mesona/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actioncable-5.2.2/lib/assets/compiled
+  /Users/mesona/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activestorage-5.2.2/app/assets/javascripts
+  /Users/mesona/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actionview-5.2.2/lib/assets/compiled
+  /Users/mesona/Documents/AppAcademy/fullStack/node_modules:
+  app/views/layouts/application.html.erb:9:in `_app_views_layouts_application_html_erb___1038391276690644932_70156307089980'
+
+Started POST "/__better_errors/e50e20e8b15a55d6/variables" for 127.0.0.1 at 2019-02-26 14:42:56 -0800
+Started GET "/" for 127.0.0.1 at 2019-02-26 14:42:58 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html within layouts/application
+  Rendered static_pages/root.html within layouts/application (0.3ms)
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 0.0ms)
+
+
+
+Sprockets::FileNotFound - couldn't find file 'jquery' with type 'application/javascript'
+Checked in these paths: 
+  /Users/mesona/Documents/AppAcademy/fullStack/app/assets/config
+  /Users/mesona/Documents/AppAcademy/fullStack/app/assets/images
+  /Users/mesona/Documents/AppAcademy/fullStack/app/assets/javascripts
+  /Users/mesona/Documents/AppAcademy/fullStack/app/assets/stylesheets
+  /Users/mesona/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /Users/mesona/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actioncable-5.2.2/lib/assets/compiled
+  /Users/mesona/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activestorage-5.2.2/app/assets/javascripts
+  /Users/mesona/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actionview-5.2.2/lib/assets/compiled
+  /Users/mesona/Documents/AppAcademy/fullStack/node_modules:
+  app/views/layouts/application.html.erb:9:in `_app_views_layouts_application_html_erb___1038391276690644932_70156263875240'
+
+Started POST "/__better_errors/078fd3b2fb597563/variables" for 127.0.0.1 at 2019-02-26 14:42:58 -0800
+Started GET "/" for 127.0.0.1 at 2019-02-26 14:46:53 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html within layouts/application
+  Rendered static_pages/root.html within layouts/application (0.2ms)
+Completed 500 Internal Server Error in 27ms (ActiveRecord: 0.0ms)
+
+
+
+Sprockets::FileNotFound - couldn't find file 'jquery_ujs' with type 'application/javascript'
+Checked in these paths: 
+  /Users/mesona/Documents/AppAcademy/fullStack/app/assets/config
+  /Users/mesona/Documents/AppAcademy/fullStack/app/assets/images
+  /Users/mesona/Documents/AppAcademy/fullStack/app/assets/javascripts
+  /Users/mesona/Documents/AppAcademy/fullStack/app/assets/stylesheets
+  /Users/mesona/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /Users/mesona/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actioncable-5.2.2/lib/assets/compiled
+  /Users/mesona/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activestorage-5.2.2/app/assets/javascripts
+  /Users/mesona/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actionview-5.2.2/lib/assets/compiled
+  /Users/mesona/Documents/AppAcademy/fullStack/node_modules:
+  app/views/layouts/application.html.erb:9:in `_app_views_layouts_application_html_erb___1038391276690644932_70156308044680'
+
+Started POST "/__better_errors/52ddaae567fbfd89/variables" for 127.0.0.1 at 2019-02-26 14:46:53 -0800
+Started GET "/" for 127.0.0.1 at 2019-02-26 14:47:42 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html within layouts/application
+  Rendered static_pages/root.html within layouts/application (0.2ms)
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 0.0ms)
+
+
+
+Sprockets::FileNotFound - couldn't find file 'jquery_ujs' with type 'application/javascript'
+Checked in these paths: 
+  /Users/mesona/Documents/AppAcademy/fullStack/app/assets/config
+  /Users/mesona/Documents/AppAcademy/fullStack/app/assets/images
+  /Users/mesona/Documents/AppAcademy/fullStack/app/assets/javascripts
+  /Users/mesona/Documents/AppAcademy/fullStack/app/assets/stylesheets
+  /Users/mesona/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /Users/mesona/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actioncable-5.2.2/lib/assets/compiled
+  /Users/mesona/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activestorage-5.2.2/app/assets/javascripts
+  /Users/mesona/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actionview-5.2.2/lib/assets/compiled
+  /Users/mesona/Documents/AppAcademy/fullStack/node_modules:
+  app/views/layouts/application.html.erb:9:in `_app_views_layouts_application_html_erb___1038391276690644932_70156307912260'
+
+Started POST "/__better_errors/71759dfc45b16a3c/variables" for 127.0.0.1 at 2019-02-26 14:47:43 -0800
+Started GET "/" for 127.0.0.1 at 2019-02-26 14:47:45 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html within layouts/application
+  Rendered static_pages/root.html within layouts/application (0.2ms)
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 0.0ms)
+
+
+
+Sprockets::FileNotFound - couldn't find file 'jquery_ujs' with type 'application/javascript'
+Checked in these paths: 
+  /Users/mesona/Documents/AppAcademy/fullStack/app/assets/config
+  /Users/mesona/Documents/AppAcademy/fullStack/app/assets/images
+  /Users/mesona/Documents/AppAcademy/fullStack/app/assets/javascripts
+  /Users/mesona/Documents/AppAcademy/fullStack/app/assets/stylesheets
+  /Users/mesona/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /Users/mesona/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actioncable-5.2.2/lib/assets/compiled
+  /Users/mesona/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activestorage-5.2.2/app/assets/javascripts
+  /Users/mesona/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actionview-5.2.2/lib/assets/compiled
+  /Users/mesona/Documents/AppAcademy/fullStack/node_modules:
+  app/views/layouts/application.html.erb:9:in `_app_views_layouts_application_html_erb___1038391276690644932_70156307631980'
+
+Started POST "/__better_errors/c5220264a90f5227/variables" for 127.0.0.1 at 2019-02-26 14:47:45 -0800
+Started GET "/" for 127.0.0.1 at 2019-02-26 14:50:43 -0800
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/mesona/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html within layouts/application
+  Rendered static_pages/root.html within layouts/application (1.1ms)
+Completed 500 Internal Server Error in 223ms (ActiveRecord: 0.0ms)
+
+
+
+Sprockets::FileNotFound - couldn't find file 'rails-uj' with type 'application/javascript'
+Checked in these paths: 
+  /Users/mesona/Documents/AppAcademy/fullStack/app/assets/config
+  /Users/mesona/Documents/AppAcademy/fullStack/app/assets/images
+  /Users/mesona/Documents/AppAcademy/fullStack/app/assets/javascripts
+  /Users/mesona/Documents/AppAcademy/fullStack/app/assets/stylesheets
+  /Users/mesona/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/jquery-rails-4.3.3/vendor/assets/javascripts
+  /Users/mesona/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /Users/mesona/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actioncable-5.2.2/lib/assets/compiled
+  /Users/mesona/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activestorage-5.2.2/app/assets/javascripts
+  /Users/mesona/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actionview-5.2.2/lib/assets/compiled
+  /Users/mesona/Documents/AppAcademy/fullStack/node_modules:
+  app/views/layouts/application.html.erb:8:in `_app_views_layouts_application_html_erb__2207452328957897405_70186105902280'
+
+Started POST "/__better_errors/812334906845a652/variables" for 127.0.0.1 at 2019-02-26 14:50:44 -0800
+Started GET "/" for 127.0.0.1 at 2019-02-26 14:50:47 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html within layouts/application
+  Rendered static_pages/root.html within layouts/application (0.3ms)
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 0.0ms)
+
+
+
+Sprockets::FileNotFound - couldn't find file 'rails-uj' with type 'application/javascript'
+Checked in these paths: 
+  /Users/mesona/Documents/AppAcademy/fullStack/app/assets/config
+  /Users/mesona/Documents/AppAcademy/fullStack/app/assets/images
+  /Users/mesona/Documents/AppAcademy/fullStack/app/assets/javascripts
+  /Users/mesona/Documents/AppAcademy/fullStack/app/assets/stylesheets
+  /Users/mesona/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/jquery-rails-4.3.3/vendor/assets/javascripts
+  /Users/mesona/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /Users/mesona/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actioncable-5.2.2/lib/assets/compiled
+  /Users/mesona/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activestorage-5.2.2/app/assets/javascripts
+  /Users/mesona/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actionview-5.2.2/lib/assets/compiled
+  /Users/mesona/Documents/AppAcademy/fullStack/node_modules:
+  app/views/layouts/application.html.erb:8:in `_app_views_layouts_application_html_erb__2207452328957897405_70186166561880'
+
+Started POST "/__better_errors/a0ed0517c4aa7cc1/variables" for 127.0.0.1 at 2019-02-26 14:50:47 -0800
+Started GET "/" for 127.0.0.1 at 2019-02-26 14:52:22 -0800
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/mesona/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html within layouts/application
+  Rendered static_pages/root.html within layouts/application (1.3ms)
+Completed 200 OK in 1325ms (Views: 1322.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/users" for 127.0.0.1 at 2019-02-26 14:52:30 -0800
+
+NameError - uninitialized constant Api:
+
+Started POST "/api/users" for 127.0.0.1 at 2019-02-26 14:52:31 -0800
+
+NameError - uninitialized constant Api:
+
+Started POST "/api/users" for 127.0.0.1 at 2019-02-26 14:52:32 -0800
+
+NameError - uninitialized constant Api:
+
+Started POST "/api/users" for 127.0.0.1 at 2019-02-26 14:52:32 -0800
+
+NameError - uninitialized constant Api:
+
+Started POST "/api/users" for 127.0.0.1 at 2019-02-26 14:52:32 -0800
+
+NameError - uninitialized constant Api:
+
+Started POST "/api/users" for 127.0.0.1 at 2019-02-26 14:52:32 -0800
+
+NameError - uninitialized constant Api:
+
+Started POST "/api/users" for 127.0.0.1 at 2019-02-26 14:52:33 -0800
+
+NameError - uninitialized constant Api:
+
