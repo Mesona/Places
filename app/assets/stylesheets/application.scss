@@ -13,3 +13,21 @@
  *= require_tree .
  *= require_self
  */
+
+.nav-bar {
+  display: grid;
+  grid-template-columns: 5fr;
+  grid-gap: 20px;
+  grid-template-rows: 
+    "header nav-bar"
+    "main body"
+    "footer footer";
+  border: 2px solid black;
+  .logo {
+    border: 2px solid green;
+  }
+
+  .logged-out-options {
+    border: 2px solid green;
+  }
+}

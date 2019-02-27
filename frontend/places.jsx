@@ -24,6 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const store = configureStore(preloadedState);
 
   // TESTING STUFF
+  window.getState = store.getState;
   // END TESTING STUFF
 
 
