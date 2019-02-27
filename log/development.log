@@ -1165,3 +1165,421 @@ Processing by Api::UsersController#create as JSON
 Completed 200 OK in 84ms (Views: 14.6ms | ActiveRecord: 1.6ms)
 
 
+Started GET "/" for 127.0.0.1 at 2019-02-26 15:38:22 -0800
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/mesona/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html within layouts/application
+  Rendered static_pages/root.html within layouts/application (1.3ms)
+Completed 200 OK in 1005ms (Views: 1003.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-02-26 15:39:36 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html within layouts/application
+  Rendered static_pages/root.html within layouts/application (0.3ms)
+Completed 200 OK in 359ms (Views: 357.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-02-26 15:39:38 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html within layouts/application
+  Rendered static_pages/root.html within layouts/application (0.2ms)
+Completed 200 OK in 24ms (Views: 22.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-02-26 15:40:35 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html within layouts/application
+  Rendered static_pages/root.html within layouts/application (0.3ms)
+Completed 200 OK in 22ms (Views: 20.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-02-26 15:43:47 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html within layouts/application
+  Rendered static_pages/root.html within layouts/application (0.2ms)
+Completed 200 OK in 35ms (Views: 32.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-02-26 15:43:50 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html within layouts/application
+  Rendered static_pages/root.html within layouts/application (0.2ms)
+Completed 200 OK in 29ms (Views: 27.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-02-26 15:45:32 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html within layouts/application
+  Rendered static_pages/root.html within layouts/application (0.2ms)
+Completed 200 OK in 337ms (Views: 335.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-02-26 15:48:32 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html within layouts/application
+  Rendered static_pages/root.html within layouts/application (0.3ms)
+Completed 200 OK in 342ms (Views: 339.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-02-26 15:48:36 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html within layouts/application
+  Rendered static_pages/root.html within layouts/application (0.3ms)
+Completed 200 OK in 24ms (Views: 22.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/users" for 127.0.0.1 at 2019-02-26 15:48:39 -0800
+Processing by Api::UsersController#create as JSON
+  Parameters: {"user"=>{"username"=>"t", "email"=>"t", "password"=>"[FILTERED]"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/users_controller.rb:26
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/users_controller.rb:26
+Completed 401 Unauthorized in 125ms (Views: 0.2ms | ActiveRecord: 48.9ms)
+
+
+Started POST "/api/users" for 127.0.0.1 at 2019-02-26 15:48:46 -0800
+Processing by Api::UsersController#create as JSON
+  Parameters: {"user"=>{"username"=>"ttttt", "email"=>"ttttt", "password"=>"[FILTERED]"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/users_controller.rb:26
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/users_controller.rb:26
+Completed 401 Unauthorized in 66ms (Views: 0.1ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/api/users" for 127.0.0.1 at 2019-02-26 15:49:04 -0800
+Processing by Api::UsersController#create as JSON
+  Parameters: {"user"=>{"username"=>"ttttt", "email"=>"ttttt@tttt.tttt", "password"=>"[FILTERED]"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/users_controller.rb:26
+  [1m[36mUser Create (0.8ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "session_token", "created_at", "updated_at", "password_digest") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["username", "ttttt"], ["email", "ttttt@tttt.tttt"], ["session_token", "mTRNmHuO-znauRPRgCSBww"], ["created_at", "2019-02-26 23:49:04.248629"], ["updated_at", "2019-02-26 23:49:04.248629"], ["password_digest", "$2a$10$ehilt9VUOHRv7qSKB6sYdOg0Gbs84pFEm62d.zIkQws6g4lHkU5YO"]]
+  ↳ app/controllers/api/users_controller.rb:26
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/users_controller.rb:26
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/show.json.jbuilder (2.7ms)
+Completed 200 OK in 77ms (Views: 9.2ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-02-26 15:49:12 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html within layouts/application
+  Rendered static_pages/root.html within layouts/application (0.2ms)
+Completed 200 OK in 21ms (Views: 18.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-02-26 15:50:22 -0800
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/mesona/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html within layouts/application
+  Rendered static_pages/root.html within layouts/application (1.4ms)
+Completed 200 OK in 1359ms (Views: 1357.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-02-26 15:50:58 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html within layouts/application
+  Rendered static_pages/root.html within layouts/application (0.2ms)
+Completed 200 OK in 21ms (Views: 19.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-02-26 15:51:43 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html within layouts/application
+  Rendered static_pages/root.html within layouts/application (0.2ms)
+Completed 200 OK in 22ms (Views: 20.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-02-26 15:52:25 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html within layouts/application
+  Rendered static_pages/root.html within layouts/application (0.2ms)
+Completed 200 OK in 322ms (Views: 320.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-02-26 15:53:16 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html within layouts/application
+  Rendered static_pages/root.html within layouts/application (0.3ms)
+Completed 200 OK in 340ms (Views: 338.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-02-26 15:54:44 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html within layouts/application
+  Rendered static_pages/root.html within layouts/application (0.3ms)
+Completed 200 OK in 324ms (Views: 321.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-02-26 15:56:33 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html within layouts/application
+  Rendered static_pages/root.html within layouts/application (0.2ms)
+Completed 200 OK in 354ms (Views: 351.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/users" for 127.0.0.1 at 2019-02-26 16:00:46 -0800
+Processing by Api::UsersController#create as JSON
+  Parameters: {"user"=>{"username"=>"tt", "email"=>"tt@tt.t", "password"=>"[FILTERED]"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/users_controller.rb:26
+  [1m[36mUser Create (0.9ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "session_token", "created_at", "updated_at", "password_digest") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["username", "tt"], ["email", "tt@tt.t"], ["session_token", "37Q-F9eDEaMxzrn4P6-2xw"], ["created_at", "2019-02-27 00:00:46.589359"], ["updated_at", "2019-02-27 00:00:46.589359"], ["password_digest", "$2a$10$6tsiBms9pmOKZ7RH1CDBFe4YgujKi.FrOtZlPWbh28IvyrrVBxxKS"]]
+  ↳ app/controllers/api/users_controller.rb:26
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/users_controller.rb:26
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/show.json.jbuilder (3.2ms)
+Completed 200 OK in 138ms (Views: 10.1ms | ActiveRecord: 51.9ms)
+
+
+Started DELETE "/api/session" for 127.0.0.1 at 2019-02-26 16:00:53 -0800
+  
+ActionController::RoutingError (No route matches [DELETE] "/api/session"):
+  
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started DELETE "/api/session" for 127.0.0.1 at 2019-02-26 16:12:48 -0800
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/mesona/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+
+NameError - uninitialized constant Api::SessionsController:
+
+Started GET "/" for 127.0.0.1 at 2019-02-26 16:12:50 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html within layouts/application
+  Rendered static_pages/root.html within layouts/application (1.2ms)
+Completed 200 OK in 1277ms (Views: 1274.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/users" for 127.0.0.1 at 2019-02-26 16:12:59 -0800
+Processing by Api::UsersController#create as JSON
+  Parameters: {"user"=>{"username"=>"ttt", "email"=>"ttt@ttt.ttt", "password"=>"[FILTERED]"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/users_controller.rb:26
+  [1m[36mUser Create (0.9ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "session_token", "created_at", "updated_at", "password_digest") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["username", "ttt"], ["email", "ttt@ttt.ttt"], ["session_token", "el3oPmn5B9Qicu3fm7XnwA"], ["created_at", "2019-02-27 00:12:59.488632"], ["updated_at", "2019-02-27 00:12:59.488632"], ["password_digest", "$2a$10$k1uRPGYLBMNJ0ZlPbogOE.lTxrbi4Qw31YTaWPZeurIeEJ.W4mL2."]]
+  ↳ app/controllers/api/users_controller.rb:26
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/users_controller.rb:26
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/show.json.jbuilder (2.9ms)
+Completed 200 OK in 92ms (Views: 9.6ms | ActiveRecord: 7.9ms)
+
+
+Started DELETE "/api/session" for 127.0.0.1 at 2019-02-26 16:13:00 -0800
+
+NameError - uninitialized constant Api::SessionsController:
+
+Started DELETE "/api/session" for 127.0.0.1 at 2019-02-26 16:13:37 -0800
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/mesona/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+
+NameError - uninitialized constant Api::SessionsController:
+
+Started GET "/" for 127.0.0.1 at 2019-02-26 16:13:38 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html within layouts/application
+  Rendered static_pages/root.html within layouts/application (1.1ms)
+Completed 200 OK in 828ms (Views: 826.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/users" for 127.0.0.1 at 2019-02-26 16:13:47 -0800
+Processing by Api::UsersController#create as JSON
+  Parameters: {"user"=>{"username"=>"tttt", "email"=>"tttt@tttt.tttt", "password"=>"[FILTERED]"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/users_controller.rb:26
+  [1m[36mUser Create (0.8ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "session_token", "created_at", "updated_at", "password_digest") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["username", "tttt"], ["email", "tttt@tttt.tttt"], ["session_token", "SGQqcOtqx3qk41_BDyqxPg"], ["created_at", "2019-02-27 00:13:47.817864"], ["updated_at", "2019-02-27 00:13:47.817864"], ["password_digest", "$2a$10$LnW17uWXzdDXmMgDxsvn/ePK9ILXBjohWF.b8ZeCaF6DTXTFbImdW"]]
+  ↳ app/controllers/api/users_controller.rb:26
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/users_controller.rb:26
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/show.json.jbuilder (3.2ms)
+Completed 200 OK in 92ms (Views: 10.2ms | ActiveRecord: 7.6ms)
+
+
+Started DELETE "/api/session" for 127.0.0.1 at 2019-02-26 16:13:50 -0800
+
+NameError - uninitialized constant Api::SessionsController:
+
+Started GET "/" for 127.0.0.1 at 2019-02-26 16:15:37 -0800
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/mesona/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html within layouts/application
+  Rendered static_pages/root.html within layouts/application (0.5ms)
+Completed 200 OK in 781ms (Views: 779.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/users" for 127.0.0.1 at 2019-02-26 16:15:47 -0800
+Processing by Api::UsersController#create as JSON
+  Parameters: {"user"=>{"username"=>"t2", "email"=>"t2@t2.t", "password"=>"[FILTERED]"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/users_controller.rb:26
+  [1m[36mUser Create (0.8ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "session_token", "created_at", "updated_at", "password_digest") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["username", "t2"], ["email", "t2@t2.t"], ["session_token", "8TUQejAghUgpeFAEpBDtqg"], ["created_at", "2019-02-27 00:15:47.874589"], ["updated_at", "2019-02-27 00:15:47.874589"], ["password_digest", "$2a$10$bUrfH/84tCrDrJbaglMV5uk/NNQrkoffM4aQ8nc/1Lb6q4vDqGo5q"]]
+  ↳ app/controllers/api/users_controller.rb:26
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/users_controller.rb:26
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/show.json.jbuilder (1.0ms)
+Completed 200 OK in 87ms (Views: 7.1ms | ActiveRecord: 8.1ms)
+
+
+Started DELETE "/api/session" for 127.0.0.1 at 2019-02-26 16:15:56 -0800
+
+NameError - uninitialized constant Api::SessionsController:
+
+Started DELETE "/api/session" for 127.0.0.1 at 2019-02-26 16:15:56 -0800
+
+NameError - uninitialized constant Api::SessionsController:
+
+Started DELETE "/api/session" for 127.0.0.1 at 2019-02-26 16:17:31 -0800
+Processing by Api::SessionsController#destroy as JSON
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "8TUQejAghUgpeFAEpBDtqg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14
+Completed 500 Internal Server Error in 38ms (ActiveRecord: 5.6ms)
+
+
+
+NoMethodError - undefined method `reset_session_token!' for #<User:0x00007fdd70573848>
+Did you mean?  restore_session_token!:
+  app/controllers/application_controller.rb:9:in `logout!'
+  app/controllers/api/sessions_controller.rb:21:in `destroy'
+
+Started GET "/" for 127.0.0.1 at 2019-02-26 16:17:32 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html within layouts/application
+  Rendered static_pages/root.html within layouts/application (0.3ms)
+Completed 200 OK in 22ms (Views: 20.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/users" for 127.0.0.1 at 2019-02-26 16:17:39 -0800
+Processing by Api::UsersController#create as JSON
+  Parameters: {"user"=>{"username"=>"r3", "email"=>"r3@r3.r3", "password"=>"[FILTERED]"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/users_controller.rb:26
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "session_token", "created_at", "updated_at", "password_digest") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["username", "r3"], ["email", "r3@r3.r3"], ["session_token", "5tjOGFwFO8DQFSGno2gQnA"], ["created_at", "2019-02-27 00:17:39.636576"], ["updated_at", "2019-02-27 00:17:39.636576"], ["password_digest", "$2a$10$IHxryylBzmV4igB9.g8LCelp.30cyTSMLbNFi31eMqRjHBIsDRZVS"]]
+  ↳ app/controllers/api/users_controller.rb:26
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/users_controller.rb:26
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/show.json.jbuilder (0.4ms)
+Completed 200 OK in 74ms (Views: 6.6ms | ActiveRecord: 0.9ms)
+
+
+Started DELETE "/api/session" for 127.0.0.1 at 2019-02-26 16:17:40 -0800
+Processing by Api::SessionsController#destroy as JSON
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "5tjOGFwFO8DQFSGno2gQnA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.4ms)
+
+
+
+NoMethodError - undefined method `reset_session_token!' for #<User:0x00007fdd70b09848>
+Did you mean?  restore_session_token!:
+  app/controllers/application_controller.rb:9:in `logout!'
+  app/controllers/api/sessions_controller.rb:21:in `destroy'
+
+Started GET "/" for 127.0.0.1 at 2019-02-26 16:18:05 -0800
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/mesona/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html within layouts/application
+  Rendered static_pages/root.html within layouts/application (0.6ms)
+Completed 200 OK in 777ms (Views: 775.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/users" for 127.0.0.1 at 2019-02-26 16:18:13 -0800
+Processing by Api::UsersController#create as JSON
+  Parameters: {"user"=>{"username"=>"r4", "email"=>"r4@rr4", "password"=>"[FILTERED]"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/users_controller.rb:26
+  [1m[36mUser Create (0.9ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "session_token", "created_at", "updated_at", "password_digest") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["username", "r4"], ["email", "r4@rr4"], ["session_token", "iS73gSfYIrGbrLdLTLsn4Q"], ["created_at", "2019-02-27 00:18:13.166727"], ["updated_at", "2019-02-27 00:18:13.166727"], ["password_digest", "$2a$10$q8a8FicJ9AEPQu9LUCfd7ueQfPS6/Cq5C1ih64jKue3MfZhW3infC"]]
+  ↳ app/controllers/api/users_controller.rb:26
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/users_controller.rb:26
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/show.json.jbuilder (1.2ms)
+Completed 200 OK in 89ms (Views: 7.5ms | ActiveRecord: 7.8ms)
+
+
+Started DELETE "/api/session" for 127.0.0.1 at 2019-02-26 16:18:15 -0800
+Processing by Api::SessionsController#destroy as JSON
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "iS73gSfYIrGbrLdLTLsn4Q"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:38
+  [1m[36mUser Update (0.5ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "DCEaHsNJMZ5KfNJvIpqlVA"], ["updated_at", "2019-02-27 00:18:15.078089"], ["id", 16]]
+  ↳ app/models/user.rb:38
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:38
+Completed 500 Internal Server Error in 131ms (ActiveRecord: 1.6ms)
+
+
+
+NameError - undefined local variable or method `new_session_url' for #<Api::SessionsController:0x00007f8b548db738>
+Did you mean?  new_api_session_url
+               api_session_url:
+  app/controllers/api/sessions_controller.rb:22:in `destroy'
+
+Started GET "/" for 127.0.0.1 at 2019-02-26 16:19:10 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html within layouts/application
+  Rendered static_pages/root.html within layouts/application (0.2ms)
+Completed 200 OK in 21ms (Views: 18.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/users" for 127.0.0.1 at 2019-02-26 16:19:17 -0800
+Processing by Api::UsersController#create as JSON
+  Parameters: {"user"=>{"username"=>"t11", "email"=>"t11@t11", "password"=>"[FILTERED]"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/users_controller.rb:26
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "session_token", "created_at", "updated_at", "password_digest") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["username", "t11"], ["email", "t11@t11"], ["session_token", "VpiroRA99CEN9rugTP07iQ"], ["created_at", "2019-02-27 00:19:17.178443"], ["updated_at", "2019-02-27 00:19:17.178443"], ["password_digest", "$2a$10$fy2GgyPvp6opfHxUgghY1OlR8uQ.G8.kKQN37AgfJ.WbekCw9isW."]]
+  ↳ app/controllers/api/users_controller.rb:26
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/users_controller.rb:26
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/show.json.jbuilder (0.4ms)
+Completed 200 OK in 97ms (Views: 7.6ms | ActiveRecord: 6.5ms)
+
+
+Started DELETE "/api/session" for 127.0.0.1 at 2019-02-26 16:19:18 -0800
+Processing by Api::SessionsController#destroy as JSON
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "VpiroRA99CEN9rugTP07iQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:38
+  [1m[36mUser Update (0.4ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "G-USRhRYNM1YRnxJWRN8ZA"], ["updated_at", "2019-02-27 00:19:18.796879"], ["id", 17]]
+  ↳ app/models/user.rb:38
+  [1m[35m (39.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:38
+Completed 200 OK in 45ms (Views: 0.3ms | ActiveRecord: 40.8ms)
+
+
