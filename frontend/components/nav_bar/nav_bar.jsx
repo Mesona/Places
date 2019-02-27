@@ -6,12 +6,12 @@ class NavBar extends React.Component {
 
     const { currentUser, logout } = this.props;
     const display = currentUser ? (
-      <div>
+      <div className="login-logout-options">
         <p>Hello, { currentUser.username }</p>
         <button onClick={ logout }>Sign Out</button>
       </div>
     ) : (
-      <div className="logged-out-options">
+      <div className="login-logout-options">
         <Link className="button" to="/signup">Sign Up</Link>
         <Link className="button" to="/signin">Sign In</Link>
       </div>
@@ -19,8 +19,11 @@ class NavBar extends React.Component {
     
     return (
       <header className="nav-bar">
-        <h1 className="logo">PLACES</h1>
-        <div>
+        <div className="logo">
+          <img src={'https://www.gstatic.com/images/branding/product/1x/atari_48dp.png'}></img>
+          <p>Places</p>
+        </div>
+        <div className="nav-display">
           { display }
         </div>
       </header>

@@ -15,12 +15,12 @@ class PlacesIndex extends React.Component {
 
   render () {
     return (
-      <header className="places-index">
-        <h1 className="logo">PLACES PLACES</h1>
+      <main className="places-index">
+        <h1 className="logo">PLACES INDEX</h1>
         <div>
           {/* { display } */}
         </div>
-      </header>
+      </main>
     );
   }
 };
