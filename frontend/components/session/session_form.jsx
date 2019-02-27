@@ -1,6 +1,6 @@
 import React from 'react';
 
-class Signup extends React.Component {
+class SessionForm extends React.Component {
   constructor(props) {
     super(props);
 
@@ -15,13 +15,14 @@ class Signup extends React.Component {
 
   handleInput (field) {
     return (e) => {
-      this.setState({ [field]: e.target.value });
+      this.setState({ [field]: e.currentTarget.value });
     };
   }
 
   handleSubmit (e) {
     e.preventDefault();
-    this.props.createNewUser(this.state)
+    const user = Object.assign({}, this.state);
+    this.props.processForm(user)
       .then( () => this.props.history.push('/'));
   }
 
@@ -29,8 +30,8 @@ class Signup extends React.Component {
   render () {
     return (
       <div className="session-form">
-        <h2>Sign Up</h2>
-        <form>
+        <h2>{this.props.formType}Test</h2>
+        <form className="login-form-box">
           <label>Username:
             <input
               type="text"
@@ -59,4 +60,4 @@ class Signup extends React.Component {
   }
 }
 
-export default Signup;
+export default SessionForm;
