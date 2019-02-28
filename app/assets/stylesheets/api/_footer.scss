@@ -1,0 +1,57 @@
+
+.footer {
+  background-color: rgb(243, 243, 245);
+  border: 2px solid black;
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-areas: ". promos np";
+  position: sticky;
+  bottom: 0;
+
+  .promo-links {
+    grid-area: promos;
+    display: flex;
+    justify-content: center;
+    // border: 2px solid green;
+    display: flex;
+    justify-content: space-evenly;
+
+    :hover {
+      text-decoration: none;
+      background-color: rgb(243, 243, 245);
+    }
+  
+    img {
+      height: 40px;
+      width: 40px;
+      // border: 2px solid orange;
+    }
+  }
+  
+  .new-place {
+    grid-area: np;
+    display: flex;
+    justify-content: flex-end;
+    padding-top: 5px;
+
+    // border: 2px solid green;
+  
+    .new-place-button:hover {
+      background-color: rgb(246, 247, 252);
+      transition: background-color 0.5s;
+    }
+
+    .new-place-button {
+      border-radius: 50%;
+      width: 55px;
+      height: 55px;
+      margin-right: 20px;
+      // border: 2px solid orange;
+      box-shadow: -2px 2px 6px;
+
+      .plus-symbol {
+        // border: 2px solid purple;
+      }
+    }
+  }
+}

@@ -1,0 +1,49 @@
+.nav-bar {
+  display: flex;
+  // border: 2px solid black;
+  // position: sticky;
+  // top: 0;
+  
+  .logo {
+    width: 15%;
+    // border: 2px solid green;
+    text-align: center;
+    vertical-align: middle;
+    display: flex;
+
+    .logo-button {
+      text-decoration: none;
+    }
+
+    .logo-button:hover {
+      background-color: white;
+    }
+    
+    
+    img {
+      height: 50px;
+      width: 50px;
+      margin-right: 10px;
+      margin-top: 5px;
+    }
+    
+    p {
+      font-size: 20px;
+      font-family: 'Raleway', sans-serif;
+      color: rgba(0, 0, 0, 0.54);
+      font-weight: bold;
+      text-decoration: none;
+    }
+  }
+  .nav-display {
+    width: 85%;
+    // border: 2px solid green;
+    display: flex;
+    justify-content: flex-end;
+
+    .login-logout-options {
+      // border: 2px solid orange;
+    }
+  }
+
+}

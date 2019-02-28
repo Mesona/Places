@@ -20,8 +20,8 @@ class NavBar extends React.Component {
     return (
       <header className="nav-bar">
         <div className="logo">
-          <img src={'https://www.gstatic.com/images/branding/product/1x/atari_48dp.png'}></img>
-          <p>Places</p>
+          <Link className="logo-button" to='/' ><img src={'https://www.gstatic.com/images/branding/product/1x/atari_48dp.png'}></img></Link>
+          <Link className="logo-button" to='/'><p>Places</p></Link>
         </div>
         <div className="nav-display">
           { display }

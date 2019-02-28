@@ -1,0 +1,30 @@
+.places-index {
+  display: grid;
+  grid-template-columns: 5fr;
+  grid-gap: 20px;
+  grid-template-rows: 
+    "header nav-bar"
+    "main body"
+    "footer footer";
+
+  border: 2px solid black;
+
+  .places-index-header {
+    display: flex;
+    justify-content: center;
+
+    .places-filter-dropdown {
+      margin-top: 5px;
+    }
+  }
+
+  .places {
+    border: 2px solid green;
+    height: 1000px;
+
+    div {
+      border: 2px solid orange;
+      height: 100%;
+    }
+  }
+}
