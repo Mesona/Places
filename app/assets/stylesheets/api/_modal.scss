@@ -1,0 +1,83 @@
+
+.modal-background {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 10;
+}
+
+.modal-child {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  padding: 20px;
+  width: 50%;
+  height: 50%;
+
+  .session-form {
+
+    .close-x {
+      float: right;
+      // justify-content: flex-end;
+      // justify-self: flex-end;
+    }
+
+    .modal-title {
+      text-transform: uppercase;
+      font-size: 20px;
+      margin: 0 auto;
+      width: 100%;
+      text-align: center;
+
+    }
+
+    .login-form-box {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      button {
+        width: 20%;
+        margin-top: 5px;
+      }
+
+    }
+
+    .session-errors {
+      text-align: center;
+    }
+
+
+    
+  }
+}
+
+.fading {
+  -webkit-animation-duration: 1s;
+  -webkit-animation-name: fading;
+  animation-duration: 1s;
+  animation-name: fading;
+}
+
+@-webkit-keyframes fading {
+  from {
+      color: red;
+  }
+  to {
+      color: black;
+  }
+}
+@keyframes fading {
+  from {
+      color: red;
+  }
+  to {
+      color: black;
+  }
+}

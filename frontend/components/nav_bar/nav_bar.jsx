@@ -4,16 +4,20 @@ import { Link } from 'react-router-dom';
 class NavBar extends React.Component {
   render () {
 
-    const { currentUser, logout } = this.props;
+    const { currentUser, logout, openModal } = this.props;
     const display = currentUser ? (
       <div className="login-logout-options">
-        <p>Hello, { currentUser.username }</p>
+        <span>Hello, { currentUser.username }</span><br></br>
         <button onClick={ logout }>Sign Out</button>
       </div>
     ) : (
       <div className="login-logout-options">
-        <Link className="button" to="/signup">Sign Up</Link>
-        <Link className="button" to="/signin">Sign In</Link>
+        <button onClick={() => openModal('login')}>Login</button>
+        &nbsp;or&nbsp;
+        <button onClick={() => openModal('signup')}>Sign Up</button>
+        <div>
+          <button className="DemoButton" onClick={() => openModal('demo')}>Demo Login</button>
+        </div>
       </div>
     );
     
