@@ -13,8 +13,16 @@
     display: flex;
     justify-content: center;
 
-    .places-filter-dropdown {
-      margin-top: 5px;
+    .places-dropdown {
+      padding-left: 10px;
+      padding-right: 10px;
+      padding-top: 1px;
+      padding-bottom: 1px;
+    }
+    .places-dropdown:hover {
+      background-color: rgb(217, 217, 226);
+      transition: background-color 0.5s;
+      border-radius: 5px;
     }
   }
 

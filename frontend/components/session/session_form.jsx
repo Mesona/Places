@@ -30,9 +30,9 @@ class SessionForm extends React.Component {
   render () {
     return (
       <div className="session-form">
-        <h2>{this.props.formType}Test</h2>
+        <h2>{this.props.formType}</h2>
         <form className="login-form-box">
-          <label>Username:
+          <label className={this.props.shouldHide ? 'hidden' : ''} >Username:
             <input
               type="text"
               value={this.state.username}
@@ -53,7 +53,7 @@ class SessionForm extends React.Component {
               onChange={this.handleInput('password')}
             />
           </label>
-          <button onClick={this.handleSubmit}>Sign Up!</button>
+          <button onClick={this.handleSubmit}>{this.props.formType}</button>
         </form>
       </div>
     )

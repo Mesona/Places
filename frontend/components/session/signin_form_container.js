@@ -3,7 +3,8 @@ import { login } from '../../actions/session_actions';
 import SessionForm from './session_form';
 
 const mapStateToProps = state => ({
-  formType: 'signin'
+  formType: 'Sign In',
+  shouldHide: true,
 });
 
 const mapDispatchToProps = dispatch => ({

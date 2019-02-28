@@ -3,7 +3,8 @@ import { createNewUser } from '../../actions/session_actions';
 import SessionForm from './session_form';
 
 const mapStateToProps = state => ({
-  formType: 'signup'
+  formType: 'Sign Up',
+  shouldHide: false,
 });
 
 const mapDispatchToProps = dispatch => ({
