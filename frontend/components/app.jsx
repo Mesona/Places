@@ -5,6 +5,8 @@ import PlacesIndexContainer from './places/places_index_container';
 import NavBarContainer from './nav_bar/nav_bar_container';
 import Footer from './footer/footer';
 import Modal from './modal/modal';
+import FooterContainer from './footer/footer_container';
+import PlaceShowContainer from './places/place_show_container';
 
 const App = () => (
   <div>
@@ -12,9 +14,10 @@ const App = () => (
     <Route path="/" component={ NavBarContainer } />
     <Switch>
       <Route exact path="/" component={ PlacesIndexContainer } />
+      <Route path="/places/:placeId" component={ PlaceShowContainer } />
       <Redirect from="*" to="/" exact />
     </Switch>
-    <Route path="/" component={ Footer } />
+    <Route path="/" component={ FooterContainer } />
 
   </div>
 );

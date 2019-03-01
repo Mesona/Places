@@ -11,6 +11,9 @@ const PlacesReducer = (state = {}, action) => {
     case RECEIVE_PLACES:
       return action.places;
     case RECEIVE_PLACE:
+      console.log('start');
+      console.log(state);
+      console.log('end');
       return merge({}, state, {[action.place.id]: action.place});
     case REMOVE_PLACE:
       let newState = merge({}, state);

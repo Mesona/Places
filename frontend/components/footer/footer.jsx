@@ -1,8 +1,28 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { Route, Redirect, Switch } from 'react-router-dom';
 
 
 class Footer extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.createPlace = this.createPlace.bind(this);
+  }
+
+  createPlace(e) {
+    e.preventDefault();
+    console.log(this.state);
+    this.state = {
+      title: 'Untitled',
+      private: false,
+      owner_id: 2,
+    };
+    console.log(this.state);
+    this.props.createPlace(this.state);
+    <Redirect to="/places/" />
+  }
+
   render () {
     return (
       <footer className="footer">
@@ -12,7 +32,10 @@ class Footer extends React.Component {
           <span><a href="https://www.linkedin.com/in/kmfischer/"><img src={window.images.linkedinImg}></img></a></span>
         </section>
         <section className="new-place">
-          <button className="new-place-button"><img src={window.images.plusImg} className="plus-symbol"></img></button>
+          <button
+            className="new-place-button"
+            onClick={this.createPlace}
+          ><img src={window.images.plusImg} className="plus-symbol"></img></button>
         </section>
       </footer>
     );

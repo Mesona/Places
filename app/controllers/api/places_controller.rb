@@ -19,7 +19,7 @@ class Api::PlacesController < ApplicationController
   end
 
   def create
-    @place = Place.new(user_params)
+    @place = Place.new(place_params)
 
     if @place.save
       render :show
@@ -47,6 +47,6 @@ class Api::PlacesController < ApplicationController
 
   private
     def place_params
-      params.require(:place).permit(:title, :private)
+      params.require(:place).permit(:title, :private, :owner_id)
     end
 end

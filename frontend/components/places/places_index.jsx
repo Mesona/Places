@@ -27,16 +27,7 @@ class PlacesIndex extends React.Component {
       'Owned by anyone', 'Owned by me', 'Not owned by me'
     ];
 
-    const { places } = this.props;
-
-    // const places = this.props.places.map(place => {
-    //   return (
-    //     <PlaceIndexItem
-    //       key={place.id}
-    //       place={place}
-    //       deletePlace={this.props.deletePlace} />
-    //   );
-    // });
+    const { places, deletePlace } = this.props;
 
     return (
       <main className="places-index">
@@ -53,6 +44,8 @@ class PlacesIndex extends React.Component {
         </section>
         <section className="places">
           {places.map(place => <PlaceIndexItem key={place.id} place={place} />)}
+          <section className="space-fixer">
+          </section>
         </section>
       </main>
     );

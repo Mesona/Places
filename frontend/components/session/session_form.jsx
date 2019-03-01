@@ -12,7 +12,7 @@ class SessionForm extends React.Component {
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.handleOtherSubmit = this.handleOtherSubmit.bind(this);
+    // this.handleOtherSubmit = this.handleOtherSubmit.bind(this);
     this.demoLogin = this.demoLogin.bind(this);
     this.demoLoginHelper = this.demoLoginHelper.bind(this);
   }
@@ -20,6 +20,10 @@ class SessionForm extends React.Component {
 
   componentDidMount() {
     this.state.username === 'Demo' ? this.demoLogin() : '';
+  }
+
+  componentWillUnmount() {
+    this.props.receiveErrors([]);
   }
 
   demoLogin() {
@@ -65,11 +69,11 @@ class SessionForm extends React.Component {
     this.props.processForm(user).then(this.props.closeModal);
   }
 
-  handleOtherSubmit (e) {
-    e.preventDefault();
-    const user = Object.assign({}, this.state);
-    this.props.otherForm(user).then(this.props.closeModal);
-  }
+  // handleOtherSubmit (e) {
+  //   e.preventDefault();
+  //   // const user = Object.assign({}, this.state);
+  //   // this.props.otherForm(user).then(this.props.closeModal);
+  // }
 
   renderErrors() {
     return(
@@ -86,16 +90,12 @@ class SessionForm extends React.Component {
     );
   }
 
-  componentWillUnmount() {
-    this.props.receiveErrors([]);
-  }
-
   render () {
     return (
       <div className="session-form" onClick={()=>{this.setState({active: false})}}>
         <div onClick={this.props.closeModal} className="close-x">X</div><br></br><br></br>
         <div className="modal-title">{this.props.formType}</div><br></br>
-        <form className="login-form-box">
+        <form className="login-form-box"  onSubmit={this.handleSubmit}>
           <label className={this.props.shouldHide ? 'hidden' : ''} onClick={e => e.stopPropagation()} >
             <section className="descriptor-div">
               <span className={this.state.active === 'username' ? 'placeholderText' : this.state.username === '' ? '' : 'hidden'}>Username</span>
@@ -131,10 +131,10 @@ class SessionForm extends React.Component {
           </label>
           <div className="session-errors"><br></br>{this.renderErrors()}</div>
           <nav className="session-form-buttons">
+            <input type="submit" className="form-button" value={this.props.formType}></input>
             <div className="other-form-button">
               {this.props.otherForm}
             </div>
-            <button className="form-button" onClick={this.handleSubmit}>{this.props.formType}</button>
           </nav>
         </form>
       </div>
