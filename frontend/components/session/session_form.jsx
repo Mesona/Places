@@ -36,8 +36,8 @@ class SessionForm extends React.Component {
   renderErrors() {
     return(
       <ul>
-        <li className="fading">
-          {this.props.errors[0]}
+        <li>
+          <span className="fading">{this.props.errors[0]}</span>
         </li>
         {/* {this.props.errors.map((error, i) => (
           <li className="fading" key={`error-${i}`}>
@@ -48,13 +48,17 @@ class SessionForm extends React.Component {
     );
   }
 
+  componentWillUnmount() {
+    this.props.receiveErrors([]);
+  }
+
   render () {
     return (
-      <div className="session-form">
+      <div className="session-form" onClick={()=>{this.setState({active: false})}}>
         <div onClick={this.props.closeModal} className="close-x">X</div><br></br><br></br>
         <div className="modal-title">{this.props.formType}</div><br></br>
         <form className="login-form-box">
-          <label className={this.props.shouldHide ? 'hidden' : ''} ><br></br>
+          <label className={this.props.shouldHide ? 'hidden' : ''} onClick={e => e.stopPropagation()} >
             <section className="descriptor-div">
               <span className={this.state.active === 'username' ? 'placeholderText' : ''}>Username</span>
             </section>
@@ -63,10 +67,9 @@ class SessionForm extends React.Component {
               value={this.state.username}
               onChange={this.handleInput('username')}
               onClick={()=>{this.setState({active: 'username'})}}
-              onMouseLeave={() => {this.setState({active: false})}}
             />
           </label>
-          <label><br></br>
+          <label onClick={e => e.stopPropagation()}>
             <section className="descriptor-div">
               <span className={this.state.active === 'email' ? 'placeholderText' : ''}>Email</span>
             </section>
@@ -75,10 +78,9 @@ class SessionForm extends React.Component {
               value={this.state.email}
               onChange={this.handleInput('email')}
               onClick={()=>{this.setState({active: 'email'})}}
-              onMouseLeave={() => {this.setState({active: false})}}
             />
           </label>
-          <label><br></br>
+          <label onClick={e => e.stopPropagation()}>
             <section className="descriptor-div">
               <span  className={this.state.active === 'password' ? 'placeholderText' : ''}>Password</span>
             </section>
@@ -87,13 +89,12 @@ class SessionForm extends React.Component {
               value={this.state.password}
               onChange={this.handleInput('password')}
               onClick={()=>{this.setState({active: 'password'})}}
-              onMouseLeave={() => {this.setState({active: false})}}
             />
           </label>
           <div className="session-errors"><br></br>{this.renderErrors()}</div>
           <nav className="session-form-buttons">
             <div className="other-form-button">
-            {this.props.otherForm}
+              {this.props.otherForm}
             </div>
             <button className="form-button" onClick={this.handleSubmit}>{this.props.formType}</button>
           </nav>

@@ -13,11 +13,10 @@ class NavBar extends React.Component {
     ) : (
       <div className="login-logout-options">
         <button onClick={() => openModal('login')}>Login</button>
-        &nbsp;or&nbsp;
+        &nbsp;&nbsp;
         <button onClick={() => openModal('signup')}>Sign Up</button>
-        <div>
-          <button className="DemoButton" onClick={() => openModal('demo')}>Demo Login</button>
-        </div>
+        &nbsp;&nbsp;
+        <button className="DemoButton" onClick={() => openModal('demo')}>Demo Login</button>
       </div>
     );
     

@@ -23,9 +23,11 @@
 
   .session-form {
     font-family: 'Google Sans';
+    z-index: -2;
 
     input {
       padding: 6px;
+      z-index: 5;
     }
 
     .close-x {
@@ -38,7 +40,7 @@
       font-size: 26px;
       margin: 0 auto;
       width: 100%;
-      padding-top: 50px;
+      padding-top: 40px;
       text-align: center;
 
     }
@@ -50,7 +52,6 @@
       align-items: center;
       
       section {
-        z-index: 1;
         position: relative;
         top: 32px;
         left: 6px;
@@ -65,15 +66,31 @@
 
 
       .other-form-button {
-        border: none;
-        background-color: inherit;
         position: absolute;
-        bottom: 73px;
+        bottom: 63px;
         left: 40px;
       }
 
+      .other-form-button:hover {
+        border-radius: 8px;
+        background: #F6FAFE;
+        transition: 1s;
+
+      }
+
+      .other-button {
+        border: none;
+        background-color: inherit;
+        font-size: 16px;
+        color: rgb(32, 109, 209);
+        padding: 10px;
+        border-radius: 4px;
+
+      }
+
+
       .form-button {
-        background: #1a1aff;
+        background: #2E7DE3;
         color: white;
         border-radius: 4px;
         width: 90px;
@@ -81,6 +98,8 @@
         position: absolute;
         right: 40px;
         bottom: 60px;
+        font-size: 16px;
+        font-weight: bold;
       }
 
       .form-button:hover {
@@ -90,17 +109,18 @@
 
     }
 
-    .session-errors {
-      text-align: center;
-    }
   }
 }
 
+.session-errors {
+  text-align: center;
+}
 .fading {
   -webkit-animation-duration: 1s;
   -webkit-animation-name: fading;
   animation-duration: 1s;
   animation-name: fading;
+  transition-delay: 1s;
 }
 
 @-webkit-keyframes fading {
@@ -118,6 +138,10 @@
   to {
       color: black;
   }
+}
+
+.drop-layer {
+
 }
 
 

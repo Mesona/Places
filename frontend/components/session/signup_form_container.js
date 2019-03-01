@@ -1,11 +1,11 @@
 import React from 'react';
 import { connect}  from 'react-redux';
-import { createNewUser } from '../../actions/session_actions';
+import { createNewUser, receiveErrors } from '../../actions/session_actions';
 import { openModal, closeModal } from '../../actions/modal_actions';
 import SessionForm from './session_form';
 
 const mapStateToProps = state => ({
-  formType: 'Sign Up',
+  formType: 'Sign up',
   otherFormType: 'Sign in',
   otherModalType: 'login',
   shouldHide: false,
@@ -13,9 +13,10 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
+  receiveErrors: errors => dispatch(receiveErrors(errors)),
   processForm: formUser => dispatch(createNewUser(formUser)),
   otherForm: (
-    <button onClick={() => dispatch(openModal('login'))}>
+    <button className="other-button" onClick={() => dispatch(openModal('login'))}>
       Sign in
     </button>
   ),

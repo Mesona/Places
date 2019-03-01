@@ -18,6 +18,16 @@
       border-radius: 5px;
       cursor: pointer;
     }
+
+    button {
+      border: none;
+      background-color: inherit;
+      font-size: 16px;
+      color: rgb(32, 109, 209);
+      padding: 10px;
+      border-radius: 4px;
+
+    }
   }
   
   .logo {
@@ -47,9 +57,9 @@
     
     p {
       font-size: 20px;
-      font-family: 'Raleway', sans-serif;
+      // font-family: 'Raleway', sans-serif;
       color: rgba(0, 0, 0, 0.54);
-      font-weight: bold;
+      // font-weight: bold;
       text-decoration: none;
       padding-bottom: -5px;
     }
