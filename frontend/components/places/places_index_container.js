@@ -2,14 +2,17 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 import PlacesIndex from './places_index';
+import { fetchPlaces, deletePlace } from '../../actions/places_actions';
+import { selectAllPlaces } from '../../reducers/selectors';
 
 
 const mapStateToProps = state => ({
-  // currentUser: state.session.currentUser,
+  places: selectAllPlaces(state),
 });
 
 const mapDispatchToProps = dispatch => ({
-  // logout: () => dispatch(logout())
+  fetchPlaces: () => dispatch(fetchPlaces()),
+  deletePlace: id => dispatch(deletePlace(id)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(PlacesIndex);

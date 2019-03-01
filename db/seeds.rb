@@ -7,6 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 User.destroy_all
+Place.destroy_all
 
 demoUser = User.create(username: 'Demo', email: 'demo@email.com', password: 'password')
 testUser = User.create(username: 't', email: 't@t.com', password: 'password')
@@ -16,3 +17,10 @@ user3 = User.create(username: Faker::Name.name, email: Faker::Internet.email, pa
 user4 = User.create(username: Faker::Name.name, email: Faker::Internet.email, password: 'password')
 user5 = User.create(username: Faker::Name.name, email: Faker::Internet.email, password: 'password')
 user6 = User.create(username: Faker::Name.name, email: Faker::Internet.email, password: 'password')
+
+place1 = Place.create(title: Faker::Dessert.variety, owner_id: testUser.id)
+place2 = Place.create(title: Faker::Dessert.variety, owner_id: testUser.id)
+place3 = Place.create(title: Faker::Dessert.variety, owner_id: testUser.id)
+place4 = Place.create(title: Faker::Dessert.variety, owner_id: testUser.id)
+place5 = Place.create(title: Faker::Dessert.variety, owner_id: testUser.id)
+place6 = Place.create(title: Faker::Dessert.variety, owner_id: testUser.id)

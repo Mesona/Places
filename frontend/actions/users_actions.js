@@ -6,12 +6,12 @@ export const RECEIVE_USER = `RECEIVE_USER`;
 const receiveAllUsers = users => ({
   type: RECEIVE_ALL_USERS,
   users,
-})
+});
 
 const receiveUser = user => ({
   type: RECEIVE_USER,
   user
-})
+});
 
 export const requestAllUsers = () => dispatch => (
   UsersAPIUtils.getUsers()

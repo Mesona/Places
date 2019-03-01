@@ -1,0 +1,1 @@
+export const selectAllPlaces = state => Object.values(state.entities.places);

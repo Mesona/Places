@@ -13,12 +13,6 @@
  *= require_tree .
  *= require_self
  */
-* {
-  box-sizing: border-box;
-}
 
-#root {
-  // border: 5px solid red;
-}
 
 @import 'api/all';

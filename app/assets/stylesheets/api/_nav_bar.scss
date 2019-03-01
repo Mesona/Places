@@ -16,6 +16,7 @@
       background-color: rgb(246, 247, 252);
       transition: background-color 0.5s;
       border-radius: 5px;
+      cursor: pointer;
     }
   }
   
@@ -28,10 +29,12 @@
 
     .logo-button {
       text-decoration: none;
+      cursor: pointer;
     }
 
     .logo-button:hover {
       background-color: white;
+      cursor: pointer;
     }
     
     

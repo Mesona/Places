@@ -1,3 +1,20 @@
+* {
+  box-sizing: border-box;
+}
+
+#root {
+  // border: 5px solid red;
+}
+
+@font-face { 
+  font-family: 'Google Sans';
+  src: url(./fonts/GoogleSans-Regular.ttf) format('truetype');
+}
+
+button {
+  cursor: pointer;
+}
+
 @import 'footer';
 @import 'nav_bar';
 @import 'places_index';

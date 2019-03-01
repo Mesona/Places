@@ -5,7 +5,9 @@ import { openModal, closeModal } from '../../actions/modal_actions';
 import SessionForm from './session_form';
 
 const mapStateToProps = state => ({
-  formType: 'Log In',
+  formType: 'Sign in',
+  otherFormType: 'Sign Up',
+  otherModalType: 'signup',
   shouldHide: true,
   errors: state.errors.session,
 });
@@ -13,8 +15,8 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = dispatch => ({
   processForm: formUser => dispatch(login(formUser)),
   otherForm: (
-    <button onClick={() => dispatch(openModal('login'))}>
-      Signup
+    <button onClick={() => dispatch(openModal('signup'))}>
+      Create account
     </button>
   ),
   closeModal: () => dispatch(closeModal()),

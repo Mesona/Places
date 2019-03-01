@@ -29,10 +29,36 @@
   .places {
     // border: 2px solid green;
     height: 1000px;
+    display: flex;
+    flex-wrap: wrap;
 
-    div {
+    .place-index-item {
       border: 2px solid orange;
-      height: 100%;
+      flex: 1 0 21%;
+      margin: 5px;
+      height: 180px;
+      list-style: none;
+      
+      Link {
+        text-decoration: none;
+      }
+      :hover {
+      text-decoration: none;
+
+      }
+
+      .place-index-item-head {
+        height: 40px;
+        border: 2px solid purple;
+      }
+      .place-index-item-body {
+        height: 90px;
+        border: 2px solid purple;
+      }
+      .place-index-item-foot {
+        height: 50px;
+        border: 2px solid purple;
+      }
     }
   }
 }

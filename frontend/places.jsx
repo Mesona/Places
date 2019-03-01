@@ -5,7 +5,7 @@ import Root from './components/root';
 import configureStore from './store/store';
 
 // TESTING IMPORTS
-
+import * as PlacesAPIUtils from './actions/places_actions';
 //END TESTING IMPORTS
 
 
@@ -25,9 +25,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // TESTING STUFF
   window.getState = store.getState;
+  
+  window.fetchPlaces = PlacesAPIUtils.fetchPlaces;
+  window.fetchPlace = PlacesAPIUtils.fetchPlace;
   // END TESTING STUFF
 
 
-  // ReactDOM.render("Yo", root);
   ReactDOM.render(<Root store={store} />, root);
 });

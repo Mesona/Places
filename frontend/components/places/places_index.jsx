@@ -1,6 +1,7 @@
 import React from 'react';
 import Dropdown from 'react-dropdown';
 import { Link } from 'react-router-dom';
+import PlaceIndexItem from './place_index_item';
 
 class PlacesIndex extends React.Component {
   // const { places } = this.props;
@@ -14,6 +15,10 @@ class PlacesIndex extends React.Component {
   //   </div>
   // );
 
+  componentDidMount() {
+    this.props.fetchPlaces();
+  }
+
   
 
   render () {
@@ -22,6 +27,16 @@ class PlacesIndex extends React.Component {
       'Owned by anyone', 'Owned by me', 'Not owned by me'
     ];
 
+    const { places } = this.props;
+
+    // const places = this.props.places.map(place => {
+    //   return (
+    //     <PlaceIndexItem
+    //       key={place.id}
+    //       place={place}
+    //       deletePlace={this.props.deletePlace} />
+    //   );
+    // });
 
     return (
       <main className="places-index">
@@ -37,17 +52,7 @@ class PlacesIndex extends React.Component {
           </div>
         </section>
         <section className="places">
-          {/* { display } */}
-          {/* <div className="col1">
-          </div>
-          <div className="col2">
-          </div>
-          <div className="col3">
-          </div>
-          <div className="col4">
-          </div>
-          <div className="col5">
-          </div> */}
+          {places.map(place => <PlaceIndexItem key={place.id} place={place} />)}
         </section>
       </main>
     );

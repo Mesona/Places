@@ -2,6 +2,7 @@
 .footer {
   // background-color: rgb(243, 243, 245);
   // border: 2px solid black;
+  background: white;
   display: grid;
   grid-template-columns: 1fr 2fr 1fr;
   grid-template-areas: ". promos np";
@@ -17,6 +18,7 @@
     justify-content: space-evenly;
     padding-left: 150px;
     padding-right: 150px;
+    cursor: pointer;
 
     :hover {
       text-decoration: none;
@@ -42,6 +44,7 @@
     .new-place-button:hover {
       background-color: rgb(246, 247, 252);
       transition: background-color 0.5s;
+      cursor: pointer;
     }
 
     .new-place-button {
@@ -49,8 +52,6 @@
       width: 55px;
       height: 55px;
       margin-right: 20px;
-      // border: 2px solid orange;
-      // box-shadow: -2px 2px 6px;
       box-shadow:
         0px 6px 10px 0px rgba(0,0,0,0.14),
         0px 1px 18px 0px rgba(0,0,0,0.12),
