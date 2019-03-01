@@ -56,7 +56,17 @@
         top: 32px;
         left: 6px;
         font-size: 20px;
-        color: #80868B
+        color: #80868B;
+        cursor: text;
+      }
+
+      .placeholderText {
+        position: relative;
+        top: -24px;
+        font-size: 14px;
+        color: #2276E4;
+        background: white;
+        padding: 3px;
       }
 
       input {
@@ -146,11 +156,3 @@
 
 
   // .placeholder::placeholder {
-  .placeholderText {
-    position: relative;
-    top: -24px;
-    font-size: 14px;
-    color: #2276E4;
-    background: white;
-    padding: 3px;
-  }

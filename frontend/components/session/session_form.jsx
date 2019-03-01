@@ -13,6 +13,44 @@ class SessionForm extends React.Component {
 
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleOtherSubmit = this.handleOtherSubmit.bind(this);
+    this.demoLogin = this.demoLogin.bind(this);
+    this.demoLoginHelper = this.demoLoginHelper.bind(this);
+  }
+
+
+  componentDidMount() {
+    this.state.username === 'Demo' ? this.demoLogin() : '';
+  }
+
+  demoLogin() {
+    
+    const emailArray = this.state.email.split('');
+    const passwordArray = this.state.password.split('');
+    this.state.email = '';
+    this.state.password = '';
+    this.demoLoginHelper(emailArray, passwordArray);
+  }
+
+  demoLoginHelper(emailArray, passwordArray) {
+    if (emailArray.length > 0) {
+      this.setState({
+        email: this.state.email + emailArray.shift()
+      }, () => {
+        window.setTimeout(() =>
+          this.demoLoginHelper(emailArray, passwordArray), 100);
+        }
+      );
+    } else if (passwordArray.length > 0) {
+      this.setState({
+        password: this.state.password + passwordArray.shift()
+      }, () => {
+        window.setTimeout(() =>
+          this.demoLoginHelper(emailArray, passwordArray), 10);
+        }
+      );
+    } else {
+      this.props.processForm({username: 'Demo', email: 'demo@email.com', password: 'password'}).then(this.props.closeModal);
+    }
   }
 
   handleInput (field) {
@@ -30,7 +68,7 @@ class SessionForm extends React.Component {
   handleOtherSubmit (e) {
     e.preventDefault();
     const user = Object.assign({}, this.state);
-    this.props.otherForm().then(this.props.closeModal);
+    this.props.otherForm(user).then(this.props.closeModal);
   }
 
   renderErrors() {
@@ -60,7 +98,7 @@ class SessionForm extends React.Component {
         <form className="login-form-box">
           <label className={this.props.shouldHide ? 'hidden' : ''} onClick={e => e.stopPropagation()} >
             <section className="descriptor-div">
-              <span className={this.state.active === 'username' ? 'placeholderText' : ''}>Username</span>
+              <span className={this.state.active === 'username' ? 'placeholderText' : this.state.username === '' ? '' : 'hidden'}>Username</span>
             </section>
             <input
               type="text"
@@ -71,7 +109,7 @@ class SessionForm extends React.Component {
           </label>
           <label onClick={e => e.stopPropagation()}>
             <section className="descriptor-div">
-              <span className={this.state.active === 'email' ? 'placeholderText' : ''}>Email</span>
+              <span className={this.state.active === 'email' ? 'placeholderText' : this.state.username === '' ? '' : 'hidden'}>Email</span>
             </section>
             <input
               type="text"
@@ -82,7 +120,7 @@ class SessionForm extends React.Component {
           </label>
           <label onClick={e => e.stopPropagation()}>
             <section className="descriptor-div">
-              <span  className={this.state.active === 'password' ? 'placeholderText' : ''}>Password</span>
+              <span  className={this.state.active === 'password' ? 'placeholderText' : this.state.username === '' ? '' : 'hidden'}>Password</span>
             </section>
             <input
               type="password"
