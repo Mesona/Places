@@ -12,13 +12,13 @@ class Footer extends React.Component {
 
   createPlace(e) {
     e.preventDefault();
-    console.log(this.state);
+    // console.log(this.state);
     this.state = {
       title: 'Untitled',
       private: false,
       owner_id: 2,
     };
-    console.log(this.state);
+    // console.log(this.state);
     this.props.createPlace(this.state)
       .then(place => this.props.history.push(`/places/${data.place.id}`));
   }
