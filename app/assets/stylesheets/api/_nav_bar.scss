@@ -40,11 +40,15 @@
     .logo-button {
       text-decoration: none;
       cursor: pointer;
+      border-radius: 5px;
     }
 
     .logo-button:hover {
-      background-color: white;
       cursor: pointer;
+      background: inherit;
+      // background-color: #f6f7fc;
+      // transition: box-shadow 0.5s, background-color 0.5s;
+      // transition: background-color 0.5s;
     }
     
     

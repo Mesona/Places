@@ -19874,3 +19874,268 @@ Processing by Api::SessionsController#create as JSON
 Completed 200 OK in 127ms (Views: 9.4ms | ActiveRecord: 45.0ms)
 
 
+Started GET "/" for 127.0.0.1 at 2019-03-01 11:44:47 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (3.0ms)
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "TUnxdUcs4XF84NjAF9oLkQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14
+Completed 200 OK in 491ms (Views: 482.4ms | ActiveRecord: 6.1ms)
+
+
+Started GET "/api/places" for 127.0.0.1 at 2019-03-01 11:44:48 -0800
+Processing by Api::PlacesController#index as JSON
+  Rendering api/places/index.json.jbuilder
+  [1m[36mPlace Load (2.0ms)[0m  [1m[34mSELECT "places".* FROM "places"[0m
+  ↳ app/views/api/places/index.json.jbuilder:1
+  Rendered api/places/index.json.jbuilder (13.0ms)
+Completed 200 OK in 25ms (Views: 12.5ms | ActiveRecord: 10.1ms)
+
+
+Started DELETE "/api/session" for 127.0.0.1 at 2019-03-01 11:44:55 -0800
+Processing by Api::SessionsController#destroy as JSON
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "TUnxdUcs4XF84NjAF9oLkQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:43
+  [1m[36mUser Update (2.3ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "AEoB3Mf5Ie9Tiw7JJMgpzA"], ["updated_at", "2019-03-01 19:44:55.022396"], ["id", 1]]
+  ↳ app/models/user.rb:43
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:43
+Completed 200 OK in 14ms (Views: 0.2ms | ActiveRecord: 9.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-03-01 11:45:57 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (3.2ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14
+Completed 200 OK in 39ms (Views: 37.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/places" for 127.0.0.1 at 2019-03-01 11:45:57 -0800
+Processing by Api::PlacesController#index as JSON
+  Rendering api/places/index.json.jbuilder
+  [1m[36mPlace Load (1.0ms)[0m  [1m[34mSELECT "places".* FROM "places"[0m
+  ↳ app/views/api/places/index.json.jbuilder:1
+  Rendered api/places/index.json.jbuilder (8.5ms)
+Completed 200 OK in 20ms (Views: 12.3ms | ActiveRecord: 5.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-03-01 11:46:49 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (3.6ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14
+Completed 200 OK in 179ms (Views: 176.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/places" for 127.0.0.1 at 2019-03-01 11:46:49 -0800
+Processing by Api::PlacesController#index as JSON
+  Rendering api/places/index.json.jbuilder
+  [1m[36mPlace Load (3.4ms)[0m  [1m[34mSELECT "places".* FROM "places"[0m
+  ↳ app/views/api/places/index.json.jbuilder:1
+  Rendered api/places/index.json.jbuilder (6.0ms)
+Completed 200 OK in 18ms (Views: 12.2ms | ActiveRecord: 3.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-03-01 11:48:46 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (2.9ms)
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14
+Completed 200 OK in 178ms (Views: 171.7ms | ActiveRecord: 4.4ms)
+
+
+Started GET "/api/places" for 127.0.0.1 at 2019-03-01 11:48:46 -0800
+Processing by Api::PlacesController#index as JSON
+  Rendering api/places/index.json.jbuilder
+  [1m[36mPlace Load (2.6ms)[0m  [1m[34mSELECT "places".* FROM "places"[0m
+  ↳ app/views/api/places/index.json.jbuilder:1
+  Rendered api/places/index.json.jbuilder (4.9ms)
+Completed 200 OK in 16ms (Views: 11.9ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-03-01 11:49:07 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (4.6ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14
+Completed 200 OK in 189ms (Views: 186.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/places" for 127.0.0.1 at 2019-03-01 11:49:07 -0800
+Processing by Api::PlacesController#index as JSON
+  Rendering api/places/index.json.jbuilder
+  [1m[36mPlace Load (1.1ms)[0m  [1m[34mSELECT "places".* FROM "places"[0m
+  ↳ app/views/api/places/index.json.jbuilder:1
+  Rendered api/places/index.json.jbuilder (3.5ms)
+Completed 200 OK in 16ms (Views: 12.8ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-03-01 11:49:17 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (3.6ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14
+Completed 200 OK in 181ms (Views: 178.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/places" for 127.0.0.1 at 2019-03-01 11:49:17 -0800
+Processing by Api::PlacesController#index as JSON
+  Rendering api/places/index.json.jbuilder
+  [1m[36mPlace Load (1.1ms)[0m  [1m[34mSELECT "places".* FROM "places"[0m
+  ↳ app/views/api/places/index.json.jbuilder:1
+  Rendered api/places/index.json.jbuilder (3.6ms)
+Completed 200 OK in 14ms (Views: 10.4ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-03-01 11:49:32 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (2.7ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14
+Completed 200 OK in 184ms (Views: 181.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/places" for 127.0.0.1 at 2019-03-01 11:49:32 -0800
+Processing by Api::PlacesController#index as JSON
+  Rendering api/places/index.json.jbuilder
+  [1m[36mPlace Load (0.4ms)[0m  [1m[34mSELECT "places".* FROM "places"[0m
+  ↳ app/views/api/places/index.json.jbuilder:1
+  Rendered api/places/index.json.jbuilder (2.8ms)
+Completed 200 OK in 12ms (Views: 9.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-03-01 11:50:15 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (3.5ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14
+Completed 200 OK in 489ms (Views: 486.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/places" for 127.0.0.1 at 2019-03-01 11:50:16 -0800
+Processing by Api::PlacesController#index as JSON
+  Rendering api/places/index.json.jbuilder
+  [1m[36mPlace Load (0.7ms)[0m  [1m[34mSELECT "places".* FROM "places"[0m
+  ↳ app/views/api/places/index.json.jbuilder:1
+  Rendered api/places/index.json.jbuilder (3.4ms)
+Completed 200 OK in 19ms (Views: 13.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-03-01 11:50:40 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (3.0ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14
+Completed 200 OK in 35ms (Views: 33.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/places" for 127.0.0.1 at 2019-03-01 11:50:40 -0800
+Processing by Api::PlacesController#index as JSON
+  Rendering api/places/index.json.jbuilder
+  [1m[36mPlace Load (1.3ms)[0m  [1m[34mSELECT "places".* FROM "places"[0m
+  ↳ app/views/api/places/index.json.jbuilder:1
+  Rendered api/places/index.json.jbuilder (3.5ms)
+Completed 200 OK in 14ms (Views: 10.3ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-03-01 11:50:41 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (3.2ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14
+Completed 200 OK in 35ms (Views: 32.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/places" for 127.0.0.1 at 2019-03-01 11:50:41 -0800
+Processing by Api::PlacesController#index as JSON
+  Rendering api/places/index.json.jbuilder
+  [1m[36mPlace Load (2.3ms)[0m  [1m[34mSELECT "places".* FROM "places"[0m
+  ↳ app/views/api/places/index.json.jbuilder:1
+  Rendered api/places/index.json.jbuilder (5.3ms)
+Completed 200 OK in 16ms (Views: 11.4ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-03-01 11:50:42 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (3.1ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14
+Completed 200 OK in 39ms (Views: 36.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/places" for 127.0.0.1 at 2019-03-01 11:50:43 -0800
+Processing by Api::PlacesController#index as JSON
+  Rendering api/places/index.json.jbuilder
+  [1m[36mPlace Load (0.5ms)[0m  [1m[34mSELECT "places".* FROM "places"[0m
+  ↳ app/views/api/places/index.json.jbuilder:1
+  Rendered api/places/index.json.jbuilder (3.3ms)
+Completed 200 OK in 16ms (Views: 12.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-03-01 11:50:51 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (3.4ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14
+Completed 200 OK in 34ms (Views: 31.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/places" for 127.0.0.1 at 2019-03-01 11:50:51 -0800
+Processing by Api::PlacesController#index as JSON
+  Rendering api/places/index.json.jbuilder
+  [1m[36mPlace Load (0.3ms)[0m  [1m[34mSELECT "places".* FROM "places"[0m
+  ↳ app/views/api/places/index.json.jbuilder:1
+  Rendered api/places/index.json.jbuilder (1.7ms)
+Completed 200 OK in 14ms (Views: 10.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-03-01 11:51:29 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (2.9ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14
+Completed 200 OK in 173ms (Views: 170.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/places" for 127.0.0.1 at 2019-03-01 11:51:29 -0800
+Processing by Api::PlacesController#index as JSON
+  Rendering api/places/index.json.jbuilder
+  [1m[36mPlace Load (1.3ms)[0m  [1m[34mSELECT "places".* FROM "places"[0m
+  ↳ app/views/api/places/index.json.jbuilder:1
+  Rendered api/places/index.json.jbuilder (15.0ms)
+Completed 200 OK in 25ms (Views: 9.8ms | ActiveRecord: 12.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-03-01 11:51:43 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (2.9ms)
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14
+Completed 200 OK in 38ms (Views: 32.6ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/api/places" for 127.0.0.1 at 2019-03-01 11:51:43 -0800
+Processing by Api::PlacesController#index as JSON
+  Rendering api/places/index.json.jbuilder
+  [1m[36mPlace Load (0.8ms)[0m  [1m[34mSELECT "places".* FROM "places"[0m
+  ↳ app/views/api/places/index.json.jbuilder:1
+  Rendered api/places/index.json.jbuilder (2.7ms)
+Completed 200 OK in 19ms (Views: 16.4ms | ActiveRecord: 0.8ms)
+
+
