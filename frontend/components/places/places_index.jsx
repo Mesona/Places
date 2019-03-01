@@ -44,8 +44,6 @@ class PlacesIndex extends React.Component {
         </section>
         <section className="places">
           {places.map(place => <PlaceIndexItem key={place.id} place={place} />)}
-          <section className="space-fixer">
-          </section>
         </section>
       </main>
     );

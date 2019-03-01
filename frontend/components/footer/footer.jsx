@@ -19,8 +19,8 @@ class Footer extends React.Component {
       owner_id: 2,
     };
     console.log(this.state);
-    this.props.createPlace(this.state);
-    <Redirect to="/places/" />
+    this.props.createPlace(this.state)
+      .then(place => this.props.history.push(`/places/${data.place.id}`));
   }
 
   render () {
