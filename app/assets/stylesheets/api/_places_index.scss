@@ -33,12 +33,12 @@
     flex-wrap: wrap;
 
     .place-index-item {
-      border: 2px solid orange;
       flex: 0 0 21%;
       // flex: 0 0 80%;
       margin: 5px;
-      height: 180px;
+      // height: 280px;
       list-style: none;
+      border: 2px solid #DFE1E5;
       
     }
       
@@ -52,16 +52,40 @@
       }
 
       .place-index-item-head {
-        height: 40px;
-        border: 2px solid purple;
+        height: 60px;
       }
       .place-index-item-body {
-        height: 90px;
-        border: 2px solid purple;
+        height: 120px;
+        border-top: 2px solid #DFE1E5;
+        border-bottom: 2px solid #DFE1E5;
       }
       .place-index-item-foot {
-        height: 50px;
-        border: 2px solid purple;
+        height: 70px;
+        // display: flex;
+        // flex-direction: column;
+        // justify-content: center;
+        .place-index-item-foot-title {
+          position: relative;
+          padding-top: 10px;
+          padding-left: 4px;
+        }
+        padding-left: 10px;
+        footer {
+          padding-top: 6px;
+          .mini-doc {
+            height: 22px;
+            width: 22px;
+          }
+          .mini-shared-img {
+            height: 20px;
+            width: 20px;
+          }
+          .mini-updated-at {
+            font-size: 11px;
+            padding-bottom: 10px;
+            padding-left: 10px;
+          }
+        }
       }
     }
   }

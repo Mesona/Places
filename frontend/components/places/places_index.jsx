@@ -2,6 +2,7 @@ import React from 'react';
 import Dropdown from 'react-dropdown';
 import { Link } from 'react-router-dom';
 import PlaceIndexItem from './place_index_item';
+import PlaceIndexItemContainer from './place_index_item_container';
 
 class PlacesIndex extends React.Component {
   // const { places } = this.props;
@@ -20,9 +21,12 @@ class PlacesIndex extends React.Component {
   }
 
   
-
+  
   render () {
-
+    const monthNames = ["January", "February", "March", "April", "May", "June",
+      "July", "August", "September", "October", "November", "December"
+    ];
+    
     const options = [
       'Owned by anyone', 'Owned by me', 'Not owned by me'
     ];
@@ -43,7 +47,8 @@ class PlacesIndex extends React.Component {
           </div>
         </section>
         <section className="places">
-          {places.map(place => <PlaceIndexItem key={place.id} place={place} />)}
+          {places.map(place => <PlaceIndexItem key={place.id} place={place}
+            monthNames={monthNames} />)}
         </section>
       </main>
     );

@@ -109,7 +109,7 @@ class SessionForm extends React.Component {
           </label>
           <label onClick={e => e.stopPropagation()}>
             <section className="descriptor-div">
-              <span className={this.state.active === 'email' ? 'placeholderText' : this.state.username === '' ? '' : 'hidden'}>Email</span>
+              <span className={this.state.active === 'email' ? 'placeholderText' : this.state.email === '' ? '' : 'hidden'}>Email</span>
             </section>
             <input
               type="text"
@@ -120,7 +120,7 @@ class SessionForm extends React.Component {
           </label>
           <label onClick={e => e.stopPropagation()}>
             <section className="descriptor-div">
-              <span  className={this.state.active === 'password' ? 'placeholderText' : this.state.username === '' ? '' : 'hidden'}>Password</span>
+              <span  className={this.state.active === 'password' ? 'placeholderText' : this.state.password === '' ? '' : 'hidden'}>Password</span>
             </section>
             <input
               type="password"

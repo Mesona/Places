@@ -3,7 +3,6 @@ import { Route, Redirect, Switch } from 'react-router-dom';
 import { AuthRoute, ProtectedRoute } from '../util/route_utils';
 import PlacesIndexContainer from './places/places_index_container';
 import NavBarContainer from './nav_bar/nav_bar_container';
-import Footer from './footer/footer';
 import Modal from './modal/modal';
 import FooterContainer from './footer/footer_container';
 import PlaceShowContainer from './places/place_show_container';
@@ -15,7 +14,7 @@ const App = () => (
     <Switch>
       <Route exact path="/" component={ PlacesIndexContainer } />
       <Route path="/places/:placeId" component={ PlaceShowContainer } />
-      <Redirect from="*" to="/" exact />
+      <Redirect from="*" to="/" />
     </Switch>
     <Route path="/" component={ FooterContainer } />
 

@@ -1,26 +1,31 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Route, Redirect, Switch } from 'react-router-dom';
+import { Route, Redirect, Switch, withRouter } from 'react-router-dom';
 
 
 class Footer extends React.Component {
   constructor(props) {
     super(props);
 
-    this.createPlace = this.createPlace.bind(this);
+    this.makeNewPlace = this.makeNewPlace.bind(this);
   }
 
-  createPlace(e) {
+  makeNewPlace (e) {
     e.preventDefault();
-    // console.log(this.state);
+    console.log(window.currentUser);
+    console.log(this.state);
     this.state = {
-      title: 'Untitled',
+      title: 'New Place',
       private: false,
       owner_id: 2,
     };
-    // console.log(this.state);
+    console.log(this.state);
     this.props.createPlace(this.state)
-      .then(place => this.props.history.push(`/places/${data.place.id}`));
+      // .then(data => console.log(data))
+      // .then(() => console.log('potash'))
+      // .then(data => this.props.history.push(`/places/${data.place.id}`));
+    //   console.log('test');
+    // console.log(this.state);
   }
 
   render () {
@@ -34,7 +39,7 @@ class Footer extends React.Component {
         <section className="new-place">
           <button
             className="new-place-button"
-            onClick={this.createPlace}
+            onClick={this.makeNewPlace}
           ><img src={window.images.plusImg} className="plus-symbol"></img></button>
         </section>
       </footer>
@@ -43,4 +48,4 @@ class Footer extends React.Component {
   }
 };
 
-export default Footer;
+export default withRouter(Footer);

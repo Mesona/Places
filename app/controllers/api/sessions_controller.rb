@@ -8,7 +8,7 @@ class Api::SessionsController < ApplicationController
       render json: ['Invalid login credentials'], status: 401
     else
       login!(@user)
-      render json: :yo;
+      render json: @user; 
     end
 
   end
