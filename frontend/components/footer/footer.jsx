@@ -20,7 +20,8 @@ class Footer extends React.Component {
       owner_id: 2,
     };
     console.log(this.state);
-    this.props.createPlace(this.state)
+    this.props.createPlace(this.state) 
+      // this.props.history.push(`/places/${data.place.id}`); 
       // .then(data => console.log(data))
       // .then(() => console.log('potash'))
       // .then(data => this.props.history.push(`/places/${data.place.id}`));

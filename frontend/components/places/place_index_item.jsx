@@ -3,11 +3,11 @@ import { Link } from 'react-router-dom';
 
 const PlaceIndexItem = ({ place, monthNames }) => (
   <li className="place-index-item">
-    <Link to={`/place/${place.id}`}>
+    <Link to={`/places/${place.id}`}>
     <section className="place-index-item-head">
     </section>
     <section className="place-index-item-body">
-      {place.id}
+      {/* {place.id} */}
     </section>
     <section className="place-index-item-foot">
       <span className="place-index-item-foot-title">{place.title}</span>

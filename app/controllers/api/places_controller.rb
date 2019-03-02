@@ -22,7 +22,7 @@ class Api::PlacesController < ApplicationController
     @place = Place.new(place_params)
 
     if @place.save
-      render json: :test;
+      render json: @place;
     else
       render json: @place.errors.full_messages, status: 401
     end

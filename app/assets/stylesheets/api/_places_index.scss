@@ -1,23 +1,51 @@
 .places-index {
-  display: grid;
-  grid-template-columns: 5fr;
-  grid-gap: 20px;
-  grid-template-rows: 
-    "header nav-bar"
-    "main body"
-    "footer footer";
+  // display: grid;
+  // grid-template-columns: 5fr;
+  // grid-gap: 20px;
+  // grid-template-rows: 
+  //   "header nav-bar"
+  //   "main body"
+  //   "footer footer";
+  // text-align: center;
+  // display: flex;
+  // flex-direction: column;
+  // justify-content: center;
 
-  // border: 2px solid black;
+  border: 2px solid black;
 
   .places-index-header {
+    // display: flex;
+    // // justify-content: flex-start;
+    // flex-wrap: nowrap;
+    // align-items: center;
     display: flex;
+    // flex-direction: column;
     justify-content: center;
+    // text-align: center;
+    // display: block;
+    // width: 100%;
+    margin: 0 auto;
+
+    .places-filter-dropdown {
+    // justify-content: flex-start;
+    // flex-wrap: nowrap;
+    padding-right: 125px;
+    position: relative;
+    align-items: center;
+    display: block;
+    margin: 0 auto;
+    // display: block;
+    // width: 100%;
+    }
 
     .places-dropdown {
       padding-left: 10px;
       padding-right: 10px;
       padding-top: 1px;
       padding-bottom: 1px;
+      width: 150px;
+      position: absolute;
+    margin: 0 auto;
     }
     .places-dropdown:hover {
       background-color: rgb(217, 217, 226);
@@ -27,10 +55,20 @@
   }
 
   .places {
-    // border: 2px solid green;
-    // height: 1000px;
+    // display: flex;
+    //   flex: 0 0 21%;
+    // justify-content: center;
+    // flex-wrap: wrap;
+    padding-top: 20px;
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
+    .places:hover {
+      // text-decoration: none;
+      // border: blue;
+      // background: magenta;
+
+      }
 
     .place-index-item {
       flex: 0 0 21%;
@@ -39,18 +77,19 @@
       // height: 280px;
       list-style: none;
       border: 2px solid #DFE1E5;
+      // border: 2px solid magenta;
+      text-decoration: none;
+      :hover {
+        cursor: pointer;
+        color: #666;
+        background: inherit;
+        text-decoration: none;
+        // border: 2px solid blue;
+
+      }
       
     }
       
-      Link {
-        text-decoration: none;
-      }
-
-      :hover {
-      text-decoration: none;
-
-      }
-
       .place-index-item-head {
         height: 60px;
       }
@@ -61,15 +100,18 @@
       }
       .place-index-item-foot {
         height: 70px;
+        display: inline-block;
+        padding-top: 10px;
+        padding-left: 10px;
         // display: flex;
         // flex-direction: column;
-        // justify-content: center;
+        // justify-content: center;a
+        :hover {
+
+        }
         .place-index-item-foot-title {
-          position: relative;
-          padding-top: 10px;
           padding-left: 4px;
         }
-        padding-left: 10px;
         footer {
           padding-top: 6px;
           .mini-doc {
@@ -79,11 +121,13 @@
           .mini-shared-img {
             height: 20px;
             width: 20px;
+            margin-left: 5px;
           }
           .mini-updated-at {
             font-size: 11px;
-            padding-bottom: 10px;
             padding-left: 10px;
+            padding-bottom: 10px;
+            vertical-align: 30%;
           }
         }
       }
