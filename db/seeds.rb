@@ -18,6 +18,7 @@ user4 = User.create!(username: Faker::Name.name, email: Faker::Internet.email, p
 user5 = User.create!(username: Faker::Name.name, email: Faker::Internet.email, password: 'password')
 user6 = User.create!(username: Faker::Name.name, email: Faker::Internet.email, password: 'password')
 
+privatePlace = Place.create!(title: Faker::Dessert.variety, owner_id: testUser.id, private: true)
 place1 = Place.create!(title: Faker::Dessert.variety, owner_id: testUser.id)
 place2 = Place.create!(title: Faker::Dessert.variety, owner_id: testUser.id)
 place3 = Place.create!(title: Faker::Dessert.variety, owner_id: testUser.id)

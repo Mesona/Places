@@ -78,7 +78,7 @@ padding-bottom: 25px;
  :hover {
     cursor: pointer;
     color: #666;
-    border: 1px solid orange;
+    // border: 1px solid orange;
   }
 }
   
@@ -86,6 +86,7 @@ padding-bottom: 25px;
   height: 60px;
   background: #43545D;
   text-decoration: none;
+  position: absolute;
   .place-index-item-head:hover {
     text-decoration: none;
     background: inherit;
@@ -107,7 +108,7 @@ padding-bottom: 25px;
 
 .place-index-item-foot-main {
   height: 70px;
-  display: inline-block;
+  // display: inline-block;
   padding-top: 10px;
   padding-left: 10px;
   // display: flex;
@@ -136,20 +137,50 @@ padding-bottom: 25px;
 }
 
 .mini-shared-img {
-  height: 20px;
-  width: 20px;
+  height: 18px;
+  width: 18px;
   margin-left: 5px;
-  text-decoration: none;
+  margin-bottom: 2px;
 }
 
 .mini-updated-at {
   font-size: 11px;
   padding-left: 5px;
-  padding-bottom: 10px;
-  vertical-align: 30%;
+  // padding-bottom: 13px;
+  vertical-align: 38%;
   text-decoration: none;
 }
 
+.mini-place-index-hamburger {
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  border: none;
+  float: right;
+  cursor: pointer;
+  margin-right: 5px;
+  // position: relative;
+  // justify-self: flex-end;
+  // align-items: flex-end;
+  // align-self: flex-end;
+  // justify-items: flex-end;
+}
+
+.mini-place-index-hamburger:hover {
+  background: #DADCE0;
+  // background: magenta;
+}
+
+
+.mini-place-index-hamburger-icon {
+  // margin-top: 3px;
+  vertical-align: center;
+}
+
+.place-index-item-hidden {
+  display: none;
+  
+}
 
  
 // @media all and (min-width: 800px) {

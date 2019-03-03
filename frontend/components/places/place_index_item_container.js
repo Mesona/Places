@@ -4,16 +4,13 @@ import { connect } from 'react-redux';
 import PlaceIndexItem from './place_index_item';
 
 const mapStateToProps = ({ places }) => ({
-  places,
-  // month_modified: state.updated_at.slice(5, 7),
-  // day_modified: state.updated_at.slice(8, 10),
-  // year_modified: state.updated_at.slice(0, 4),
-  month_modified: place.updated_at.slice(5, 7),
-  day_modified: place.updated_at.slice(8, 10),
-  year_modified: place.updated_at.slice(0, 4),
+  placePrivate: place.private,
 });
 
 const mapDispatchToProps = dispatch => ({
+  showState: () => console.log(this.state),
+  showProps: () => console.log(this.props),
+  showPrivate: () => console.log(this.placePrivate),
 
 });
 
