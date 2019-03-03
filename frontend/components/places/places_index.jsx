@@ -47,6 +47,8 @@ class PlacesIndex extends React.Component {
           </div>
         </section>
         <section className="places">
+        {/* {places.map(place =>  <Link to={`/places/${place.id}`}><PlaceIndexItem key={place.id} place={place}
+            monthNames={monthNames} /></Link>)} */}
           {places.map(place => <PlaceIndexItem key={place.id} place={place}
             monthNames={monthNames} />)}
         </section>
