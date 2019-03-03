@@ -16,7 +16,7 @@ const App = () => (
       <Route path="/places/:placeId" component={ PlaceShowContainer } />
       <Redirect from="*" to="/" />
     </Switch>
-    <Route path="/" component={ FooterContainer } />
+    <Route exact path="/" component={ FooterContainer } />
 
   </div>
 );

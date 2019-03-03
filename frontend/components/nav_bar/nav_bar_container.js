@@ -11,6 +11,7 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
   logout: () => dispatch(logout()),
+    // .then(() => this.forceUpdate()),
   openModal: modal => dispatch(openModal(modal)),
 });
 

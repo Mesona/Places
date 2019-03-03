@@ -21,7 +21,7 @@ class Api::PlacesController < ApplicationController
   def create
     @place = Place.new(place_params)
 
-    if @place.save
+    if @place.save!
       render json: @place;
     else
       render json: @place.errors.full_messages, status: 401
