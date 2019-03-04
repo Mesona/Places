@@ -7,19 +7,18 @@ class PlaceIndexItem extends React.Component {
 
     this.state = {
       displayMenu: false,
+      private: this.props.place.private,
+      currentUser: this.props.currentUser,
     };
 
     this.showDropdownMenu = this.showDropdownMenu.bind(this);
     this.hideDropdownMenu = this.hideDropdownMenu.bind(this);
-    this.handleDelete = this.handleDelete.bind(this);
+    this.changePrivacy = this.changePrivacy.bind(this);
 
   }
 
   showDropdownMenu(e) {
     e.preventDefault();
-    console.log(this.props.deletePlace);
-    console.log('mid');
-    console.log(this.props);
     this.setState({ displayMenu: true }, () => {
       document.addEventListener('click', this.hideDropdownMenu);
     });
@@ -31,9 +30,30 @@ class PlaceIndexItem extends React.Component {
     });
   }
 
-  handleDelete(e) {
+  changePrivacy(e) {
     e.preventDefault();
-    this.props.deletePlace(this.props.place.id);
+    this.state = this.props.place;
+    let privacy = this.state.private;
+    if (privacy) {
+      this.state.private = false;
+    } else {
+      this.state.private = true;
+    }
+    this.props.updatePlace(this.state);
+  }
+
+  // renderErrors() {
+  //   return(
+  //     <ul>
+  //       <li>
+  //         <span className="fading">{this.props.errors[0]}</span>
+  //       </li>
+  //     </ul>
+  //   );
+  // }
+
+  componentWillUnmount() {
+    // this.props.receiveErrors([]);
   }
 
   render () {
@@ -50,21 +70,19 @@ class PlaceIndexItem extends React.Component {
             <section className="place-index-item-foot-icons">
               <img src={window.images.miniDoc} className="mini-doc"></img>
               <span className={place.private === true ? 'place-index-item-hidden' : ''}><img src={window.images.sharedImg} className="mini-shared-img"></img></span>
-              {/* <img src={window.images.sharedImg} className="mini-shared-img"></img> */}
               <span className="mini-updated-at">
                 {monthNames[(place.updated_at.slice(8, 10) % 12)].slice(0, 3)}&nbsp;
                 {place.updated_at.slice(5, 7)},&nbsp;
                 {place.updated_at.slice(0, 4)}
               </span>
-              <span className="places-hamburger-dropdown">
+              <span className={this.props.currentUser ===  null ? "place-index-item-hidden" : this.props.currentUser.id === this.props.place.owner_id ?  "places-hamburger-dropdown" : "place-index-item-hidden"}>
                 <button className="mini-place-index-hamburger" onClick={this.showDropdownMenu}>
                   <img src={window.images.hamburgerDots} className="mini-place-index-hamburger-icon" />
                   { this.state.displayMenu ? (
                     <ul>
-                      <li><img src={window.images.textIcon} />Rename</li>
-                      <li onClick={this.handleDelete}><img src={window.images.trashIcon} />Remove</li>
-                      {/* <li><img src={window.images.trashIcon} />Remove</li> */}
-                      <li><img src={window.images.sharedImg} />Make Private</li>
+                      {/* <li><img src={window.images.textIcon} />Rename</li> */}
+                      <li onClick={(e) => this.props.deletePlace(this.props.place.id)}><img src={window.images.trashIcon} />Remove</li>
+                      <li onClick={this.changePrivacy}><img src={window.images.sharedImg} />Switch Privacy</li>
                     </ul>
                   ) : (
                     null
@@ -74,6 +92,9 @@ class PlaceIndexItem extends React.Component {
             </section>
           </section>
           </Link>
+          <div className="places-index-errors">
+            {/* {this.renderErrors()} */}
+          </div>
         </main>
 
       );

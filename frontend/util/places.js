@@ -23,8 +23,8 @@ export const postPlace = place => (
 
 export const patchPlace = place => (
   $.ajax({
-    method: `POST`,
-    url: `/api/user/${place.id}`,
+    method: `PATCH`,
+    url: `/api/places/${place.id}`,
     data: { place }
   })
 );

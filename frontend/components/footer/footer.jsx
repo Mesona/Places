@@ -29,7 +29,9 @@ class Footer extends React.Component {
       };
       this.props.createPlace(this.state);
       this.props.history.push(`/places/${newPlaceId}`); 
-    } 
+    } else {
+      this.props.receiveErrors(["You must be signed in to create new Places!"]);
+    }
   }
 
   renderErrors() {
@@ -42,19 +44,26 @@ class Footer extends React.Component {
     );
   }
 
+  componentDidUpdate(prevProps) {
+    if (this.props.currentUser != prevProps.currentUser) {
+      this.props.receiveErrors([]);
+    }
+  }
+
   render () {
+    const { currentUser } = this.props;
 
     return (
       <footer className="footer">
         <section className="promo-links">
           {/* Github icon from https://www.flaticon.com/free-icon/github-logo_25231 */}
-          <span><a href="https://github.com/Mesona"><img src={window.images.githubImg}></img></a></span>
-          <span><a href="https://www.linkedin.com/in/kmfischer/"><img src={window.images.linkedinImg}></img></a></span>
-        </section>
-        <section className="footer-errors">
-          {/* {this.renderErrors()} */}
+          <a href="https://github.com/Mesona"><img src={window.images.githubImg}></img></a>
+          <a href="https://www.linkedin.com/in/kmfischer/"><img src={window.images.linkedinImg}></img></a>
         </section>
         <section className="new-place">
+          <section className="footer-errors">
+            {this.renderErrors()}
+          </section>
           <button
             className="new-place-button"
             onClick={this.makeNewPlace}

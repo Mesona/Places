@@ -21,7 +21,7 @@ const removePlace = placeId => ({
   placeId,
 });
 
-const receiveErrors = errors => ({
+export const receiveErrors = errors => ({
   type: RECEIVE_PLACE_ERRORS,
   errors,
 });

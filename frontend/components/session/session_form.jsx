@@ -1,4 +1,5 @@
-import React from 'react';
+import React from 'react'
+import { withRouter } from 'react-router-dom';;
 
 class SessionForm extends React.Component {
   constructor(props) {
@@ -12,7 +13,6 @@ class SessionForm extends React.Component {
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
-    // this.handleOtherSubmit = this.handleOtherSubmit.bind(this);
     this.demoLogin = this.demoLogin.bind(this);
     this.demoLoginHelper = this.demoLoginHelper.bind(this);
   }
@@ -66,18 +66,9 @@ class SessionForm extends React.Component {
   handleSubmit (e) {
     e.preventDefault();
     const user = Object.assign({}, this.state);
-    console.log('start');
-    console.log(getState());
-    console.log('end');
     this.setState({currentUser: user});
     this.props.processForm(user).then(this.props.closeModal);
   }
-
-  // handleOtherSubmit (e) {
-  //   e.preventDefault();
-  //   // const user = Object.assign({}, this.state);
-  //   // this.props.otherForm(user).then(this.props.closeModal);
-  // }
 
   renderErrors() {
     return(
@@ -146,4 +137,4 @@ class SessionForm extends React.Component {
   }
 }
 
-export default SessionForm;
+export default withRouter(SessionForm);

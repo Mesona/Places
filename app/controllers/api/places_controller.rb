@@ -39,7 +39,7 @@ class Api::PlacesController < ApplicationController
 
   def destroy
     @place = Place.find(params[:id])
-    if @place
+    if @place && (current_user.id = @place.owner_id)
       @place.destroy
       render :show
     else
