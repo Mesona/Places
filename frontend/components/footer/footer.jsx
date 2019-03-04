@@ -17,7 +17,7 @@ class Footer extends React.Component {
   makeNewPlace (e) {
     e.preventDefault();
     const {currentUser} = this.props;
-    if (currentUser) {
+    if (this.props.currentUser) {
       const { places } = this.props;
       const newPlaceLength = Object.keys(places).length;
       const newPlaceValues = Object.values(places);
@@ -25,7 +25,7 @@ class Footer extends React.Component {
       this.state = {
         title: 'New Place',
         private: false,
-        owner_id: currentUser.id,
+        owner_id: this.props.currentUser.id,
       };
       this.props.createPlace(this.state);
       this.props.history.push(`/places/${newPlaceId}`); 
