@@ -2,36 +2,36 @@
 export const getPages = () => (
   $.ajax({
     method: `GET`,
-    url: '/api/pes',
+    url: '/api/pages',
   })
 );
 
-export const getPlace = id => (
+export const getPage = id => (
   $.ajax({
     method: `GET`,
-    url: `/api/places/${id}`,
+    url: `/api/pages/${id}`,
   })
 );
 
-export const postPlace = place => (
+export const postPage = page => (
   $.ajax({
     method: `POST`,
-    url: `/api/places`,
-    data: { place }
+    url: `/api/pages`,
+    data: { page }
   })
 );
 
-export const patchPlace = place => (
+export const patchPage = page => (
   $.ajax({
     method: `PATCH`,
-    url: `/api/places/${place.id}`,
-    data: { place }
+    url: `/api/pages/${page.id}`,
+    data: { page }
   })
 );
 
-export const deletePlace = id => (
+export const deletePage = id => (
   $.ajax({
     method: `DELETE`,
-    url: `/api/places/${id}`,
+    url: `/api/pages/${id}`,
   })
 );

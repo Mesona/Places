@@ -10,7 +10,7 @@ User.destroy_all
 Place.destroy_all
 
 demoUser = User.create!(username: 'Demo', email: 'demo@email.com', password: 'password')
-testUser = User.create!(username: 't', email: 't@t.com', password: 'password')
+testUser = User.create!(username: 't', email: 't@t', password: 'password')
 # user1 = User.create!(username: Faker::Name.name, email: Faker::Internet.email, password: 'password')
 # user2 = User.create!(username: Faker::Name.name, email: Faker::Internet.email, password: 'password')
 # user3 = User.create!(username: Faker::Name.name, email: Faker::Internet.email, password: 'password')
