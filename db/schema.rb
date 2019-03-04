@@ -10,10 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_02_28_194651) do
+ActiveRecord::Schema.define(version: 2019_03_04_214235) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "pages", force: :cascade do |t|
+    t.string "title", null: false
+    t.text "body"
+    t.boolean "private", default: false
+    t.integer "place_id", null: false
+    t.integer "parent_page_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["parent_page_id"], name: "index_pages_on_parent_page_id"
+    t.index ["place_id"], name: "index_pages_on_place_id"
+  end
 
   create_table "places", force: :cascade do |t|
     t.string "title", null: false
