@@ -42,6 +42,8 @@ class Api::PlacesController < ApplicationController
     if @place
       @place.destroy
       render :show
+    else
+      render json: @post.errors.full_messages, status: 422
     end
   end
 

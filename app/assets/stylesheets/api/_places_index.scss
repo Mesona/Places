@@ -86,7 +86,6 @@ padding-bottom: 25px;
   height: 60px;
   background: #43545D;
   text-decoration: none;
-  position: absolute;
   .place-index-item-head:hover {
     text-decoration: none;
     background: inherit;
@@ -128,6 +127,7 @@ padding-bottom: 25px;
 }
 .place-index-item-foot-icons {
   padding-top: 6px;
+  
 }
 
 .mini-doc {
@@ -151,13 +151,15 @@ padding-bottom: 25px;
   text-decoration: none;
 }
 
+
 .mini-place-index-hamburger {
   height: 30px;
   width: 30px;
   border-radius: 50%;
   border: none;
+  // position: absolute;
+  // left: 0;
   float: right;
-  cursor: pointer;
   margin-right: 5px;
   // position: relative;
   // justify-self: flex-end;
@@ -165,6 +167,14 @@ padding-bottom: 25px;
   // align-self: flex-end;
   // justify-items: flex-end;
 }
+
+.mini-place-index-hamburger:focus {
+// button:active {
+  // outline: none;
+  // border: none;
+  outline: 0;
+}
+// button:focus {outline:0;}
 
 .mini-place-index-hamburger:hover {
   background: #DADCE0;
@@ -174,7 +184,6 @@ padding-bottom: 25px;
 
 .mini-place-index-hamburger-icon {
   // margin-top: 3px;
-  vertical-align: center;
 }
 
 .place-index-item-hidden {

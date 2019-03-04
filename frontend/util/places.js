@@ -32,6 +32,6 @@ export const patchPlace = place => (
 export const deletePlace = id => (
   $.ajax({
     method: `DELETE`,
-    url: `/api/place/${id}`,
+    url: `/api/places/${id}`,
   })
 );
