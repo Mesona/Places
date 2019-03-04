@@ -65,9 +65,19 @@
     0px 3px 5px -1px rgba(0,0,0,0.2);
 }
 
+.new-place-button:active {
+  border: none;
+}
+
+.new-place-button:focus {
+  border: none;
+  outline: 0;
+}
+
 .new-place-button:hover {
   background-color: rgb(246, 247, 252);
   transition: background-color 0.5s;
+  border: none;
   cursor: pointer;
 }
 
