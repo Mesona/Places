@@ -16,7 +16,7 @@ class Footer extends React.Component {
 
   makeNewPlace (e) {
     e.preventDefault();
-    const {currentUser} = this.props;
+    // const {currentUser} = this.props;
     if (this.props.currentUser) {
       const { places } = this.props;
       const newPlaceLength = Object.keys(places).length;
