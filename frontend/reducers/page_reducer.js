@@ -12,7 +12,7 @@ const PagesReducer = (state = {}, action) => {
     case RECEIVE_PAGES:
       // newState = merge({}, state, action.pages);
       // return newState;
-      return action.pages;
+      return merge({}, action.pages);
     case RECEIVE_PAGE:
       return merge({}, state, {[action.page.id]: action.page});
     case REMOVE_PAGE:

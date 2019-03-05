@@ -40,18 +40,18 @@ export const fetchPlace = id => dispatch => (
 
 export const createPlace = place => dispatch => (
   PlacesAPIUtils.postPlace(place)
-    .then(place => dispatch(receivePlace(place))),
-      errors => dispatch(receiveErrors(errors.responseJSON))
+    .then(place => dispatch(receivePlace(place)),
+      errors => dispatch(receiveErrors(errors.responseJSON)))
 );
 
 export const updatePlace = place => dispatch => (
   PlacesAPIUtils.patchPlace(place)
-    .then(place => dispatch(receivePlace(place))),
-      errors => dispatch(receiveErrors(errors.responseJSON))
+    .then(place => dispatch(receivePlace(place)),
+      errors => dispatch(receiveErrors(errors.responseJSON)))
 );
 
 export const deletePlace= placeId => dispatch => (
   PlacesAPIUtils.deletePlace(placeId)
-    .then( place => dispatch(removePlace(placeId))),
-      errors => dispatch(receiveErrors(errors.responseJSON))
+    .then( place => dispatch(removePlace(placeId)),
+      errors => dispatch(receiveErrors(errors.responseJSON)))
 );

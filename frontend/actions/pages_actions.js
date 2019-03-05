@@ -40,18 +40,18 @@ export const fetchPage = id => dispatch => (
 
 export const createPage = page => dispatch => (
   PagesAPIUtils.postPage(page)
-    .then(page=> dispatch(receivePage(page))),
-      errors => dispatch(receiveErrors(errors.responseJSON))
+    .then(page=> dispatch(receivePage(page)),
+      errors => dispatch(receiveErrors(errors.responseJSON)))
 );
 
 export const updatePage = page => dispatch => (
   PagesAPIUtils.patchPage(page)
-    .then(page => dispatch(receivePage(page))),
-      errors => dispatch(receiveErrors(errors.responseJSON))
+    .then(page => dispatch(receivePage(page)),
+      errors => dispatch(receiveErrors(errors.responseJSON)))
 );
 
 export const deletePage = pageId => dispatch => (
   PagesAPIUtils.deletePage(pageId)
-    .then( page => dispatch(removePage(pageId))),
-      errors => dispatch(receiveErrors(errors.responseJSON))
+    .then( page => dispatch(removePage(pageId)),
+      errors => dispatch(receiveErrors(errors.responseJSON)))
 );

@@ -15,6 +15,11 @@ class PageShow extends React.Component {
     console.log(this.props);
   }
 
+  componentDidMount() {
+    this.props.fetchPages();
+  }
+
+
   render () {
     return (
         <section className="page-show">

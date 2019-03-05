@@ -35,11 +35,11 @@ class PageIndex extends React.Component {
     return (
       <main className="page">
         <PageShowContainer />
-        <section className="page-index">
-          <header className="page-index-header" onClick={this.getData}>
+        <section className="pages-index">
+          <header className="pages-index-header" onClick={this.getData}>
             HEAD INDEX
           </header>
-          <section className="page-index-body">
+          <section className="pages-index-body">
             BODY
           </section>
         </section>

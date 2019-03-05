@@ -22,9 +22,7 @@ class Footer extends React.Component {
     if (this.props.currentUser) {
       const { places } = this.props;
       const newPlaceLength = Object.keys(places).length;
-      // const newPlaceValues = Object.values(places);
-      // const newPlaceId = newPlaceValues[newPlaceLength - 1].id;
-      const newPlaceId = Object.values(places)[newPlaceLength - 1].id;
+      const newPlaceId = Object.values(places)[newPlaceLength - 1].id + 1;
       this.state = {
         title: 'New Place',
         private: false,
@@ -35,20 +33,10 @@ class Footer extends React.Component {
         title: 'Home Page',
         place_id: newPlaceId,
       };
-      // this.props.createPlace(this.state);
-      // fetchPlace(newPlaceId);
-      setTimeout(this.props.createPage(defaultPage), 1000);
-      // this.props.createPage(defaultPage);
-      // createPlace(this.state).then(createPage(defaultPage));
-      // let promise = new Promise()
-      // this.props.createPage(defaultPage);
+      this.props.createPlace(this.state)
+        .then(() => this.props.createPage(defaultPage));
 
-      console.log('START TEST');
-      // console.log(createPlace);
-      console.log('MIDDLE');
-      // console.log(this.props);
-      console.log('END TEST');
-      // this.props.history.push(`/places/${newPlaceId}/pages/`); 
+      this.props.history.push(`/places/${newPlaceId}/pages/`); 
     } else {
       this.props.receiveErrors(["You must be signed in to create new Places!"]);
     }
