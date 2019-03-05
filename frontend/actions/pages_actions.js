@@ -26,8 +26,8 @@ export const receiveErrors = errors => ({
   errors,
 });
 
-export const fetchPages = () => dispatch => (
-  PagesAPIUtils.getPages()
+export const fetchPages = placeId => dispatch => (
+  PagesAPIUtils.getPages(placeId)
     .then(pages => dispatch(receivePages(pages))),
       errors => dispatch(receiveErrors(errors.responseJSON))
 );

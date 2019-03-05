@@ -6,7 +6,8 @@ import NavBarContainer from './nav_bar/nav_bar_container';
 import Modal from './modal/modal';
 import FooterContainer from './footer/footer_container';
 import PlaceShowContainer from './places/place_show_container';
-import PlacesHamburger from './dropdownmenus/places_hamburger';
+import PageShowContainer from './pages/page_show_container';
+import PageIndexContainer from './pages/page_index_container';
 
 const App = () => (
   <div>
@@ -14,7 +15,10 @@ const App = () => (
     <Route path="/" component={ NavBarContainer } />
     <Switch>
       <Route exact path="/" component={ PlacesIndexContainer } />
-      <Route path="/places/:placeId" component={ PlaceShowContainer } />
+      <Route exact path="/places/:placeId" component={ PlaceShowContainer } />
+      <Route path="/places/:placeId/pages" component={ PageIndexContainer } />
+      <Route exact path="/pages" component={ PageIndexContainer } />
+      <Route path="/pages/:pageId" component={ PageShowContainer } />
 
       {/* TESTING ROUTES */}
       {/* <Route exact path="/test" component={ PlacesHamburger } /> */}

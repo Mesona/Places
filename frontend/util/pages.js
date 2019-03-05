@@ -1,8 +1,8 @@
 
-export const getPages = () => (
+export const getPages = placeId => (
   $.ajax({
     method: `GET`,
-    url: '/api/pages',
+    url: `/api/places/${placeId}/pages`,
   })
 );
 

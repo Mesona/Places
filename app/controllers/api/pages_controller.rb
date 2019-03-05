@@ -1,7 +1,10 @@
 class Api::PagesController < ApplicationController
 
   def index
-    @pages = Page.all
+    @place = User.find(params[:place_id])
+    @pages = @place.pages
+
+    # render `/api/places/`
   end
 
   def show
@@ -49,7 +52,7 @@ class Api::PagesController < ApplicationController
 
   private
     def page_params
-      params.require(:page).permit(:title, :body, :place_id, :parent_page_id)
+      params.require(:page).permit(:title, :body, :place_id)
     end
 end
 

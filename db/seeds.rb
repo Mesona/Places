@@ -8,6 +8,7 @@
 
 User.destroy_all
 Place.destroy_all
+Page.destroy_all
 
 demoUser = User.create!(username: 'Demo', email: 'demo@email.com', password: 'password')
 testUser = User.create!(username: 't', email: 't@t', password: 'password')
@@ -18,10 +19,14 @@ testUser = User.create!(username: 't', email: 't@t', password: 'password')
 # user5 = User.create!(username: Faker::Name.name, email: Faker::Internet.email, password: 'password')
 # user6 = User.create!(username: Faker::Name.name, email: Faker::Internet.email, password: 'password')
 
-privatePlace = Place.create!(title: "dessert", owner_id: testUser.id, private: false)
+defaultPlace = Place.create!(title: "dessert", owner_id: testUser.id, private: false)
 # place1 = Place.create!(title: Faker::Dessert.variety, owner_id: testUser.id)
 # place2 = Place.create!(title: Faker::Dessert.variety, owner_id: testUser.id)
 # place3 = Place.create!(title: Faker::Dessert.variety, owner_id: testUser.id)
 # place4 = Place.create!(title: Faker::Dessert.variety, owner_id: testUser.id)
 # place5 = Place.create!(title: Faker::Dessert.variety, owner_id: testUser.id)
 # place6 = Place.create!(title: Faker::Dessert.variety, owner_id: testUser.id)
+
+defaultPage1 = Page.create!(title: "New Page", place_id: defaultPlace.id)
+defaultPage2 = Page.create!(title: "New sub Page", place_id: defaultPlace.id, parent_page_id: defaultPage1.id)
+defaultPage3 = Page.create!(title: "New Page", place_id: defaultPlace.id)

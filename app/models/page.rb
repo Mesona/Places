@@ -15,13 +15,14 @@
 class Page < ApplicationRecord
   validates :title, :place_id, presence: true
 
-  has_many :pages,
-    foreign_key: :parent_page_id,
-    class_name: :Page
-
   belongs_to :place
   
-  belongs_to :page,
+  has_many :children,
     foreign_key: :parent_page_id,
-    class_name: :Page
+    class_name: "Page"
+  
+  belongs_to :parent,
+    foreign_key: :parent_page_id,
+    class_name: "Page",
+    optional: true
 end

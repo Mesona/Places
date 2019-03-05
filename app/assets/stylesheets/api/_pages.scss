@@ -1,0 +1,29 @@
+.page {
+  display: flex;
+  margin-top: 20px;
+}
+
+.page-show {
+  width: 75%;
+}
+.page-show-header {
+  height: 250px;
+  // height: 20%;
+  background-color: cyan;
+}
+
+.page-show-body {
+  background-color: orange;
+  min-height: 300px;
+  // height: 80%;
+
+}
+
+.pages-index-sidebar {
+  background-color: magenta;
+  position: absolute;
+  right: 0;
+  // height: 100%;
+  min-height: 86.5%;
+  width: 25%;
+}
