@@ -13,7 +13,7 @@
 #
 
 class Page < ApplicationRecord
-  validates :title, :place_id, presence: true
+  validates :title, presence: true
 
   belongs_to :place
   

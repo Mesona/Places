@@ -1,5 +1,6 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
+import PageShowContainer from './page_show_container';
 
 
 class PageIndex extends React.Component {
@@ -7,8 +8,9 @@ class PageIndex extends React.Component {
     super(props);
 
     // this.state = {
-    //   parentPlace: 
-    // }
+    //   parentPlace: this.props.entities.places[this.props.match.placeId],
+
+    // };
 
     this.getData = this.getData.bind(this);
   }
@@ -20,7 +22,8 @@ class PageIndex extends React.Component {
   }
 
   componentDidMount() {
-    this.props.fetchPages(this.props.match.params.placeId);
+    // this.props.fetchPages(this.props.match.params.place_id);
+    // this.props.fetchPages(125);
     // console.log("BEGIN INDEX LOGS");
     // console.log(this.state);
     // console.log("STATE ^ PROPS BELOW");
@@ -31,11 +34,14 @@ class PageIndex extends React.Component {
 
     return (
       <main className="page">
-        <header className="page-index-header" onClick={this.getData}>
-          HEAD INDEX
-        </header>
-        <section className="page-index-body">
-          BODY
+        <PageShowContainer />
+        <section className="page-index">
+          <header className="page-index-header" onClick={this.getData}>
+            HEAD INDEX
+          </header>
+          <section className="page-index-body">
+            BODY
+          </section>
         </section>
       </main>
     )

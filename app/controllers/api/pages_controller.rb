@@ -1,7 +1,7 @@
 class Api::PagesController < ApplicationController
 
   def index
-    @place = User.find(params[:place_id])
+    @place = Place.find(params[:place_id])
     @pages = @place.pages
 
     # render `/api/places/`

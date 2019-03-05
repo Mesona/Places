@@ -15,10 +15,8 @@ class PageShow extends React.Component {
     console.log(this.props);
   }
 
-
   render () {
     return (
-      <main className="page">
         <section className="page-show">
           <header className="page-show-header" onClick={this.getData}>
             HEAD
@@ -27,13 +25,30 @@ class PageShow extends React.Component {
             BODY
           </section>
         </section>
-        <section className="pages-index-sidebar">
-          <PageIndexContainer />
-        </section>
-      </main>
     )
   }
 
 }
+
+
+//   render () {
+//     return (
+//       <main className="page">
+//         <section className="page-show">
+//           <header className="page-show-header" onClick={this.getData}>
+//             HEAD
+//           </header>
+//           <section className="page-show-body">
+//             BODY
+//           </section>
+//         </section>
+//         <section className="pages-index-sidebar">
+//           <PageIndexContainer />
+//         </section>
+//       </main>
+//     )
+//   }
+
+// }
 
 export default PageShow;

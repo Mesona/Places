@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Route, Redirect, Switch, withRouter } from 'react-router-dom';
+import { selectPrivatePlaces } from '../../reducers/selectors';
 
 
 class Footer extends React.Component {
@@ -8,6 +9,7 @@ class Footer extends React.Component {
     super(props);
 
     this.makeNewPlace = this.makeNewPlace.bind(this);
+
   }
 
   componentDidMount() {
@@ -16,7 +18,7 @@ class Footer extends React.Component {
 
   makeNewPlace (e) {
     e.preventDefault();
-    const {currentUser} = this.props;
+    const {currentUser, createPlace, createPage } = this.props;
     if (this.props.currentUser) {
       const { places } = this.props;
       const newPlaceLength = Object.keys(places).length;
@@ -27,9 +29,26 @@ class Footer extends React.Component {
         title: 'New Place',
         private: false,
         owner_id: this.props.currentUser.id,
+        pages: [],
       };
-      this.props.createPlace(this.state);
-      this.props.history.push(`/places/${newPlaceId}`); 
+      let defaultPage = {
+        title: 'Home Page',
+        place_id: newPlaceId,
+      };
+      // this.props.createPlace(this.state);
+      // fetchPlace(newPlaceId);
+      setTimeout(this.props.createPage(defaultPage), 1000);
+      // this.props.createPage(defaultPage);
+      // createPlace(this.state).then(createPage(defaultPage));
+      // let promise = new Promise()
+      // this.props.createPage(defaultPage);
+
+      console.log('START TEST');
+      // console.log(createPlace);
+      console.log('MIDDLE');
+      // console.log(this.props);
+      console.log('END TEST');
+      // this.props.history.push(`/places/${newPlaceId}/pages/`); 
     } else {
       this.props.receiveErrors(["You must be signed in to create new Places!"]);
     }

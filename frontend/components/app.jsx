@@ -15,15 +15,16 @@ const App = () => (
     <Route path="/" component={ NavBarContainer } />
     <Switch>
       <Route exact path="/" component={ PlacesIndexContainer } />
-      <Route exact path="/places/:placeId" component={ PlaceShowContainer } />
+      {/* <Route exact path="/places/:placeId/pages/:pageId" component={ PageShowContainer } /> */}
+      {/* <Route path="/places/:placeId/pages" component={ PageIndexContainer } /> */}
       <Route path="/places/:placeId/pages" component={ PageIndexContainer } />
-      <Route exact path="/pages" component={ PageIndexContainer } />
-      <Route path="/pages/:pageId" component={ PageShowContainer } />
+      {/* <Route exact path="/places/:placeId/pages/" component={ PageIndexContainer } /> */}
+      {/* <Route path="/pages/:pageId" component={ PageShowContainer } /> */}
 
       {/* TESTING ROUTES */}
       {/* <Route exact path="/test" component={ PlacesHamburger } /> */}
 
-      <Redirect from="*" to="/" />
+      {/* <Redirect from="*" to="/" /> */}
     </Switch>
     <Route exact path="/" component={ FooterContainer } />
 
