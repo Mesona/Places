@@ -17,7 +17,7 @@ const App = () => (
       <Route exact path="/" component={ PlacesIndexContainer } />
       {/* <Route exact path="/places/:placeId/pages/:pageId" component={ PageShowContainer } /> */}
       {/* <Route path="/places/:placeId/pages" component={ PageIndexContainer } /> */}
-      <Route path="/places/:placeId/pages" component={ PageIndexContainer } />
+      <Route path="/places/:placeId/pages" component={ PageIndexContainer } placeTest=":placeId" />
       {/* <Route exact path="/places/:placeId/pages/" component={ PageIndexContainer } /> */}
       {/* <Route path="/pages/:pageId" component={ PageShowContainer } /> */}
 

@@ -49,6 +49,6 @@ class Api::PlacesController < ApplicationController
 
   private
     def place_params
-      params.require(:place).permit(:title, :private, :owner_id)
+      params.require(:place).permit(:title, :private, :owner_id, :pages)
     end
 end

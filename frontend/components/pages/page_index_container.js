@@ -2,21 +2,20 @@ import React from 'react';
 import { connect } from 'react-redux';
 import PageIndex from './page_index';
 import { fetchPages, deletePage } from '../../actions/pages_actions';
-import { selectAllPlaces, selectPages } from '../../reducers/selectors';
+import { selectAllPlaces, selectPages, viewState, selectAllPages } from '../../reducers/selectors';
 
 const mapStateToProps = (state, ownProps) => ({
   currentUser: state.session.currentUser,
-  // parentPlace: selectAllPlaces(state).filter((e) => e.id === ownProps.match.params.placeId),
-  // pages: state.entities.places[125],
-  testState: state,
-  // allPages: selectPages(state),
-  // place: state.entities.place
-  // place: state.place[ownProps.match.params.placeId],
-  // pages: state.place[ownProps.match.params.]
+  // testState: state,
+  // viewState: viewState(state),
+  // allPlaces: selectAllPlaces(state),
+  // currentPlace: ownProps.match.params.placeId,
+  // placeTest: ownProps,
+  pages: state.entities.pages,
 });
 
 const mapDispatchToProps = dispatch => ({
-  fetchPages: () => dispatch(fetchPages()),
+  fetchPages: (id) => dispatch(fetchPages(id)),
   deletePage: id => dispatch(deletePage(id)),
 });
 

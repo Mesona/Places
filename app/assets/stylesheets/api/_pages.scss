@@ -1,10 +1,14 @@
 .page {
   display: flex;
-  margin-top: 20px;
+  margin: 0px 0px 0px 0px;
+  // margin-top: 20px;
+  background-color: #F1F3F4;
+  border-top: 1px solid #DADCE0;
 }
 
 .page-show {
   width: 75%;
+  background-color: white;
 }
 .page-show-header {
   height: 250px;
@@ -20,11 +24,63 @@
 }
 
 .pages-index {
-  background-color: magenta;
-  position: fixed;
+  position: relative;
+  // top: 75px;
   right: 0;
   // height: 100%;
   min-height: 86.5%;
   width: 25%;
   margin-left: 25px;
+  background-color: white;
+}
+
+.pages-index-header {
+  // border-top: 1px solid #DADCE0;
+  line-height: 60px;
+  border-left: 1px solid #DADCE0;
+  border-bottom: 1px solid #DADCE0;
+  text-align: center;
+  cursor: pointer;
+  font-family: 'Google Sans';
+  font-weight: bold;
+  font-size: 18px;
+  height: 60px;
+  // vertical-align: center;
+  // flex-direction: column;
+  // justify-items: center;
+}
+
+.pages-index-body {
+  border-left: 1px solid #DADCE0;
+  font-family: 'Google Sans';
+  font-weight: normal;
+  min-height: 800px;
+  padding-left: 20px;
+  padding-top: 20px;
+  cursor: pointer;
+}
+
+.pages-index-body img {
+  height: 16px;
+  width: 16px;
+  margin-right: 10px;
+}
+
+.pages-index-body span {
+  // margin-bottom: 20px;
+  // padding-bottom: 20px;
+  // line-height: 25px;
+  vertical-align: top;
+}
+
+.pages-index-selected {
+  color: blue;
+}
+
+.page-show {
+  margin-top: 5px;
+}
+
+.pages-index-dropdown {
+  float: right;
 }

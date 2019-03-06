@@ -34,7 +34,7 @@ class Footer extends React.Component {
         place_id: newPlaceId,
       };
       this.props.createPlace(this.state)
-        .then(() => this.props.createPage(defaultPage));
+        .then(() => setInterval(this.props.createPage(defaultPage), 500));
 
       this.props.history.push(`/places/${newPlaceId}/pages/`); 
     } else {

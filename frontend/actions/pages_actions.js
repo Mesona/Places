@@ -28,14 +28,14 @@ export const receiveErrors = errors => ({
 
 export const fetchPages = placeId => dispatch => (
   PagesAPIUtils.getPages(placeId)
-    .then(pages => dispatch(receivePages(pages))),
-      errors => dispatch(receiveErrors(errors.responseJSON))
+    .then(pages => dispatch(receivePages(pages)),
+      errors => dispatch(receiveErrors(errors.responseJSON)))
 );
 
 export const fetchPage = id => dispatch => (
   PagesAPIUtils.getPage(id)
-    .then(id => dispatch(receivePage(id))),
-      errors => dispatch(receiveErrors(errors.responseJSON))
+    .then(id => dispatch(receivePage(id)),
+      errors => dispatch(receiveErrors(errors.responseJSON)))
 );
 
 export const createPage = page => dispatch => (

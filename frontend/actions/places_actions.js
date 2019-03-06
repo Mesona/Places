@@ -28,14 +28,14 @@ export const receiveErrors = errors => ({
 
 export const fetchPlaces = () => dispatch => (
   PlacesAPIUtils.getPlaces()
-    .then(places => dispatch(receivePlaces(places))),
-      errors => dispatch(receiveErrors(errors.responseJSON))
+    .then(places => dispatch(receivePlaces(places)),
+      errors => dispatch(receiveErrors(errors.responseJSON)))
 );
 
 export const fetchPlace = id => dispatch => (
   PlacesAPIUtils.getPlace(id)
-    .then(id => dispatch(receivePlace(id))),
-      errors => dispatch(receiveErrors(errors.responseJSON))
+    .then(id => dispatch(receivePlace(id)),
+      errors => dispatch(receiveErrors(errors.responseJSON)))
 );
 
 export const createPlace = place => dispatch => (

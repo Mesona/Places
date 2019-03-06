@@ -60,7 +60,7 @@ class PlaceIndexItem extends React.Component {
     const { place, monthNames } = this.props;
       return (
         <main className="place-index-item-border">
-          <Link to={`/places/${place.id}`}>
+          <Link to={`/places/${place.id}/pages/`}>
           <section className="place-index-item-head">
           </section>
           <section className="place-index-item-body">

@@ -1,5 +1,6 @@
 import React from 'react';
 import PageIndexContainer from './page_index_container';
+import { withRouter } from 'react-router-dom';
 
 
 class PageShow extends React.Component {
@@ -10,14 +11,14 @@ class PageShow extends React.Component {
   }
 
   getData () {
-    console.log(this.state);
+    console.log(this.props.viewState);
     console.log("STATE ^ PROPS BELOW");
     console.log(this.props);
   }
 
-  componentDidMount() {
-    this.props.fetchPages();
-  }
+  // componentDidMount() {
+  //   this.props.fetchPages(this.props.match.params.placeId);
+  // }
 
 
   render () {
@@ -56,4 +57,4 @@ class PageShow extends React.Component {
 
 // }
 
-export default PageShow;
+export default withRouter(PageShow);
