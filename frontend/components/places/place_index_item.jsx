@@ -58,9 +58,10 @@ class PlaceIndexItem extends React.Component {
 
   render () {
     const { place, monthNames } = this.props;
+    const firstPageId = place.pages[0].id;
       return (
         <main className="place-index-item-border">
-          <Link to={`/places/${place.id}/pages/`}>
+          <Link to={`/places/${place.id}/pages/${firstPageId}`}>
           <section className="place-index-item-head">
           </section>
           <section className="place-index-item-body">

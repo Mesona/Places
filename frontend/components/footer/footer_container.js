@@ -1,11 +1,12 @@
 import { connect } from 'react-redux';
 import Footer from './footer';
 import { createPlace, fetchPlaces, receiveErrors } from '../../actions/places_actions';
-import { selectAllPlaces } from '../../reducers/selectors';
+import { selectAllPlaces, selectAllPages } from '../../reducers/selectors';
 import { createPage } from '../../actions/pages_actions';
 
 const mapStateToProps = (state, ownProps) => ({
   places: selectAllPlaces(state),
+  pages: selectAllPages(state),
   errors: state.errors.places,
   currentUser: state.session.currentUser,
   // const place = { title: 'Untitled', private: false, owner_id: 2 };

@@ -68,6 +68,9 @@ class PlacesIndex extends React.Component {
       'Owned by anyone', 'Owned by me', 'Not owned by me'
     ];
 
+    // console.log('PLACE LOG')
+    // console.log(this.state.allPlaces)
+
     const { places, deletePlace, myPlaces, otherPlaces, privatePlaces } = this.props;
     this.state.allPlaces = myPlaces.concat(otherPlaces);
 

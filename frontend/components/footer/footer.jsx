@@ -1,7 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import { Route, Redirect, Switch, withRouter } from 'react-router-dom';
-import { selectPrivatePlaces } from '../../reducers/selectors';
+import { withRouter } from 'react-router-dom';
 
 
 class Footer extends React.Component {
@@ -18,7 +16,6 @@ class Footer extends React.Component {
 
   makeNewPlace (e) {
     e.preventDefault();
-    const {currentUser, createPlace, createPage } = this.props;
     if (this.props.currentUser) {
       const { places } = this.props;
       const newPlaceLength = Object.keys(places).length;
@@ -34,9 +31,10 @@ class Footer extends React.Component {
         place_id: newPlaceId,
       };
       this.props.createPlace(this.state)
-        .then(() => setInterval(this.props.createPage(defaultPage), 500));
+        .then(() => this.props.createPage(defaultPage));
 
-      this.props.history.push(`/places/${newPlaceId}/pages/`); 
+      const newPageId = this.props.places[newPlaceLength - 1].pages[0].id;
+      this.props.history.push(`/places/${newPlaceId}/pages/${newPageId}`); 
     } else {
       this.props.receiveErrors(["You must be signed in to create new Places!"]);
     }

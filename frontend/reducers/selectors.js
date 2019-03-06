@@ -7,7 +7,10 @@ export const selectPrivatePlaces = state => Object.values(Object.values(state.en
 
 export const selectAllPages = state => Object.values(state.entities.pages);
 
+// export const selectAllPages = state => Object.values(state.entities.pages);
+
 export const viewState = state => Object.values(state);
+export const thisPlace = state => Object.values(state.entities.places);
 
 
 // export const selectPages = state => Object.values(state.entitites.pages).filter((e) => e.place_id === 125);

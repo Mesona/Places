@@ -12,6 +12,8 @@ const mapStateToProps = (state, ownProps) => ({
   // currentPlace: ownProps.match.params.placeId,
   // placeTest: ownProps,
   pages: state.entities.pages,
+  firstPage: Object.values(state.entities.pages)[0],
+  otherPages: Object.values(state.entities.pages).slice(1),
 });
 
 const mapDispatchToProps = dispatch => ({
