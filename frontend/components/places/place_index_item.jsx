@@ -42,23 +42,9 @@ class PlaceIndexItem extends React.Component {
     this.props.updatePlace(this.state);
   }
 
-  // renderErrors() {
-  //   return(
-  //     <ul>
-  //       <li>
-  //         <span className="fading">{this.props.errors[0]}</span>
-  //       </li>
-  //     </ul>
-  //   );
-  // }
-
-  componentWillUnmount() {
-    // this.props.receiveErrors([]);
-  }
-
   render () {
     const { place, monthNames } = this.props;
-    const firstPageId = place.pages[0].id;
+    const firstPageId = typeof place.pages === 'undefined' ? '' : place.pages[0].id;
       return (
         <main className="place-index-item-border">
           <Link to={`/places/${place.id}/pages/${firstPageId}`}>

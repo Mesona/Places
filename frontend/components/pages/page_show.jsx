@@ -14,6 +14,7 @@ class PageShow extends React.Component {
     };
 
     this.getData = this.getData.bind(this);
+    this.handleChange = this.handleChange.bind(this);
   }
 
   getData () {
@@ -29,45 +30,34 @@ class PageShow extends React.Component {
     this.props.fetchPlace(thisPlaceId);
   }
 
+  handleChange(e) {
+
+  }
+
   render () {
     const thisPageId = this.props.location.pathname.split('/')[4];
     const thisPlaceId = this.props.location.pathname.split('/')[2];
-    // const thisPage = this.props.pages[thisPlaceId]
-    // const thisPlace = typeof this.props.places === 'undefined' ? "" : this.props.place[thisPlaceId];
-    
-    // console.log(this.props.pages[thisPageId])
-    // console.log('SHOW PROPS')
-    // console.log(typeof this.props.places === 'undefined')
-    // console.log(this.props.places)
-    // const
-    // this.state = {
-    //   placeTitle: this.props.place[thisPlaceId].title,
-    //   pageTitle: this.props.page[thisPageId].title,
-    //   pageBody: this.props.page[thisPageId].body,
-    // };
-    // while (this.state.pageTitle === '' ) {
-    //   if (typeof this.props.places !== 'undefined') {
-    //     let newState = {
-    //       placeTitle: this.props.place[thisPlaceId].title,
-    //       pageTitle: this.props.page[thisPageId].title,
-    //       pageBody: this.props.page[thisPageId].body, 
-    //     };
-    //   }
 
-    //   this.setState(newState);
-    // }
-
-    const { place } = this.props;
+    const { pages, places } = this.props;
+    console.log(typeof pages[thisPageId] === 'undefined')
     return (
         <section className="page-show">
           <header className="page-show-header" onClick={this.getData}>
             <div className="place-name">
-            {/* Place Title */}
-              {/* {this.state.placeTitle} */}
+              <input
+                type="string"
+                value={typeof places[0] === 'undefined' ? "" : places[0].title}
+                name="place[title]"
+                >
+              </input>
             </div>
             <div className="page-title">
-              {/* <textarea value={this.state.pageTitle} name="title"></textarea> */}
-              <textarea name="title"></textarea>
+              <textarea
+                value={typeof pages[thisPageId] === 'undefined' ? `` : pages[thisPageId].body}
+                name="title"
+                onChange={this.handleChange}>
+                  {typeof pages[thisPageId] === 'undefined' ? "" : pages[thisPageId].body}
+              </textarea>
             </div>
           </header>
           <section className="page-show-body">

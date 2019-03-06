@@ -18,7 +18,6 @@ class PageIndexItem extends React.Component {
     const {title, id, src } = this.props; 
 
     return (
-      // <div className="page-index-items" onClick={this.sendData}>
       <div className="page-index-items" onClick={this.sendData}>
         <Link to={`/places/${this.props.match.params.placeId}/pages/${this.props.pageId}/`}><img src={src}></img><span className="pages-index-selected">{title}</span><img className="pages-index-dropdown" src={window.images.hamburgerDots}></img></Link>
       </div>
