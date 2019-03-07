@@ -1,5 +1,4 @@
 import React from 'react';
-import PageIndexContainer from './page_index_container';
 import { withRouter } from 'react-router-dom';
 
 
@@ -14,13 +13,15 @@ class PageShow extends React.Component {
     };
 
     this.getData = this.getData.bind(this);
-    this.handleChange = this.handleChange.bind(this);
+    // this.handleChange = this.handleChange.bind(this);
+    this.update = this.update.bind(this);
   }
 
   getData () {
     console.log(this.props);
     console.log("Props ^ specs BELOW");
     // console.log(this.props.places[175].id)
+    console.log(this.state);
   }
 
   componentDidMount() {
@@ -30,9 +31,12 @@ class PageShow extends React.Component {
     this.props.fetchPlace(thisPlaceId);
   }
 
-  handleChange(e) {
-
+  update(field) {
+    return (e) => {
+      this.setState({[field]: e.currentTarget.value});
+    };
   }
+
 
   render () {
     const thisPageId = this.props.location.pathname.split('/')[4];
@@ -47,7 +51,8 @@ class PageShow extends React.Component {
               <input
                 type="string"
                 value={typeof places[0] === 'undefined' ? "" : places[0].title}
-                name="place[title]"
+                // name="place[title]"
+                onChange={this.update('placeTitle')}
                 >
               </input>
             </div>
@@ -55,8 +60,8 @@ class PageShow extends React.Component {
               <textarea
                 value={typeof pages[thisPageId] === 'undefined' ? `` : pages[thisPageId].body}
                 name="title"
-                onChange={this.handleChange}>
-                  {typeof pages[thisPageId] === 'undefined' ? "" : pages[thisPageId].body}
+                onChange={this.update('title')}>
+                  {typeof pages[thisPageId] === 'undefined' ? "" : pages[thisPageId].title}
               </textarea>
             </div>
           </header>

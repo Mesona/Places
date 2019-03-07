@@ -53,15 +53,19 @@ class PageIndex extends React.Component {
   createNewPage(e) {
     e.preventDefault();
     const { placeId } = this.props.match.params;
-    // const placeId = this.props.match.params.placeId;
     console.log(placeId)
     let defaultPage = {
       title: 'New Page',
       place_id: placeId,
     };
 
-
     this.props.createPage(defaultPage);
+
+
+
+
+
+
       // .then(() => setTimeout(this.props.history.push(`/places/${placeId}/pages/${Object.values(this.props.pages)[Object.values(this.props.pages).length].id}`)));
     // console.log(this.props)
     // console.log(Object.values(this.props.pages).length)
@@ -82,6 +86,7 @@ class PageIndex extends React.Component {
 
     const allPages = Object.values(this.props.pages);
     const {firstPage} = this.props;
+    const topPages = allPages.filter((e) => e.parent_page_id === null);
 
     return (
       <main className="page">
@@ -93,18 +98,17 @@ class PageIndex extends React.Component {
             <div className="bottom-border"></div>
           </header>
           <section className="pages-index-body">
-            {allPages.map(page => <PageIndexItemContainer
+            {topPages.map(page => <PageIndexItemContainer
               key={page.id}
               pageId = {page.id}
               title={page.title}
               page={page}
-              subPages = {page.children}
+              // subPages = {page.children}
+              layers="0"
               src={page.id === firstPage.id ? window.images.homeIcon : window.images.headerImg}
             />)}
           </section>
           <section className="pages-index-footer">
-            {/* <img src={window.images.newPageIcon}></img> */}
-            {/* <span className="new-page-plus">+</span> */}
             <button className="new-page-plus-button" onClick={this.createNewPage}><span className="new-page-plus-text">+</span></button>
           </section>
         </section>

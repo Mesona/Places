@@ -74,6 +74,10 @@ input {
   font-weight: bold;
 }
 
+.form-button:focus {
+  outline: 0;
+}
+
 .form-button:hover {
   box-shadow: 0 3px 4px 0 rgba(0,0,0,0.24), 0 4px 12px 0 rgba(0,0,0,0.19);
   transition: box-shadow 0.5s;
@@ -95,6 +99,10 @@ input {
 
     }
 
+    .other-form-button:focus {
+      outline: 0;
+    }
+
     .other-button {
       border: none;
       background-color: inherit;
@@ -103,6 +111,10 @@ input {
       padding: 10px;
       border-radius: 4px;
 
+    }
+
+    .other-button:focus {
+      outline: 0;
     }
 
 

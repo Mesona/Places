@@ -1,29 +1,101 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
+import PageIndexItemContainer from './page_index_item_container';
 
 class PageIndexItem extends React.Component {
   constructor(props) {
     super(props);
 
+
+    this.state = {
+      displayMenu: false,
+    }
+
+    this.destroyPage = this.destroyPage.bind(this);
     this.sendData = this.sendData.bind(this);
+    this.showDropdownMenu = this.showDropdownMenu.bind(this);
+    this.hideDropdownMenu = this.hideDropdownMenu.bind(this);
   }
 
   sendData(e) {
     // console.log(this.props)
     // this.props.history.push(`/places/${this.props.match.params.placeId}/pages/${this.props.pageId}/`);
     // <NavLink to={`/places/${this.props.match.params.placeId}/pages/${this.props.pageId}/`} />;
+    console.log('ITEMS DATA')
+    // console.log(this.props)
+    console.log(this.props.page.children)
   }
+
+  destroyPage(e) {
+    e.preventDefault();
+    e.stopPropagation();
+    this.props.deletePage(this.props.page.id);
+  }
+
+
+  showDropdownMenu(e) {
+    e.preventDefault();
+    this.setState({ displayMenu: true }, () => {
+      document.addEventListener('click', this.hideDropdownMenu);
+    });
+  }
+
+  hideDropdownMenu() {
+    this.setState({ displayMenu: false }, () => {
+      document.removeEventListener('click', this.hideDropdownMenu);
+    });
+  }
+
 
   render () {
     const {title, id, src } = this.props; 
+    const children = this.props.page.children;
 
     return (
       <div className="page-index-items" onClick={this.sendData}>
-        <Link to={`/places/${this.props.match.params.placeId}/pages/${this.props.pageId}/`}>
+        {/* <Link to={`/places/${this.props.match.params.placeId}/pages/${this.props.pageId}/`}> */}
           <img className="page-index-nav-icon" src={src}></img>
           <span className="pages-index-selected">{title}</span>
-          <div className="pages-index-dropdown"><img src={window.images.hamburgerDots}></img></div>
-        </Link>
+          { children !== undefined ?
+            <ul>
+              <li>
+              {children.map(page =>
+                <PageIndexItemContainer
+                  key={page.id}
+                  pageId = {page.id}
+                  title={page.title}
+                  page={page}
+                  src={ window.images.headerImg }
+                />)}
+              </li>
+            </ul>  : null
+          }
+          <div className="pages-index-dropdown" onClick={this.showDropdownMenu}>
+            {/* <div className="pages-index-button" > */}
+            <div >
+              <img className="pages-index-button" src={window.images.hamburgerDots}></img></div>
+              { this.state.displayMenu ? (
+                <ul>
+                  <li onClick={this.destroyPage}><img src={window.images.trashIcon} />Remove</li>
+                  {/* <li onClick={(e) => this.props.deletePage(this.props.page.id)}><img src={window.images.trashIcon} />Remove</li> */}
+                </ul>
+              ) : (
+                null
+              )}
+           </div>
+        {/* </Link> */}
+        {/* <div>
+          { children !== undefined ? 
+          children.map( page =>
+            <PageIndexItemContainer
+              key={page.id}
+              pageId = {page.id}
+              title={page.title}
+              page={page}
+              src={ window.images.headerImg }
+            />) : null
+          }
+        </div> */}
       </div>
     );
   };

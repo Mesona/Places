@@ -18,6 +18,7 @@ class Page < ApplicationRecord
   belongs_to :place
   
   has_many :children,
+    dependent: :destroy,
     foreign_key: :parent_page_id,
     class_name: "Page"
   

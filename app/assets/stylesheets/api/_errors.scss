@@ -2,11 +2,11 @@
   text-align: center;
 }
 .fading {
-  -webkit-animation-duration: 1s;
+  -webkit-animation-duration: 3s;
   -webkit-animation-name: fading;
-  animation-duration: 2s;
+  animation-duration: 3s;
   animation-name: fading;
-  transition-delay: 2s;
+  transition-delay: 3s;
 }
 
 @-webkit-keyframes fading {

@@ -4,6 +4,7 @@ import PageIndexItem from './page_index_item';
 import { fetchPage, deletePage } from '../../actions/pages_actions';
 
 const mapStateToProps = (state, ownProps) => ({
+  children: ownProps.children,
 });
 
 const mapDispatchToProps = dispatch => ({
