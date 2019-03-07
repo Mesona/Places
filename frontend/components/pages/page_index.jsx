@@ -15,13 +15,14 @@ class PageIndex extends React.Component {
   getData () {
     // console.log(this.state);
     console.log("STATE ^ PROPS BELOW");
-    // console.log(this.props.pages);
-    console.log(Object.values(this.props.pages)[Object.values(this.props.pages).length - 1].id);
+    console.log(this.props);
+    // console.log(Object.values(this.props.pages)[Object.values(this.props.pages).length - 1].id);
     console.log("PAGE INFO");
     // console.log(this.props.firstPage.id);
   }
 
   componentDidMount() {
+    this.props.fetchPlaces();
     this.props.fetchPages(this.props.match.params.placeId);
   }
 
@@ -86,6 +87,7 @@ class PageIndex extends React.Component {
 
     const allPages = Object.values(this.props.pages);
     const {firstPage} = this.props;
+    const { placeId } = this.props.match.params;
     const topPages = allPages.filter((e) => e.parent_page_id === null);
 
     return (
@@ -104,7 +106,8 @@ class PageIndex extends React.Component {
               title={page.title}
               page={page}
               // subPages = {page.children}
-              layers="0"
+              layers='1'
+              placeId = {placeId}
               src={page.id === firstPage.id ? window.images.homeIcon : window.images.headerImg}
             />)}
           </section>
