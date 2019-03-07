@@ -13,7 +13,7 @@ const App = () => (
     <Route path="/" component={ NavBarContainer } />
     <Switch>
       <Route exact path="/" component={ PlacesIndexContainer } />
-      <Route path="/places/:placeId/pages" component={ PageIndexContainer } />
+      <Route path="/places/:placeId/pages/:pageId" component={ PageIndexContainer } />
 
       {/* TESTING ROUTES */}
 

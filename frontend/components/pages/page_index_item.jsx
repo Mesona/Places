@@ -20,7 +20,7 @@ class PageIndexItem extends React.Component {
   }
 
   componentDidMount() {
-    this.props.fetchPage(this.props.page.id);
+    // this.props.fetchPage(this.props.page.id);
     this.props.fetchPlaces();
     this.props.fetchPages(this.props.match.params.placeId);
   }
@@ -40,7 +40,11 @@ class PageIndexItem extends React.Component {
   destroyPage(e) {
     e.preventDefault();
     e.stopPropagation();
-    this.props.deletePage(this.props.page.id);
+    if (this.props.page.id === this.props.pageId) {
+      this.props.deletePage(this.props.page.id);
+      this.props.history.push(`/places/${this.props.placeId}/pages/${this.props.thisPlace.pages[0].id}`);
+
+    }
   }
 
 
@@ -59,22 +63,47 @@ class PageIndexItem extends React.Component {
 
   createNewPage(e) {
     e.preventDefault();
-    const { placeId } = this.props.match.params;
-    console.log('CREATING NEW PAGE')
-    console.log(this.props.page.id)
-    console.log('WOO YEAH')
+    const { placeId, page } = this.props.match.params;
+    // const nextPage = Object.values(getState().entitites.pages)[Object.values(getState().entities.pages).length].id + 1;
     let defaultPage = {
       title: 'New Page',
       place_id: placeId,
       parent_page_id: this.props.page.id,
     };
-
     this.props.createPage(defaultPage);
+    // this.forceUpdate();
+    // .then(() => this.props.history.push(`/places/${placeId}/pages/${Object.values(getState().entitites.pages)[Object.values(getState().entities.pages).length].id}`));
+    // this.props.history.push(`/places/${placeId}/pages/${newPageId}`);
+    
+    // this.props.createPage(defaultPage);
+    // const newPageId = Object.values(getState().entitites.pages)[Object.values(getState().entities.pages).length].id;
+    // this.props.history.push(`/places/${placeId}/pages/${newPageId}`);
+
+    // console.log('CREATING NEW PAGE')
+    // console.log(this.props)
+    // console.log('WOO YEAH')
+    // console.log(this.props.pages);
+  }
+
+  componentDidUpdate(prevProps) {
+    if (Object.values(getState().entities.pages).length > Object.values(prevProps.pages).length) {
+      console.log('YEAH');
+      // console.log(this.props.pages);
+      const length = Object.values(this.props.pages).length;
+      const newPageId = Object.values(this.props.pages)[length - 1].id;
+      // console.log(this.props)
+      // console.log(getState().entities.pages)
+      // newPageId = Object.values(getState().entitites.pages)[Object.values(getState().entities.pages).length].id;
+      this.props.history.push(`/places/${this.props.placeId}/pages/${newPageId}`);
+      this.forceUpdate();
+      // this.forceUpdate();
+    }
   }
 
   render () {
-    const {title, id, src, layers, classTitle, placeId } = this.props; 
-    const children = this.props.page.children;
+    const {title, id, src, layers, classTitle, placeId, page } = this.props; 
+    // const children = this.props.page.children;
+    const children = this.props.page === undefined ? '' : this.props.page.children;
 
     let styles = {
       margin: `15px`,
@@ -83,6 +112,7 @@ class PageIndexItem extends React.Component {
     return (
       <ul>
       <li className={classTitle} onClick={this.sendData}>
+        {page ? console.log('page test') : ''}
         <Link to={`/places/${this.props.match.params.placeId}/pages/${this.props.pageId}/`}>
           <img className="page-index-nav-icon" src={src}></img>
           <span className="pages-index-selected">{title}</span>
@@ -102,7 +132,7 @@ class PageIndexItem extends React.Component {
         </Link>
            </li>
            <ul>
-          { children !== undefined ?
+          { children !== undefined && children !== '' ?
             <li style={styles}>
               {children.map(page =>
                 <PageIndexItemContainer

@@ -55,10 +55,10 @@
   justify-content: center;
 }
 
-.page-title:focus {
-  outline: 0;
-  border: 1px solid blue;
-}
+// .page-title:focus {
+//   outline: 0;
+//   border: 1px solid blue;
+// }
 
 .page-title textarea {
   // color: orange;
@@ -117,7 +117,7 @@
   width: 60px;
   position: relative;
   bottom: 0;
-  right: -35%;
+  right: -42%;
 }
 
 .bottom-border {
@@ -159,9 +159,14 @@
 }
 
 .pages-index-selected {
-  color: blue;
+  // color: blue;
   margin-left: 5px;
+  // color: black;
 }
+
+// .pages-index-selected:hover {
+//   color: blue;
+// }
 
 
 
@@ -174,11 +179,29 @@
   height: 25px;
   cursor: pointer;
   margin-left: 20px;
+  padding: 5px;
+  color: black;
+  width: 100%;
 }
 
 .page-index-items a:hover {
   text-decoration: none;
   background: inherit;
+  color: blue;
+}
+
+.page-index-items a {
+  text-decoration: none;
+}
+
+.page-index-items ul li a {
+  text-decoration: none;
+}
+
+.page-index-items:hover {
+  // background: green;
+  // border: 1px solid blue;
+  // border-radius: 10px;
 }
 
 
