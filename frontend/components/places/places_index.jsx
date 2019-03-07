@@ -83,7 +83,7 @@ class PlacesIndex extends React.Component {
           </div>
         </section>
         <section className="places">
-          {(this.state.placeSelection === '' ? this.state.allPlaces : this.state.placeSelection).map(place => <PlaceIndexItemContainer key={place.id} place={place} 
+          {(this.state.placeSelection === '' && this.state.allPlaces !== undefined ? this.state.allPlaces : this.state.placeSelection).map(place => <PlaceIndexItemContainer key={place.id} place={place} 
             monthNames={monthNames} />)}
         </section>
       </main>

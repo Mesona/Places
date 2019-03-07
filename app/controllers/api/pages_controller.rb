@@ -53,7 +53,7 @@ class Api::PagesController < ApplicationController
 
   private
     def page_params
-      params.require(:page).permit(:title, :body, :place_id)
+      params.require(:page).permit(:title, :body, :place_id, :parent_page_id)
     end
 end
 

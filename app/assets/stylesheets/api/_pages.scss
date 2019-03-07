@@ -29,12 +29,35 @@
 .place-name {
   width: 100%;
   display: block;
+  background: none;
+  border: none;
+}
+
+.place-name input {
+  // background: inherit;
+  background: none;
+  border: none;
+  color: white;
+  margin-left: 20px;
+  line-height: 40px;
+}
+
+.place-name input:focus {
+  outline: 0;
+  border-bottom: 1px solid white;
+  // transition: border-bottom 2s;
 }
 
 .page-title {
+  margin-top: 10px;
   display: block;
   display: flex;
   justify-content: center;
+}
+
+.page-title:focus {
+  outline: 0;
+  border: 1px solid blue;
 }
 
 .page-title textarea {
@@ -112,6 +135,17 @@
   margin-bottom: 5px;
 }
 
+.pages-index-body ul {
+  list-style-type: none;
+  margin: 0px;
+  padding: 0px;
+}
+
+.pages-index-body ul li {
+  margin: 0px;
+  padding: 0px;
+}
+
 .pages-index-body img {
   height: 16px;
   width: 16px;
@@ -124,40 +158,22 @@
   vertical-align: top;
 }
 
-// .page-index-items ul {
-//   margin-left: 20px;
-//   background-color: green;
-// }
-
 .pages-index-selected {
   color: blue;
   margin-left: 5px;
 }
 
-.pages-index-dropdown {
-  float: right;
-  opacity: 0;
-  margin-right: 20px;
-  // margin-top: 5px;
-  // margin-bottom: 5px;
-  // background: orange;
-  height: 25px;
-  width: 25px;
-}
 
-.pages-index-dropdown:hover {
-  // border: 1px solid aquamarine;
-  border-radius: 50%;
-}
 
 .page-index-items {
-  margin-bottom: 5px;
+  // margin-bottom: 5px;
   opacity: 100;
   // opacity: 0;
   text-decoration: none;
   display: block;
   height: 25px;
   cursor: pointer;
+  margin-left: 20px;
 }
 
 .page-index-items a:hover {
@@ -166,10 +182,6 @@
 }
 
 
-.page-index-items:hover .pages-index-dropdown {
-  // background: magenta;
-  opacity: 100;
-}
 
 .pages-index-footer {
   position: relative;

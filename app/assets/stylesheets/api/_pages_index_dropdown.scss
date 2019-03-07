@@ -1,17 +1,27 @@
 .pages-index-dropdown {
   font-size: 14px;
   font-family: 'Google Sans';
-  position: relative;
-  // border-radius: 5px;
   border: none;
   cursor: pointer;
-  // padding: 5px;
-  // margin-top: 5px;
+  position: absolute;
+  right: 25px;
+  display: inline-block;
+
+  opacity: 0;
+  height: 25px;
+  width: 25px;
 }
 
 .pages-index-dropdown:hover {
   background: #F5F5F5;
+  border-radius: 50%;
 }
+
+.page-index-items:hover .pages-index-dropdown {
+  // background: magenta;
+  opacity: 100;
+}
+
 
 .pages-index-dropdown:active {
   background: rgb(164, 183, 221);
@@ -65,6 +75,7 @@
   margin-top: 4px;
   // border-radius:5px;
   // padding-left: 10px;
+  position: relative;
 }
 
 // .pages-index-button:before {

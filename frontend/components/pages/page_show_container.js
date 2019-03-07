@@ -3,17 +3,34 @@ import { connect } from 'react-redux';
 import PageShow from './page_show';
 import { fetchPage, fetchPages, updatePage } from '../../actions/pages_actions';
 import { viewState, thisPlace, selectAllPages } from '../../reducers/selectors';
+import { withRouter } from 'react-router-dom';
 
-const mapStateToProps = (state, ownProps) => ({
+const mapStateToProps = (state, ownProps) => {
+  // debugger
+  return ({
   currentUser: state.session.currentUser,
   thesePages: state.entities.pages,
   pages: selectAllPages(state),
   thesePages: selectAllPages(state),
   // places: state.entities.places,
   places: thisPlace(state),
+  thisPlace: state.entities.places[ownProps.match.params.placeId],
   allPages: getState().entities.pages,
   test: getState(),
-});
+  }
+)};
+
+// const mapStateToProps = (state, ownProps) => ({
+//   currentUser: state.session.currentUser,
+//   thesePages: state.entities.pages,
+//   pages: selectAllPages(state),
+//   thesePages: selectAllPages(state),
+//   // places: state.entities.places,
+//   places: thisPlace(state),
+//   thisPlace: state.entities.pages[ownProps.match.params.placeId],
+//   allPages: getState().entities.pages,
+//   test: getState(),
+// });
 
 // const mapStateToProps = (state, ownProps) => {
 //   const defaultPage = {pageTitle: '', pageBody: '', placeTitle: ''};
@@ -36,4 +53,4 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
 
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(PageShow);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(PageShow));

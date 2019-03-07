@@ -45,6 +45,7 @@ class PlaceIndexItem extends React.Component {
   render () {
     const { place, monthNames } = this.props;
     const firstPageId = typeof place.pages === 'undefined' ? '' : place.pages[0].id;
+    // const firstPageId = place === undefined ? '' : place.pages[0].id;
       return (
         <main className="place-index-item-border">
           <Link to={`/places/${place.id}/pages/${firstPageId}`}>

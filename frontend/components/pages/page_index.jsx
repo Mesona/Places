@@ -40,14 +40,6 @@ class PageIndex extends React.Component {
         this.props.history.push(`/places/${placeId}/pages/${newPageId}`);
 
       }
-      // let currentPages = (typeof this.props.entities === 'undefined' ? '' : Object.values(this.props.entities.pages));
-      // let pageLength = (typeof this.props.entities === 'undefined' ? '' : currentPages.length);
-      // let newPageId = (typeof this.props.entities === 'undefined' ? '' : currentPages[pageLength].id);
-      // if ( newPageId !== '' ) {
-      //   this.props.history.push(`/places/${placeId}/pages/${newPageId}`);
-      // }
-      // newPageId === '' ? '' : this.props.history.push(`/places/${placeId}/pages/${newPageId}`);
-      // this.props.history.push(`/places/${placeId}/pages/${newPageId}`);
     }
   }
 
@@ -61,23 +53,6 @@ class PageIndex extends React.Component {
     };
 
     this.props.createPage(defaultPage);
-
-
-
-
-
-
-      // .then(() => setTimeout(this.props.history.push(`/places/${placeId}/pages/${Object.values(this.props.pages)[Object.values(this.props.pages).length].id}`)));
-    // console.log(this.props)
-    // console.log(Object.values(this.props.pages).length)
-    // let pageLength = Object.values(this.props.entities.pages).length;
-    // let newPageId = Object.values(this.props.entities.pages)[pageLength].id;
-    // let newPageId = Object.values(this.props.pages)[Object.values(this.props.pages).length].id;
-    // console.log('BREAK')
-    // console.log(newPageId)
-    // this.props.fetchPages(placeId)
-    //   .then( () => console.log(this.props))
-    //   .then( () => setTimeout(this.props.history.push(`/places/${placeId}/pages/${newPageId}`)), 1000);
   }
 
   render () {
@@ -105,10 +80,10 @@ class PageIndex extends React.Component {
               pageId = {page.id}
               title={page.title}
               page={page}
-              // subPages = {page.children}
               layers='1'
               placeId = {placeId}
               src={page.id === firstPage.id ? window.images.homeIcon : window.images.headerImg}
+              classTitle="page-index-items"
             />)}
           </section>
           <section className="pages-index-footer">

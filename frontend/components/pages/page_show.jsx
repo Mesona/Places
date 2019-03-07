@@ -7,9 +7,11 @@ class PageShow extends React.Component {
     super(props);
 
     this.state = {
-      pageTitle: '',
-      placeTitle: '',
-      pageBody: '',
+      pageTitle: typeof pages === 'undefined' ? "" : pages[thisPageId].title,
+      placeTitle: typeof places === 'undefined' ? "" : places[this.props.match.params.placeId].title,
+      pageBody: typeof pages === 'undefined' ? `` : pages[thisPageId].body,
+      // place: getState().entitites.places[this.props.match.params.placeId],
+      // page: getState().entities.pages[this.props.location.pathname.split('/')[4]],
     };
 
     this.getData = this.getData.bind(this);
@@ -43,24 +45,28 @@ class PageShow extends React.Component {
     const thisPlaceId = this.props.location.pathname.split('/')[2];
 
     const { pages, places } = this.props;
-    console.log(typeof pages[thisPageId] === 'undefined')
+    // console.log(typeof pages[thisPageId] === 'undefined')
     return (
         <section className="page-show">
           <header className="page-show-header" onClick={this.getData}>
             <div className="place-name">
               <input
                 type="string"
-                value={typeof places[0] === 'undefined' ? "" : places[0].title}
+                // value={typeof places[0] === 'undefined' ? "" : getState().entities.places[this.props.match.params.placeId].title}
+                // value={typeof places[0] === 'undefined' ? "" : places[0].title}
                 // name="place[title]"
-                onChange={this.update('placeTitle')}
+                // onChange={this.update('placeTitle')}
+                onChange={() => console.log("change change change")}
                 >
               </input>
             </div>
             <div className="page-title">
               <textarea
-                value={typeof pages[thisPageId] === 'undefined' ? `` : pages[thisPageId].body}
+                value={typeof pages[thisPageId] === 'undefined' ? `` : pages[thisPageId].title}
                 name="title"
-                onChange={this.update('title')}>
+                // onChange={this.update('title')}
+                onChange={() => console.log("change change change")}
+                >
                   {typeof pages[thisPageId] === 'undefined' ? "" : pages[thisPageId].title}
               </textarea>
             </div>
