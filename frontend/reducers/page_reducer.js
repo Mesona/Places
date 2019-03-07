@@ -10,11 +10,8 @@ const PagesReducer = (state = {}, action) => {
   let newState = {};
   switch (action.type) {
     case RECEIVE_PAGES:
-      // newState = merge({}, state, action.pages);
-      // return newState;
       return merge({}, action.pages);
     case RECEIVE_PAGE:
-      // return merge({}, state, {[action.page.pageId]: action.page});
       return merge({}, state, {[action.page.id]: action.page});
     case REMOVE_PAGE:
       newState = merge({}, state);

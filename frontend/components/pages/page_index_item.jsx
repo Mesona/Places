@@ -19,7 +19,11 @@ class PageIndexItem extends React.Component {
 
     return (
       <div className="page-index-items" onClick={this.sendData}>
-        <Link to={`/places/${this.props.match.params.placeId}/pages/${this.props.pageId}/`}><img src={src}></img><span className="pages-index-selected">{title}</span><img className="pages-index-dropdown" src={window.images.hamburgerDots}></img></Link>
+        <Link to={`/places/${this.props.match.params.placeId}/pages/${this.props.pageId}/`}>
+          <img className="page-index-nav-icon" src={src}></img>
+          <span className="pages-index-selected">{title}</span>
+          <div className="pages-index-dropdown"><img src={window.images.hamburgerDots}></img></div>
+        </Link>
       </div>
     );
   };
