@@ -36,8 +36,7 @@ class PageShow extends React.Component {
   }
   
   componentDidUpdate(prevProps) {
-    // if (prevProps.match.params.pageId !== this.props.match.params.pageId) {
-    if (prevProps.location.pathname !== this.props.location.pathname) {
+    if (prevProps.match.params.pageId !== this.props.match.params.pageId) {
       this.props.fetchPage(this.props.match.params.pageId)
       .then((response) => this.setState({
         page: response.page,

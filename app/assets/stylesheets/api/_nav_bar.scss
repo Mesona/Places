@@ -1,14 +1,9 @@
 .nav-sticky {
-  // position: fixed;
-  // top: 0;
   border-bottom: 1px solid #DADCE0;
-  
-
 }
 
 .nav-bar {
   display: flex;
-  // border: 2px solid black;
   position: sticky;
   top: 0;
   margin-top: -25px;
@@ -47,7 +42,6 @@
   
   .logo {
     width: 15%;
-    // border: 2px solid green;
     text-align: center;
     vertical-align: middle;
     display: flex;
@@ -61,9 +55,6 @@
     .logo-button:hover {
       cursor: pointer;
       background: inherit;
-      // background-color: #f6f7fc;
-      // transition: box-shadow 0.5s, background-color 0.5s;
-      // transition: background-color 0.5s;
     }
     
     
@@ -76,22 +67,14 @@
     
     p {
       font-size: 20px;
-      // font-family: 'Raleway', sans-serif;
       color: rgba(0, 0, 0, 0.54);
-      // font-weight: bold;
       text-decoration: none;
       padding-bottom: -5px;
     }
   }
   .nav-display {
     width: 85%;
-    // border: 2px solid green;
     display: flex;
     justify-content: flex-end;
-
-    .login-logout-options {
-      // border: 2px solid orange;
-    }
   }
-
 }

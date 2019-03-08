@@ -6,6 +6,10 @@ class Footer extends React.Component {
   constructor(props) {
     super(props);
 
+    this.state = {
+      renderedErrors: false,
+    };
+
     this.makeNewPlace = this.makeNewPlace.bind(this);
 
   }
@@ -16,6 +20,11 @@ class Footer extends React.Component {
 
   makeNewPlace (e) {
     e.preventDefault();
+    // if (this.props.errors.places !== []) {
+    //   setTimeout(() => this.state.renderedErrors = false, 500);
+    // }
+    this.state.renderedErrors = true;
+    setTimeout(() => this.state.renderedErrors = false, 500);
     if (this.props.currentUser) {
       const { places } = this.props;
       const newPlaceLength = Object.keys(places).length;
@@ -32,12 +41,13 @@ class Footer extends React.Component {
       };
       this.props.createPlace(this.state)
         .then(() => this.props.createPage(defaultPage))
-        .then((response) => this.props.history.push(`/places/${newPlaceId}/pages/${response.page.id}`))
-
-      // const newPageId = this.props.places[newPlaceLength - 1].pages[0].id;
-      // this.props.history.push(`/places/${newPlaceId}/pages/${newPageId}`); 
+        .then((response) => this.props.history.push(`/places/${newPlaceId}/pages/${response.page.id}`));
     } else {
+      // this.state.renderedErrors = true;
       this.props.receiveErrors(["You must be signed in to create new Places!"]);
+    }
+    if (this.props.errors !== []) {
+      setTimeout(() => this.state.renderedErrors = false, 500);
     }
   }
 
@@ -45,7 +55,7 @@ class Footer extends React.Component {
     return(
       <ul>
         <li>
-          <span className="fading">{this.props.errors[0]}</span>
+          <span className={this.state.renderedErrors ? 'fading' : ''}>{this.props.errors[0]}</span>
         </li>
       </ul>
     );
@@ -58,8 +68,6 @@ class Footer extends React.Component {
   }
 
   render () {
-    const { currentUser } = this.props;
-
     return (
       <footer className="footer">
         <section className="promo-links">
@@ -78,7 +86,6 @@ class Footer extends React.Component {
         </section>
       </footer>
     );
-
   }
 };
 

@@ -10,6 +10,7 @@ class SessionForm extends React.Component {
       email: this.props.user.email,
       password: this.props.user.password,
       active: false,
+      renderedErrors: false,
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -27,7 +28,6 @@ class SessionForm extends React.Component {
   }
 
   demoLogin() {
-    
     const emailArray = this.state.email.split('');
     const passwordArray = this.state.password.split('');
     this.state.email = '';
@@ -65,9 +65,13 @@ class SessionForm extends React.Component {
 
   handleSubmit (e) {
     e.preventDefault();
+    this.state.renderedErrors = true;
     const user = Object.assign({}, this.state);
     this.setState({currentUser: user});
     this.props.processForm(user).then(this.props.closeModal);
+    if (this.props.errors.session !== []) {
+      setTimeout(() => this.state.renderedErrors = false, 500);
+    }
   }
 
   renderErrors() {
@@ -75,7 +79,7 @@ class SessionForm extends React.Component {
     return(
       <ul>
         <li>
-          <span className="fading">{this.props.errors[0]}</span>
+          <span className={this.state.renderedErrors ? 'fading' : ''}>{this.props.errors[0]}</span>
         </li>
         {/* {this.props.errors.map((error, i) => (
           <li className="fading" key={`error-${i}`}>

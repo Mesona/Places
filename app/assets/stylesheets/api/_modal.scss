@@ -25,7 +25,6 @@
 }
 
 .modal-title {
-  // text-transform: uppercase;
   font-size: 26px;
   margin: 0 auto;
   width: 100%;
@@ -83,39 +82,35 @@ input {
   transition: box-shadow 0.5s;
 }
 
+.other-form-button {
+  position: absolute;
+  bottom: 63px;
+  left: 40px;
+}
 
+.other-form-button:hover {
+  border-radius: 8px;
+  background: #F6FAFE;
+  transition: 1s;
 
+}
 
-    .other-form-button {
-      position: absolute;
-      bottom: 63px;
-      left: 40px;
-    }
+.other-form-button:focus {
+  outline: 0;
+}
 
-    .other-form-button:hover {
-      border-radius: 8px;
-      background: #F6FAFE;
-      transition: 1s;
+.other-button {
+  border: none;
+  background-color: inherit;
+  font-size: 16px;
+  color: rgb(32, 109, 209);
+  padding: 10px;
+  border-radius: 4px;
+}
 
-    }
-
-    .other-form-button:focus {
-      outline: 0;
-    }
-
-    .other-button {
-      border: none;
-      background-color: inherit;
-      font-size: 16px;
-      color: rgb(32, 109, 209);
-      padding: 10px;
-      border-radius: 4px;
-
-    }
-
-    .other-button:focus {
-      outline: 0;
-    }
+.other-button:focus {
+  outline: 0;
+}
 
 
 .login-form-box {
@@ -123,7 +118,6 @@ input {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  
 }
 
 .login-form-box section {
@@ -135,10 +129,3 @@ input {
   cursor: text;
 }
 
-
-// .drop-layer {
-
-// }
-
-
-  // .placeholder::placeholder {
