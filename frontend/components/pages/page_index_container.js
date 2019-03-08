@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import PageIndex from './page_index';
 import { fetchPages, deletePage, createPage, fetchPage } from '../../actions/pages_actions';
+import { withRouter } from 'react-router-dom';
 
 const mapStateToProps = (state, ownProps) => ({
   currentUser: state.session.currentUser,
@@ -23,4 +24,4 @@ const mapDispatchToProps = dispatch => ({
   createPage: (page) => dispatch(createPage(page)),
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(PageIndex);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(PageIndex));

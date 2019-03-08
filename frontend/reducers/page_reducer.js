@@ -2,6 +2,7 @@ import {
   RECEIVE_PAGES,
   RECEIVE_PAGE,
   REMOVE_PAGE,
+  RESET_PAGES,
 } from '../actions/pages_actions';
 import merge from 'lodash/merge';
 
@@ -17,6 +18,8 @@ const PagesReducer = (state = {}, action) => {
       newState = merge({}, state);
       delete newState[action.pageId];
       return newState;
+    case RESET_PAGES:
+      return {};
     default:
       return state;
   }

@@ -31,10 +31,11 @@ class Footer extends React.Component {
         place_id: newPlaceId,
       };
       this.props.createPlace(this.state)
-        .then(() => this.props.createPage(defaultPage));
+        .then(() => this.props.createPage(defaultPage))
+        .then((response) => this.props.history.push(`/places/${newPlaceId}/pages/${response.page.id}`))
 
-      const newPageId = this.props.places[newPlaceLength - 1].pages[0].id;
-      this.props.history.push(`/places/${newPlaceId}/pages/${newPageId}`); 
+      // const newPageId = this.props.places[newPlaceLength - 1].pages[0].id;
+      // this.props.history.push(`/places/${newPlaceId}/pages/${newPageId}`); 
     } else {
       this.props.receiveErrors(["You must be signed in to create new Places!"]);
     }

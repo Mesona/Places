@@ -15,7 +15,7 @@ class PageIndex extends React.Component {
   getData () {
     // console.log(this.state);
     // console.log("STATE ^ PROPS BELOW");
-    // console.log(this.props);
+    console.log(this.props);
     // console.log(Object.values(this.props.pages)[Object.values(this.props.pages).length - 1].id);
     // console.log("PAGE INFO");
     // console.log(this.props.firstPage.id);
@@ -66,7 +66,7 @@ class PageIndex extends React.Component {
     allPagesTest.unshift(this.props.firstPage);
 
     const allPages = Object.values(this.props.pages);
-    const {firstPage} = this.props;
+    const { firstPage } = this.props;
     const { placeId } = this.props.match.params;
     const topPages = allPages.filter((e) => e.parent_page_id === null);
 
@@ -85,8 +85,9 @@ class PageIndex extends React.Component {
               pageId = {page.id}
               title={page.title}
               page={page}
-              layers='1'
+              // layers='1'
               placeId = {placeId}
+              firstPage = {this.props.firstPage}
               src={page.id === firstPage.id ? window.images.homeIcon : window.images.headerImg}
               classTitle="page-index-items"
             />)}

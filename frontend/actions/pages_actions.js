@@ -5,6 +5,7 @@ export const RECEIVE_PAGE = `RECEIVE_PAGE`;
 export const CREATE_PAGE = `CREATE_PAGE`;
 export const REMOVE_PAGE = `REMOVE_PAGE`;
 export const RECEIVE_PAGE_ERRORS = `RECEIVE_PAGE_ERRORS`;
+export const RESET_PAGES = `RESET_PAGES`;
 
 const receivePages = pages => ({
   type: RECEIVE_PAGES,
@@ -19,6 +20,10 @@ const receivePage = page => ({
 const removePage = pageId => ({
   type: REMOVE_PAGE,
   pageId,
+});
+
+export const resetPages = () => ({
+  type: RESET_PAGES,
 });
 
 export const receiveErrors = errors => ({

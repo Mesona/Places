@@ -20,6 +20,7 @@ class PlacesIndex extends React.Component {
 
   componentDidMount() {
     this.props.fetchPlaces();
+    this.props.resetPages();
   }
 
   showDropdownMenu(e) {

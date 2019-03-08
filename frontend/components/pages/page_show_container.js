@@ -13,6 +13,7 @@ const mapStateToProps = (state, ownProps) => {
   pages: selectAllPages(state),
   thisPlace: state.entities.places[ownProps.match.params.placeId],
   thisPage: state.entities.pages[ownProps.match.params.pageId],
+  // location: ownProps.url,
   // placeTitle: Object.values(state.entities.places[ownProps.match.params.placeId]).title,
   }
 )};

@@ -63,8 +63,8 @@ class PlaceIndexItem extends React.Component {
               <img src={window.images.miniDoc} className="mini-doc"></img>
               <span className={place.private === true ? 'place-index-item-hidden' : ''}><img src={window.images.sharedImg} className="mini-shared-img"></img></span>
               <span className="mini-updated-at">
-                {monthNames[(place.updated_at.slice(8, 10) % 12)].slice(0, 3)}&nbsp;
-                {place.updated_at.slice(5, 7)},&nbsp;
+                {monthNames[(place.updated_at.slice(5, 7) % 12)].slice(0, 3)}&nbsp;
+                {place.updated_at.slice(8, 10)},&nbsp;
                 {place.updated_at.slice(0, 4)}
               </span>
               <span className={this.props.currentUser ===  null ? "place-index-item-hidden" : this.props.currentUser.id === this.props.place.owner_id ?  "places-hamburger-dropdown" : "place-index-item-hidden"}>

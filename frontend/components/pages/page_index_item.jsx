@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, withRouter } from 'react-router-dom';
+import { NavLink, withRouter } from 'react-router-dom';
 import PageIndexItemContainer from './page_index_item_container';
 import { fetchPage } from '../../actions/pages_actions';
 
@@ -38,8 +38,13 @@ class PageIndexItem extends React.Component {
     if (this.props.currentUser.id === this.props.thisPlace.owner_id) {
         // || this.props.currentUser.id === this.props.pages[this.props.match.params.pageId].owner_id) {
       if (this.props.page.id === this.props.pageId) {
+        let parent = this.props.page.parent_page_id === null ? this.props.firstPage.id : this.props.page.parent_page_id;
+        // console.log(parent)
         this.props.deletePage(this.props.page.id)
-          .then(() => this.props.history.push(`/places/${this.props.placeId}/pages/${this.props.thisPlace.pages[0].id}`));
+          // .then(() => this.props.history.push(`/places/${this.props.placeId}/pages/${this.props.thisPlace.pages[0].id}`));
+          .then(() => this.props.history.push(`/places/${this.props.placeId}/pages/${parent}`))
+          .then(() => this.forceUpdate());
+          // .then((response) => console.log(response))
         // let firstPage = Object.values(this.props.thisPlace).pages[0];
         // this.props.history.push(`/places/${this.props.placeId}/pages/${firstPage}`);
   
@@ -71,7 +76,8 @@ class PageIndexItem extends React.Component {
       parent_page_id: this.props.page.id,
     };
     this.props.createPage(defaultPage)
-      .then((response) => console.log(response));
+      // .then((response) => console.log(response))
+      .then((response) => this.props.history.push(`/places/${this.props.placeId}/pages/` + response.page.id));
   }
 
   componentDidUpdate(prevProps) {
@@ -85,33 +91,34 @@ class PageIndexItem extends React.Component {
   }
 
   render () {
-    const {title, id, src, layers, classTitle, placeId, page } = this.props; 
+    const {title, id, src, layers, classTitle, placeId, firstPage } = this.props; 
     const children = this.props.page === undefined ? '' : this.props.page.children;
 
     let styles = {
       margin: `15px`,
     };
-
+    const disableClass = this.props.currentUser === null ? 'hamburger-disabled' : '';
+    
     return (
       <ul>
       <li className={classTitle} onClick={this.sendData}>
-        <Link to={`/places/${this.props.match.params.placeId}/pages/${this.props.pageId}/`}>
+        <NavLink to={`/places/${this.props.match.params.placeId}/pages/${this.props.pageId}`}>
           <img className="page-index-nav-icon" src={src}></img>
           <span className="pages-index-selected">{title}</span>
-          <div className="pages-index-dropdown" onClick={this.showDropdownMenu}>
+          <div className={`pages-index-dropdown ${disableClass}`} onClick={this.showDropdownMenu}>
             <div >
-              <img className="pages-index-button" src={window.images.hamburgerDots}></img></div>
+              <img className={`pages-index-button`} src={window.images.hamburgerDots}></img></div>
               { this.state.displayMenu ? (
                 <ul>
                   <li onClick={this.createNewPage}><img src={window.images.headerImg} />Add Subpage</li>
-                  <li onClick={this.sendData}><img src={window.images.headerImg} />Specs</li>
-                  <li onClick={this.destroyPage}><img src={window.images.trashIcon} />Remove</li>
+                  {/* <li onClick={this.sendData}><img src={window.images.headerImg} />Specs</li> */}
+                  {currentUser.id === this.props.thisPlace.owner_id ? <li onClick={this.destroyPage}><img src={window.images.trashIcon} />Remove</li> : null }
                 </ul>
               ) : (
                 null
                 )}
            </div>
-        </Link>
+        </NavLink>
            </li>
            <ul>
           { children !== undefined && children !== '' ?
