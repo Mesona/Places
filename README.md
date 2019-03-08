@@ -1,24 +1,111 @@
-# README
+# PLACES
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+[Live demo](https://full-stack-places.herokuapp.com/#/)
 
-Things you may want to cover:
 
-* Ruby version
+## Features
 
-* System dependencies
+* Create public or private Places
 
-* Configuration
+* Create, update, delete Pages within Places
 
-* Database creation
+* View public Places
 
-* Database initialization
+* Switch privacy options on Places
 
-* How to run the test suite
+* Filter Places by different criteria
 
-* Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
+### Main Page
 
-* ...
+The main page displays, by default, all publicly viewable Places.  This is done by creating a component that is rendered for each item within the Place database.  But once a user logs in, they can filter Places between a few different options.  This is accomplished by three pieces of code.
+
+The first piece of code is a dropdown that calls `updateIndex()`.  The main page defaults to showing `allPlaces` but allows the other filters to be selected. 
+```javascript
+<div className="places-sort-button">{this.state.currentDisplay}
+  { this.state.displayMenu ? (
+    <ul>
+      <li onClick={(e) => this.updateIndex('allPlaces')}>Owned by anyone</li>
+      <li onClick={(e) => this.updateIndex('myPlaces')}>Owned by me</li>
+      <li onClick={(e) => this.updateIndex('otherPlaces')}>Not owned by me</li>
+    </ul>
+  ) : (
+    null
+  )}
+</div>
+```
+
+The second piece of code is a simple switch statement that is passed in the change, and makes the state updates accordingly. 
+
+```javascript
+updateIndex(target) {
+  switch (target) {
+    case 'allPlaces':
+      this.state.currentDisplay = 'Owned by anyone';
+      this.state.placeSelection = this.state.allPlaces;
+      break;
+    case 'myPlaces':
+      this.state.currentDisplay = 'Owned by me';
+      this.state.placeSelection = this.props.myPlaces;
+      break;
+    case 'otherPlaces':
+      this.state.currentDisplay = 'Not owned by me';
+      this.state.placeSelection = this.props.otherPlaces;
+      break;
+  }
+}
+```
+
+The final piece to this is the actual rendering of the component.
+
+```javascript
+<section className="places">
+  {(
+    this.state.placeSelection === '' && this.state.allPlaces !== undefined ?
+      this.state.allPlaces : this.state.placeSelection).map(place => <PlaceIndexItemContainer
+        key={place.id}
+        place={place}
+        monthNames={monthNames}
+      />
+  )}
+</section>
+```
+
+
+A fun piece of CSS styling I like can be seen here, or viewed on the Login/Signup pages:
+
+Moving Placeholder Text:
+![moving placeholder text](https://github.com/mesona/places/app/assets/javascripts/images/readme/moving_placeholder_text.png "moving placeholder text")
+
+This was accomplished by setting text that mimics the standard placeholder text, because actual placeholder text cannot be moved outside of its input field.  The span field reads from the state to see if a `.placeholderText` styling should be applied, but is otherwise just text.
+
+```javascript
+<section className="descriptor-div">
+  <span  className={this.state.active === 'password' ? 'placeholderText' : this.state.password === '' ? '' : 'hidden'}>Password</span>
+</section>
+```
+
+The input itself has an `onClick` handler to set the currently active state.
+
+```javascript
+<input
+  type="text"
+  value={this.state.email}
+  onChange={this.handleInput('email')}
+  onClick={()=>{this.setState({active: 'email'})}}
+/>
+```
+
+And this is the CSS that moves the fake placeholder text into the top left section of the input field.
+
+```css
+.placeholderText {
+  position: relative;
+  top: -24px;
+  font-size: 14px;
+  color: #2276E4;
+  background: white;
+  padding: 3px;
+}
+```
+

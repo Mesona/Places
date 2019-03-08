@@ -27,7 +27,10 @@ class PageIndex extends React.Component {
     if (prevState.otherPages.length > this.props.otherPages.length ) {
       this.props.fetchPages(this.props.match.params.placeId);
       // this.forceUpdate();
-    }
+    } // STILL NEED TO FIX SUBPAGE AUTOMATIC RENAME REFRESH
+    // if (prevState.otherPages !== this.props.otherPages ) {
+    //   this.props.fetchPages(this.props.match.params.placeId);
+    // }
   }
 
   createNewPage(e) {
