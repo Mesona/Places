@@ -3,14 +3,12 @@ import { connect } from 'react-redux';
 import PageIndexItem from './page_index_item';
 import { fetchPage, fetchPages, deletePage, createPage } from '../../actions/pages_actions';
 import { fetchPlaces } from '../../actions/places_actions';
-// import { pageChildren } from '../../reducers/selectors';
 import { withRouter } from 'react-router-dom';
 
 const mapStateToProps = (state, ownProps) => ({
   children: ownProps.children,
   pages: state.entities.pages,
-  // childrenTest: pageChildren(state, ownProps.pageId),
-  // thisPlace: state.entities.places === undefined ? state.entities.places[ownProps.match.params.placeId] : '',
+  currentUser: state.session.currentUser,
   thisPlace: state.entities.places[ownProps.match.params.placeId],
 });
 

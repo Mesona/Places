@@ -7,36 +7,55 @@ class PageShow extends React.Component {
     super(props);
 
     this.state = {
-      pageTitle: typeof pages === 'undefined' ? "" : pages[thisPageId].title,
-      placeTitle: typeof places === 'undefined' ? "" : places[this.props.match.params.placeId].title,
-      pageBody: typeof pages === 'undefined' ? `` : pages[thisPageId].body,
-      // place: getState().entitites.places[this.props.match.params.placeId],
-      // page: getState().entities.pages[this.props.location.pathname.split('/')[4]],
+      page: {title: ''},
+      place: {title: '', body: ''},
     };
 
     this.getData = this.getData.bind(this);
     // this.handleChange = this.handleChange.bind(this);
     this.update = this.update.bind(this);
+    this.sendUpdate = this.sendUpdate.bind(this);
   }
 
   getData () {
     console.log(this.props);
-    console.log("Props ^ specs BELOW");
-    // console.log(this.props.places[175].id)
+    console.log('PROPS ABOVE STATE BELOW');
     console.log(this.state);
   }
 
   componentDidMount() {
     const thisPageId = this.props.location.pathname.split('/')[4];
     const thisPlaceId = this.props.location.pathname.split('/')[2];
-    this.props.fetchPage(thisPageId);
-    this.props.fetchPlace(thisPlaceId);
+    this.props.fetchPage(thisPageId)
+      // .then((response) => console.error(response))
+      .then((response) => this.setState({
+        page: response.page,
+      }));
+    this.props.fetchPlace(thisPlaceId)
+      // .then((response) => console.log(response));
+      .then((response) => this.setState({
+        place: response.place,
+      }));
   }
 
   update(field) {
     return (e) => {
       this.setState({[field]: e.currentTarget.value});
+      document.addEventListener('click', this.sendUpdate);
     };
+  }
+
+  sendUpdate() {
+    let updatedPlace = this.props.thisPlace;
+    updatedPlace.title = this.state.placeTitle;
+    
+    let updatedPage = this.props.thisPage;
+    updatedPage.title = this.state.pageTitle;
+    updatedPage.body = this.state.pageBody;
+
+    document.removeEventListener('click', this.sendUpdate);
+    this.props.updatePlace(updatedPlace);
+    this.props.updatePage(updatedPage);
   }
 
 
@@ -45,34 +64,36 @@ class PageShow extends React.Component {
     const thisPlaceId = this.props.location.pathname.split('/')[2];
 
     const { pages, places } = this.props;
-    // console.log(typeof pages[thisPageId] === 'undefined')
+    // console.warn(this.props)
+
     return (
         <section className="page-show">
           <header className="page-show-header" onClick={this.getData}>
             <div className="place-name">
               <input
                 type="string"
-                // value={typeof places[0] === 'undefined' ? "" : getState().entities.places[this.props.match.params.placeId].title}
-                // value={typeof places[0] === 'undefined' ? "" : places[0].title}
-                // name="place[title]"
-                // onChange={this.update('placeTitle')}
-                onChange={() => console.log("change change change")}
+                value={this.state.place.title}
+                name="placeTitle"
+                onChange={this.update('placeTitle')}
                 >
               </input>
             </div>
             <div className="page-title">
               <textarea
-                value={typeof pages[thisPageId] === 'undefined' ? `` : pages[thisPageId].title}
-                name="title"
-                // onChange={this.update('title')}
-                onChange={() => console.log("change change change")}
+                // value={typeof pages[thisPageId] === 'undefined' ? `` : pages[thisPageId].title}
+                value={this.state.page.title}
+                name="pageTitle"
+                onChange={this.update('pageTitle')}
+                // onChange={() => console.log("change change change")}
                 >
                   {typeof pages[thisPageId] === 'undefined' ? "" : pages[thisPageId].title}
               </textarea>
             </div>
           </header>
           <section className="page-show-body">
-            {this.state.pageBody}
+            <textarea
+            value={this.state.page.body}
+            ></textarea>
           </section>
         </section>
     )

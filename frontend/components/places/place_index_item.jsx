@@ -44,7 +44,11 @@ class PlaceIndexItem extends React.Component {
 
   render () {
     const { place, monthNames } = this.props;
-    const firstPageId = typeof place.pages === 'undefined' ? '' : place.pages[0].id;
+    // let firstPageId = this.props.place ? Object.values(this.props.place).pages[0].id : "";
+    // const firstPageId = typeof place.pages === 'undefined' ? '' : firstPage;
+    const pageIdArray = typeof place.pages === 'undefined' ? '' : place.pages.map((e) => e.id);
+    const firstPageId = Math.min(...pageIdArray);
+    // debugger
     // const firstPageId = place === undefined ? '' : place.pages[0].id;
       return (
         <main className="place-index-item-border">

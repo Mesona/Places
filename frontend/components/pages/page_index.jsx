@@ -14,15 +14,15 @@ class PageIndex extends React.Component {
 
   getData () {
     // console.log(this.state);
-    console.log("STATE ^ PROPS BELOW");
-    console.log(this.props);
+    // console.log("STATE ^ PROPS BELOW");
+    // console.log(this.props);
     // console.log(Object.values(this.props.pages)[Object.values(this.props.pages).length - 1].id);
-    console.log("PAGE INFO");
+    // console.log("PAGE INFO");
     // console.log(this.props.firstPage.id);
   }
 
   componentDidMount() {
-    this.props.fetchPlaces();
+    // this.props.fetchPlaces();
     this.props.fetchPages(this.props.match.params.placeId);
   }
 
@@ -33,10 +33,10 @@ class PageIndex extends React.Component {
       if (this.props.entities && this.props.entites.pages) {
         const currentPages = Object.values(this.props.entities.pages);
         const newPageId = currentPages[currentPages.Length].id;
-        console.log('START')
-        console.log(currentPages)
-        console.log(newPageId)
-        console.log('end')
+        // console.log('START')
+        // console.log(currentPages)
+        // console.log(newPageId)
+        // console.log('end')
         this.props.history.push(`/places/${placeId}/pages/${newPageId}`);
 
       }
@@ -46,13 +46,18 @@ class PageIndex extends React.Component {
   createNewPage(e) {
     e.preventDefault();
     const { placeId } = this.props.match.params;
-    console.log(placeId)
+    // console.log(placeId)
     let defaultPage = {
       title: 'New Page',
       place_id: placeId,
     };
 
     this.props.createPage(defaultPage);
+  }
+
+  componentWillUnmount() {
+    // this.props.pages = {};
+    // this.props.fetchPages(0);
   }
 
   render () {

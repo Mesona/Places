@@ -55,6 +55,10 @@
   justify-content: center;
 }
 
+.page-title textarea { 
+  resize: none;
+}
+
 // .page-title:focus {
 //   outline: 0;
 //   border: 1px solid blue;
