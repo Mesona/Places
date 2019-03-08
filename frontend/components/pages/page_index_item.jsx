@@ -23,31 +23,19 @@ class PageIndexItem extends React.Component {
     this.props.fetchPages(this.props.match.params.placeId);
   }
 
-  componentWillUnmount() {
-    // this.props.fetchPages([]);
-  }
 
   sendData(e) {
-    // console.log('ITEMS DATA')
-    // console.log(this.props)
   }
 
   destroyPage(e) {
     e.preventDefault();
     e.stopPropagation();
     if (this.props.currentUser.id === this.props.thisPlace.owner_id) {
-        // || this.props.currentUser.id === this.props.pages[this.props.match.params.pageId].owner_id) {
       if (this.props.page.id === this.props.pageId) {
         let parent = this.props.page.parent_page_id === null ? this.props.firstPage.id : this.props.page.parent_page_id;
-        // console.log(parent)
         this.props.deletePage(this.props.page.id)
-          // .then(() => this.props.history.push(`/places/${this.props.placeId}/pages/${this.props.thisPlace.pages[0].id}`));
           .then(() => this.props.history.push(`/places/${this.props.placeId}/pages/${parent}`))
           .then(() => this.forceUpdate());
-          // .then((response) => console.log(response))
-        // let firstPage = Object.values(this.props.thisPlace).pages[0];
-        // this.props.history.push(`/places/${this.props.placeId}/pages/${firstPage}`);
-  
       }
 
     }
@@ -76,22 +64,19 @@ class PageIndexItem extends React.Component {
       parent_page_id: this.props.page.id,
     };
     this.props.createPage(defaultPage)
-      // .then((response) => console.log(response))
-      .then((response) => this.props.history.push(`/places/${this.props.placeId}/pages/` + response.page.id));
+      .then((response) => this.props.history.push(`/places/${this.props.placeId}/pages/` + response.page.id))
+      .then(() => this.props.fetchPages(this.props.match.params.placeId));
   }
 
-  componentDidUpdate(prevProps) {
-    if (Object.values(getState().entities.pages).length > Object.values(prevProps.pages).length) {
-      // console.log('YEAH');
-      const length = Object.values(this.props.pages).length;
-      const newPageId = Object.values(this.props.pages)[length - 1].id;
-      // this.props.history.push(`/places/${this.props.placeId}/pages/${newPageId}`);
-      // this.forceUpdate();
-    }
-  }
+  // componentDidUpdate(prevProps) {
+  //   if (Object.values(getState().entities.pages).length > Object.values(prevProps.pages).length) {
+  //     const length = Object.values(this.props.pages).length;
+  //     const newPageId = Object.values(this.props.pages)[length - 1].id;
+  //   }
+  // }
 
   render () {
-    const {title, id, src, layers, classTitle, placeId, firstPage } = this.props; 
+    const {title, src, classTitle, placeId, } = this.props; 
     const children = this.props.page === undefined ? '' : this.props.page.children;
 
     let styles = {
@@ -112,7 +97,7 @@ class PageIndexItem extends React.Component {
                 <ul>
                   <li onClick={this.createNewPage}><img src={window.images.headerImg} />Add Subpage</li>
                   {/* <li onClick={this.sendData}><img src={window.images.headerImg} />Specs</li> */}
-                  {currentUser.id === this.props.thisPlace.owner_id ? <li onClick={this.destroyPage}><img src={window.images.trashIcon} />Remove</li> : null }
+                  {this.props.currentUser.id === this.props.thisPlace.owner_id ? <li onClick={this.destroyPage}><img src={window.images.trashIcon} />Remove</li> : null }
                 </ul>
               ) : (
                 null

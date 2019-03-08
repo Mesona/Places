@@ -20,6 +20,7 @@ const mapStateToProps = (state, ownProps) => ({
 const mapDispatchToProps = dispatch => ({
   fetchPlaces: () => dispatch(fetchPage()),
   fetchPages: (id) => dispatch(fetchPages(id)),
+  fetchPage: (id) => dispatch(fetchPage(id)),
   deletePage: id => dispatch(deletePage(id)),
   createPage: (page) => dispatch(createPage(page)),
 });
