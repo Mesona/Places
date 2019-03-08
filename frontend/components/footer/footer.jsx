@@ -18,6 +18,10 @@ class Footer extends React.Component {
     this.props.fetchPlaces();
   }
 
+  componentWillUnmount() {
+    this.props.receiveErrors([]);
+  }
+
   makeNewPlace (e) {
     e.preventDefault();
     // if (this.props.errors.places !== []) {

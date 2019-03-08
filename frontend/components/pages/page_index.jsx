@@ -13,6 +13,7 @@ class PageIndex extends React.Component {
   }
 
   getData () {
+    console.log(this.props)
   }
 
   componentDidMount() {
@@ -21,7 +22,11 @@ class PageIndex extends React.Component {
 
   componentDidUpdate(prevState) {
     if (prevState.location !== this.props.location) {
-      this.props.fetchPage(this.props.match.params.pageId)
+      this.props.fetchPage(this.props.match.params.pageId);
+    }
+    if (prevState.otherPages.length > this.props.otherPages.length ) {
+      this.props.fetchPages(this.props.match.params.placeId);
+      // this.forceUpdate();
     }
   }
 
@@ -33,18 +38,19 @@ class PageIndex extends React.Component {
       place_id: placeId,
     };
 
-    this.props.createPage(defaultPage);
+    this.props.createPage(defaultPage)
+      .then((response) => this.props.history.push(`/places/${this.props.match.params.placeId}/pages/` + response.page.id));
   }
 
   render () {
 
-    const allPagesTest = this.props.otherPages;
-    allPagesTest.unshift(this.props.firstPage);
+    // const allPagesTest = this.props.otherPages;
+    // allPagesTest.unshift(this.props.firstPage);
 
     const allPages = Object.values(this.props.pages);
+    const topPages = allPages.filter((e) => e.parent_page_id === null);
     const { firstPage } = this.props;
     const { placeId } = this.props.match.params;
-    const topPages = allPages.filter((e) => e.parent_page_id === null);
 
     return (
       <main className="page">

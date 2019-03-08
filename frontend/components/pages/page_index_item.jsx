@@ -31,25 +31,22 @@ class PageIndexItem extends React.Component {
   destroyPage(e) {
     e.preventDefault();
     e.stopPropagation();
-    if (this.props.currentUser.id === this.props.thisPlace.owner_id) {
-      if (this.props.page.id === this.props.pageId) {
-        if (this.props.firstPage.id === this.props.pageId) {
-          this.props.deletePage(this.props.page.id)
-          .then(() => this.props.history.push(`/places/${this.props.placeId}/pages/${this.props.pages[1].id}`))
+    if (this.props.page.id === this.props.pageId) {
+      if (this.props.firstPage.id === this.props.pageId) {
+        this.props.deletePage(this.props.page.id)
+        .then(() => this.props.history.push(`/places/${this.props.placeId}/pages/${this.props.pages[1].id}`))
+        // .then(() => this.forceUpdate())
+        // .then(() => this.props.history.push(`/places/${this.props.placeId}/pages/${Object.values(this.props.thisPlace).pages[0].id}`))
+        // .then(() => this.props.history.push(`/places/${this.props.placeId}/pages/${parent}`))
+
+      } else {
+        let parent = this.props.page.parent_page_id === null ? this.props.firstPage.id : this.props.page.parent_page_id;
+        this.props.deletePage(this.props.page.id)
+          // .then(() => this.props.history.push(`/places/${this.props.placeId}/pages/${this.props.pages[1].id}`))
           // .then(() => this.props.history.push(`/places/${this.props.placeId}/pages/${Object.values(this.props.thisPlace).pages[0].id}`))
-          // .then(() => this.props.history.push(`/places/${this.props.placeId}/pages/${parent}`))
-          // .then(() => this.forceUpdate())
-
-        } else {
-          let parent = this.props.page.parent_page_id === null ? this.props.firstPage.id : this.props.page.parent_page_id;
-          this.props.deletePage(this.props.page.id)
-            // .then(() => this.props.history.push(`/places/${this.props.placeId}/pages/${this.props.pages[1].id}`))
-            // .then(() => this.props.history.push(`/places/${this.props.placeId}/pages/${Object.values(this.props.thisPlace).pages[0].id}`))
-            .then(() => this.props.history.push(`/places/${this.props.placeId}/pages/${parent}`))
-            .then(() => this.forceUpdate());
-        }
+          .then(() => this.props.history.push(`/places/${this.props.placeId}/pages/${parent}`))
+          // .then(() => this.forceUpdate());
       }
-
     }
   }
 
@@ -80,12 +77,16 @@ class PageIndexItem extends React.Component {
       .then(() => this.props.fetchPages(this.props.match.params.placeId));
   }
 
-  // componentDidUpdate(prevProps) {
-  //   if (Object.values(getState().entities.pages).length > Object.values(prevProps.pages).length) {
-  //     const length = Object.values(this.props.pages).length;
-  //     const newPageId = Object.values(this.props.pages)[length - 1].id;
-  //   }
-  // }
+  componentDidUpdate(prevProps) {
+    // if (prevProps.match.params.pageId !== this.props.match.params.pageId) {
+    //   this.props.fetchPages(this.props.thisPlace.id)
+    // }
+    // console.log('UPDATE')
+    // console.log(this.props)
+    // if (prevProps.thisPage.title !== this.props.thisPage.title.title ) {
+    //   this.forceUpdate();
+    // }
+  }
 
   render () {
     const {title, src, classTitle, placeId, } = this.props; 
