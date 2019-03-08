@@ -27,6 +27,6 @@ defaultPlace = Place.create!(title: "dessert", owner_id: testUser.id, private: f
 # place5 = Place.create!(title: Faker::Dessert.variety, owner_id: testUser.id)
 # place6 = Place.create!(title: Faker::Dessert.variety, owner_id: testUser.id)
 
-defaultPage1 = Page.create!(title: "New Page", place_id: defaultPlace.id)
+defaultPage1 = Page.create!(title: "Home Page", place_id: defaultPlace.id)
 defaultPage2 = Page.create!(title: "New sub Page", place_id: defaultPlace.id, parent_page_id: defaultPage1.id)
 defaultPage3 = Page.create!(title: "New Page", place_id: defaultPlace.id)

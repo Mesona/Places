@@ -44,16 +44,15 @@ class PlaceIndexItem extends React.Component {
 
   render () {
     const { place, monthNames } = this.props;
-    // let firstPageId = this.props.place ? Object.values(this.props.place).pages[0].id : "";
-    // const firstPageId = typeof place.pages === 'undefined' ? '' : firstPage;
     const pageIdArray = typeof place.pages === 'undefined' ? '' : place.pages.map((e) => e.id);
     const firstPageId = Math.min(...pageIdArray);
     // debugger
-    // const firstPageId = place === undefined ? '' : place.pages[0].id;
       return (
         <main className="place-index-item-border">
           <Link to={`/places/${place.id}/pages/${firstPageId}`}>
           <section className="place-index-item-head">
+            <span className="place-index-item-homepage-title">{place.title}</span>
+            {/* <span className="place-index-item-homepage-title">{Object.values(place.pages)[0].title}</span> */}
           </section>
           <section className="place-index-item-body">
           </section>

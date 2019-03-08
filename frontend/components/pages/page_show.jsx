@@ -18,6 +18,7 @@ class PageShow extends React.Component {
   }
 
   getData () {
+    // console.log(this.props)
   }
 
   componentDidMount() {
@@ -32,6 +33,18 @@ class PageShow extends React.Component {
         place: response.place,
         placeTitle: response.place.title,
       }));
+  }
+  
+  componentDidUpdate(prevProps) {
+    // if (prevProps.match.params.pageId !== this.props.match.params.pageId) {
+    if (prevProps.location.pathname !== this.props.location.pathname) {
+      this.props.fetchPage(this.props.match.params.pageId)
+      .then((response) => this.setState({
+        page: response.page,
+        pageTitle: response.page.title,
+        pageBody: response.page.body,
+      }));
+    }
   }
 
   update(field) {
@@ -57,7 +70,7 @@ class PageShow extends React.Component {
     const disableClass = this.props.currentUser === null ? 'input-disabled' : '';
 
     return (
-        <section className={`page-show`}>
+        <section className={`page-show`} onClick={this.getData}>
           <header className={`page-show-header ${disableClass}`} onClick={this.getData}>
             <div className="place-name">
               <input

@@ -61,6 +61,8 @@
   height: 60px;
   background: #43545D;
   text-decoration: none;
+  display: flex;
+  justify-content: center;
   .place-index-item-head:hover {
     text-decoration: none;
     background: inherit;
@@ -160,18 +162,11 @@
   right: 325px;
   border: none;
   box-shadow: none;
-  // height: 200px;
-  // width: 400px;
 }
 
- 
-// @media all and (min-width: 800px) {
-//   .place-index-item {
-//     flex: 0 0 21%;
-//   }
-// }
-
-// .places-border {
-//   border: 5px solid cyan;
-//   background: purple;
-// }
+.place-index-item-homepage-title {
+  color: white;
+  text-align: center;
+  width: 100%;
+  line-height: 60px;
+}

@@ -25,6 +25,7 @@ class PageIndexItem extends React.Component {
 
 
   sendData(e) {
+    // console.log(this.props)
   }
 
   destroyPage(e) {
@@ -32,10 +33,21 @@ class PageIndexItem extends React.Component {
     e.stopPropagation();
     if (this.props.currentUser.id === this.props.thisPlace.owner_id) {
       if (this.props.page.id === this.props.pageId) {
-        let parent = this.props.page.parent_page_id === null ? this.props.firstPage.id : this.props.page.parent_page_id;
-        this.props.deletePage(this.props.page.id)
-          .then(() => this.props.history.push(`/places/${this.props.placeId}/pages/${parent}`))
-          .then(() => this.forceUpdate());
+        if (this.props.firstPage.id === this.props.pageId) {
+          this.props.deletePage(this.props.page.id)
+          .then(() => this.props.history.push(`/places/${this.props.placeId}/pages/${this.props.pages[1].id}`))
+          // .then(() => this.props.history.push(`/places/${this.props.placeId}/pages/${Object.values(this.props.thisPlace).pages[0].id}`))
+          // .then(() => this.props.history.push(`/places/${this.props.placeId}/pages/${parent}`))
+          // .then(() => this.forceUpdate())
+
+        } else {
+          let parent = this.props.page.parent_page_id === null ? this.props.firstPage.id : this.props.page.parent_page_id;
+          this.props.deletePage(this.props.page.id)
+            // .then(() => this.props.history.push(`/places/${this.props.placeId}/pages/${this.props.pages[1].id}`))
+            // .then(() => this.props.history.push(`/places/${this.props.placeId}/pages/${Object.values(this.props.thisPlace).pages[0].id}`))
+            .then(() => this.props.history.push(`/places/${this.props.placeId}/pages/${parent}`))
+            .then(() => this.forceUpdate());
+        }
       }
 
     }
@@ -116,6 +128,7 @@ class PageIndexItem extends React.Component {
                   page={getState().entities.pages[page.id]}
                   placeId = {placeId}
                   src={ window.images.headerImg }
+                  firstPage = {this.props.firstPage}
                   classTitle="page-index-items subpage-index-items"
                 />)}
             </li>: null
