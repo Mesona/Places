@@ -1,6 +1,6 @@
 # PLACES
 
-[Live demo](https://full-stack-places.herokuapp.com/#/)
+[Live demo](http://www.places.mesona.net/#/)
 
 
 ## Features
