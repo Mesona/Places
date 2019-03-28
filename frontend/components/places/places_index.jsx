@@ -69,6 +69,9 @@ class PlacesIndex extends React.Component {
     return (
       <main className="places-index">
         <section className="places-index-header">
+          <div className="recent-sites">
+            Recent sites
+          </div>
           <div className={this.props.currentUser === null ? "cannot-view" : "places-sort-dropdown"} onClick={this.showDropdownMenu}>
             <div className="places-sort-button">{this.state.currentDisplay}
               { this.state.displayMenu ? (
@@ -80,6 +83,16 @@ class PlacesIndex extends React.Component {
               ) : (
                 null
               )}
+            </div>
+          </div>
+          <div className="places-list-and-view-buttons">
+            <div className="list-view-icon"><img src={window.images.listViewIcon}></img>
+              <i class="up-arrow"></i>
+              <span className="tooltiptext">List view</span>
+            </div>
+            <div className="places-sort-icon"><img src={window.images.placesSortIcon}></img>
+              <i class="up-arrow"></i>
+              <span className="tooltiptext">Sort options</span>
             </div>
           </div>
         </section>
