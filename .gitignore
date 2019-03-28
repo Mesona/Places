@@ -6,3 +6,5 @@ bundle.js.map
 npm-debug.log
 tmp/
 log/development.log
+development.log
+log/

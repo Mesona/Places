@@ -15,6 +15,7 @@ const mapStateToProps = (state, ownProps) => ({
   pages: state.entities.pages,
   firstPage: Object.values(state.entities.pages)[0],
   otherPages: Object.values(state.entities.pages).slice(1),
+  currentPage: state.entities.pages[ownProps.match.params.pageId],
 });
 
 const mapDispatchToProps = dispatch => ({

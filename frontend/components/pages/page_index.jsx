@@ -31,6 +31,9 @@ class PageIndex extends React.Component {
     // if (prevState.otherPages !== this.props.otherPages ) {
     //   this.props.fetchPages(this.props.match.params.placeId);
     // }
+    // if (prevState !== undefined && prevState.currentPage.title !== this.props.currentPage.title ) {
+    //   this.props.fetchPages(this.props.match.params.placeId);
+    // }
   }
 
   createNewPage(e) {
@@ -77,6 +80,7 @@ class PageIndex extends React.Component {
             />)}
           </section>
           <section className="pages-index-footer">
+            {/* <div className="new-page-plus-button" onClick={this.createNewPage}><span className="new-page-plus-text">+</span></div> */}
             <button className="new-page-plus-button" onClick={this.createNewPage}><span className="new-page-plus-text">+</span></button>
           </section>
         </section>

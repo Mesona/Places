@@ -89,13 +89,13 @@ class PageShow extends React.Component {
             </div>
           </header>
           <section className="page-show-body">
-            <textarea
+            {/* <textarea
             value={this.state.pageBody}
             name="page.body"
             onChange={this.update('pageBody')}
             >
               {this.state.pageBody}
-            </textarea>
+            </textarea> */}
           </section>
         </section>
     )

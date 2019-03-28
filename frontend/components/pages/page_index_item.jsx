@@ -25,7 +25,7 @@ class PageIndexItem extends React.Component {
 
 
   sendData(e) {
-    // console.log(this.props)
+    console.log(this.props)
   }
 
   destroyPage(e) {
@@ -83,8 +83,9 @@ class PageIndexItem extends React.Component {
     // }
     // console.log('UPDATE')
     // console.log(this.props)
-    // if (prevProps.thisPage.title !== this.props.thisPage.title.title ) {
-    //   this.forceUpdate();
+    // if (prevProps.title !== this.props.title ) {
+      // this.props.fetchPages(this.props.match.params.placeId);
+      // console.log('YEP')
     // }
   }
 
