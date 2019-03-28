@@ -87,11 +87,11 @@ class PlacesIndex extends React.Component {
           </div>
           <div className="places-list-and-view-buttons">
             <div className="list-view-icon"><img src={window.images.listViewIcon}></img>
-              <i class="up-arrow"></i>
+              <i className="up-arrow"></i>
               <span className="tooltiptext">List view</span>
             </div>
             <div className="places-sort-icon"><img src={window.images.placesSortIcon}></img>
-              <i class="up-arrow"></i>
+              <i className="up-arrow"></i>
               <span className="tooltiptext">Sort options</span>
             </div>
           </div>

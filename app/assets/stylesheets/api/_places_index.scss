@@ -107,6 +107,7 @@
   flex: 0 0 21%;
   // flex: 0 0 80%;
   margin: 5px;
+  border: 2px solid transparent;
   border: 2px solid #DFE1E5;
   a {
     background: inherit;
@@ -116,7 +117,7 @@
 .place-index-item-border:hover {
   cursor: pointer;
   color: #666;
-  border: 1px solid rgb(0, 81, 255);
+  border: 2px solid rgb(0, 81, 255);
 }
   
 .place-index-item-head {
