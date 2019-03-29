@@ -49,6 +49,7 @@ class PlaceIndexList extends React.Component {
     // debugger
       return (
         <main className="place-index-list">
+          {/* <div className="place-index-list-item"> */}
           <Link to={`/places/${place.id}/pages/${firstPageId}`}>
           <div className="place-index-body">
             <section className="mini-doc">
@@ -88,6 +89,7 @@ class PlaceIndexList extends React.Component {
               </section>
             </div>
           </Link>
+          {/* </div> */}
         <div className="places-index-errors">
           {/* {this.renderErrors()} */}
         </div>
