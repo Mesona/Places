@@ -1,6 +1,7 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
 import PlaceIndexItemContainer from './place_index_item_container';
+import PlaceIndexListContainer from './place_index_list_container';
 
 class PlacesIndex extends React.Component {
   constructor(props) {
@@ -8,6 +9,8 @@ class PlacesIndex extends React.Component {
 
     this.state = {
       displayMenu: false,
+      displaySortMenu: false,
+      displayStyle: "places",
       currentDisplay: 'Owned by anyone',
       placeSelection: '',
     };
@@ -15,6 +18,7 @@ class PlacesIndex extends React.Component {
     this.showDropdownMenu = this.showDropdownMenu.bind(this);
     this.hideDropdownMenu = this.hideDropdownMenu.bind(this);
     this.updateIndex = this.updateIndex.bind(this);
+    this.swapView = this.swapView.bind(this);
 
   }
 
@@ -52,6 +56,14 @@ class PlacesIndex extends React.Component {
         break;
     }
   }
+
+  swapView() {
+    if (this.state.displayStyle === "places") {
+      this.setState({displayStyle: "list"});
+    } else {
+      this.setState({displayStyle: "places"});
+    }
+  }
   
   
   render () {
@@ -59,10 +71,6 @@ class PlacesIndex extends React.Component {
       "July", "August", "September", "October", "November", "December"
     ];
     
-    const options = [
-      'Owned by anyone', 'Owned by me', 'Not owned by me'
-    ];
-
     const { myPlaces, otherPlaces } = this.props;
     this.state.allPlaces = myPlaces.concat(otherPlaces);
 
@@ -86,7 +94,7 @@ class PlacesIndex extends React.Component {
             </div>
           </div>
           <div className="places-list-and-view-buttons">
-            <div className="list-view-icon"><img src={window.images.listViewIcon}></img>
+            <div className="list-view-icon" onClick={this.swapView}><img src={window.images.listViewIcon}></img>
               <i className="up-arrow"></i>
               <span className="tooltiptext">List view</span>
             </div>
@@ -94,11 +102,26 @@ class PlacesIndex extends React.Component {
               <i className="up-arrow"></i>
               <span className="tooltiptext">Sort options</span>
             </div>
+            <div className="places-sort-icon-dropdown" onClick={this.showDropdownMenu}>
+              { this.state.displaySortMenu ? (
+                <ul>
+                  <li onClick={(e) => this.updateIndex('allPlaces')}>Owned by me</li>
+                  <li onClick={(e) => this.updateIndex('myPlaces')}>Not owned by me</li>
+                </ul>
+              ) : (
+                null
+              )}
+            </div>
           </div>
         </section>
-        <section className="places">
-          {(this.state.placeSelection === '' && this.state.allPlaces !== undefined ? this.state.allPlaces : this.state.placeSelection).map(place => <PlaceIndexItemContainer key={place.id} place={place} 
-            monthNames={monthNames} />)}
+        <section className={this.state.displayStyle}>
+          { this.state.displayStyle === "places" ? (
+            (this.state.placeSelection === '' && this.state.allPlaces !== undefined ? this.state.allPlaces : this.state.placeSelection).map(place => <PlaceIndexItemContainer key={place.id} place={place} 
+              monthNames={monthNames} />)
+          ) : (
+            (this.state.placeSelection === '' && this.state.allPlaces !== undefined ? this.state.allPlaces : this.state.placeSelection).map(place => <PlaceIndexListContainer key={place.id} place={place} 
+              monthNames={monthNames} />)
+          )}
         </section>
       </main>
     );

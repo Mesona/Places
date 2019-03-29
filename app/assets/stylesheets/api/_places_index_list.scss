@@ -1,0 +1,11 @@
+.place-index-list {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  border: 1px solid magenta;
+}
+
+.place-index-body {
+  display: block;
+  width: 85%;
+}
