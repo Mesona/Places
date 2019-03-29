@@ -10,8 +10,7 @@ class PlacesIndex extends React.Component {
     this.state = {
       displayMenu: false,
       displaySortMenu: false,
-      // displayStyle: "places",
-      displayStyle: "list",
+      displayStyle: "places",
       currentDisplay: 'Owned by anyone',
       placeSelection: '',
     };

@@ -61,8 +61,9 @@ class PlaceIndexList extends React.Component {
             <section className="place-index-list-privacy">
               <span className={place.private === true ? 'place-index-item-hidden' : ''}><img src={window.images.sharedImg} className="mini-shared-img"></img></span>
             </section>
-            <section className="places-index-list-owner">
-            
+            <section className="place-index-list-owner">
+              {this.state.currentUser.username === place.owner.username ? "me" : place.owner.username}
+              {/* {place.owner.username}  */}
             </section>
             <section className="place-index-list-updated-at">
               <span className="mini-updated-at">
@@ -71,7 +72,7 @@ class PlaceIndexList extends React.Component {
                 {place.updated_at.slice(0, 4)}
               </span>
             </section>
-            <section className="places-index-list-hamburger">
+            <section className="place-index-list-hamburger">
                 <span className={this.props.currentUser ===  null ? "place-index-item-hidden" : this.props.currentUser.id === this.props.place.owner_id ?  "places-hamburger-dropdown" : "place-index-item-hidden"}>
                   <button className="mini-place-index-hamburger" onClick={this.showDropdownMenu}>
                     <img src={window.images.hamburgerDots} className="mini-place-index-hamburger-icon" />
