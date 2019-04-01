@@ -17,10 +17,6 @@ class PageShow extends React.Component {
     this.sendUpdate = this.sendUpdate.bind(this);
   }
 
-  getData () {
-    // console.log(this.props)
-  }
-
   componentDidMount() {
     this.props.fetchPage(this.props.match.params.pageId)
       .then((response) => this.setState({
@@ -65,12 +61,12 @@ class PageShow extends React.Component {
 
 
   render () {
-    // console.warn(this.props)
     const disableClass = this.props.currentUser === null ? 'input-disabled' : '';
 
     return (
         <section className={`page-show`} onClick={this.getData}>
           <header className={`page-show-header ${disableClass}`} onClick={this.getData}>
+
             <div className="place-name">
               <input
                 type="string"
@@ -79,6 +75,7 @@ class PageShow extends React.Component {
               >
               </input>
             </div>
+
             <div className="page-title">
               <textarea
                 value={this.state.pageTitle}
@@ -87,15 +84,9 @@ class PageShow extends React.Component {
                 >
               </textarea>
             </div>
+
           </header>
           <section className="page-show-body">
-            {/* <textarea
-            value={this.state.pageBody}
-            name="page.body"
-            onChange={this.update('pageBody')}
-            >
-              {this.state.pageBody}
-            </textarea> */}
           </section>
         </section>
     )

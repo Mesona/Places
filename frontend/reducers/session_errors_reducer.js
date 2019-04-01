@@ -11,8 +11,6 @@ const SessionErrorsReducer = (state = [], action) => {
   switch (action.type) {
     case RECEIVE_SESSION_ERRORS:
       return merge([], action.errors);
-      // let newState = action.errors;
-      // return merge([], state, newState);
     case RECEIVE_CURRENT_USER:
     case CLOSE_MODAL:
       return [];

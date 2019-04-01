@@ -6,11 +6,6 @@ import { withRouter } from 'react-router-dom';
 
 const mapStateToProps = (state, ownProps) => ({
   currentUser: state.session.currentUser,
-  // testState: state,
-  // viewState: viewState(state),
-  // allPlaces: selectAllPlaces(state),
-  // currentPlace: ownProps.match.params.placeId,
-  // placeTest: ownProps,
   places: state.entities.places,
   pages: state.entities.pages,
   firstPage: Object.values(state.entities.pages)[0],

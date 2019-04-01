@@ -46,13 +46,11 @@ class PlaceIndexItem extends React.Component {
     const { place, monthNames } = this.props;
     const pageIdArray = typeof place.pages === 'undefined' ? '' : place.pages.map((e) => e.id);
     const firstPageId = Math.min(...pageIdArray);
-    // debugger
       return (
         <main className="place-index-item-border">
           <Link to={`/places/${place.id}/pages/${firstPageId}`}>
           <section className="place-index-item-head">
             <span className="place-index-item-homepage-title">{place.title}</span>
-            {/* <span className="place-index-item-homepage-title">{Object.values(place.pages)[0].title}</span> */}
           </section>
           <section className="place-index-item-body">
           </section>
@@ -71,7 +69,6 @@ class PlaceIndexItem extends React.Component {
                   <img src={window.images.hamburgerDots} className="mini-place-index-hamburger-icon" />
                   { this.state.displayMenu ? (
                     <ul>
-                      {/* <li><img src={window.images.textIcon} />Rename</li> */}
                       <li onClick={(e) => this.props.deletePlace(this.props.place.id)}><img src={window.images.trashIcon} />Remove</li>
                       <li onClick={this.changePrivacy}><img src={window.images.sharedImg} />Switch Privacy</li>
                     </ul>
@@ -84,7 +81,6 @@ class PlaceIndexItem extends React.Component {
           </section>
           </Link>
           <div className="places-index-errors">
-            {/* {this.renderErrors()} */}
           </div>
         </main>
 

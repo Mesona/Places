@@ -9,9 +9,6 @@ const mapStateToProps = (state, ownProps) => ({
   pages: selectAllPages(state),
   errors: state.errors.places,
   currentUser: state.session.currentUser,
-  // const place = { title: 'Untitled', private: false, owner_id: 2 };
-  // return { place };
-  // places,
 });
 
 const mapDispatchToProps = (dispatch) => ({

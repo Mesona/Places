@@ -24,9 +24,6 @@ class Footer extends React.Component {
 
   makeNewPlace (e) {
     e.preventDefault();
-    // if (this.props.errors.places !== []) {
-    //   setTimeout(() => this.state.renderedErrors = false, 500);
-    // }
     this.state.renderedErrors = true;
     setTimeout(() => this.state.renderedErrors = false, 500);
     if (this.props.currentUser) {
@@ -47,7 +44,6 @@ class Footer extends React.Component {
         .then(() => this.props.createPage(defaultPage))
         .then((response) => this.props.history.push(`/places/${newPlaceId}/pages/${response.page.id}`));
     } else {
-      // this.state.renderedErrors = true;
       this.props.receiveErrors(["You must be signed in to create new Places!"]);
     }
     if (this.props.errors !== []) {

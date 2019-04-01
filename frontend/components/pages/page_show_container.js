@@ -7,14 +7,11 @@ import { withRouter } from 'react-router-dom';
 import { updatePlace } from '../../actions/places_actions';
 
 const mapStateToProps = (state, ownProps) => {
-  // debugger
   return ({
   currentUser: state.session.currentUser,
   pages: selectAllPages(state),
   thisPlace: state.entities.places[ownProps.match.params.placeId],
   thisPage: state.entities.pages[ownProps.match.params.pageId],
-  // location: ownProps.url,
-  // placeTitle: Object.values(state.entities.places[ownProps.match.params.placeId]).title,
   }
 )};
 
