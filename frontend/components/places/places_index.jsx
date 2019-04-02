@@ -74,12 +74,21 @@ class PlacesIndex extends React.Component {
   }
 
   sortIndex(target) {
+    if (this.state.placeSelection = '') {
+      const { myPlaces, otherPlaces } = this.props;
+      this.state.allPlaces = myPlaces.concat(otherPlaces);
+    }
     switch (target) {
       case 'alphabetical':
-        console.log('alpha');
+        this.state.placeSelection = this.state.placeSelection.sort(
+          function(a, b) {return a.title.localeCompare(b.title)}
+          );
         break;
       case 'historical':
-        console.log('hist');
+        console.log(this.state.placeSelection === '');
+        this.state.placeSelection = this.state.placeSelection.sort(
+          function(a, b) {return new Date(b.updated_at) - new Date(a.updated_at)}
+        )
         break;
     }
   }
@@ -94,8 +103,8 @@ class PlacesIndex extends React.Component {
   
   
   render () {
-    const monthNames = ["January", "February", "March", "April", "May", "June",
-      "July", "August", "September", "October", "November", "December"
+    const monthNames = ["December", "January", "February", "March", "April", "May", "June",
+      "July", "August", "September", "October", "November"
     ];
     
     const { myPlaces, otherPlaces } = this.props;
@@ -162,7 +171,7 @@ class PlacesIndex extends React.Component {
         <section className={this.state.displayStyle}>
           { this.state.displayStyle === "places" ? (
             (this.state.placeSelection === '' &&
-              this.state.allPlaces !== undefined ? this.state.allPlaces : this.state.placeSelection
+              this.state.allPlaces !== undefined ? this.state.allPlaces.sort() : this.state.placeSelection
               ).map(place => <PlaceIndexItemContainer key={place.id} place={place} 
               monthNames={monthNames} />)
           ) : (
