@@ -14,7 +14,7 @@ class PlaceIndexItem extends React.Component {
     this.showDropdownMenu = this.showDropdownMenu.bind(this);
     this.hideDropdownMenu = this.hideDropdownMenu.bind(this);
     this.changePrivacy = this.changePrivacy.bind(this);
-
+    this.destroyPlace = this.destroyPlace.bind(this);
   }
 
   showDropdownMenu(e) {
@@ -40,6 +40,13 @@ class PlaceIndexItem extends React.Component {
       this.state.private = true;
     }
     this.props.updatePlace(this.state);
+  }
+
+  destroyPlace(e) {
+    e.preventDefault();
+    e.stopPropagation();
+    this.props.deletePlace(this.props.place.id)
+      .then(this.forceUpdate());
   }
 
   render () {
@@ -85,7 +92,8 @@ class PlaceIndexItem extends React.Component {
                     className="mini-place-index-hamburger-icon" />
                   { this.state.displayMenu ? (
                     <ul>
-                      <li onClick={(e) => this.props.deletePlace(this.props.place.id)}>
+                      {/* <li onClick={(e) => this.props.deletePlace(this.props.place.id)}> */}
+                      <li onClick={this.destroyPlace}>
                         <img src={window.images.trashIcon} />Remove
                       </li>
                       <li onClick={this.changePrivacy}>

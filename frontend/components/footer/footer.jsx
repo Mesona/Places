@@ -11,7 +11,7 @@ class Footer extends React.Component {
     };
 
     this.makeNewPlace = this.makeNewPlace.bind(this);
-
+    this.makeNewPage = this.makeNewPage.bind(this);
   }
 
   componentDidMount() {
@@ -27,28 +27,29 @@ class Footer extends React.Component {
     this.state.renderedErrors = true;
     setTimeout(() => this.state.renderedErrors = false, 500);
     if (this.props.currentUser) {
-      const { places } = this.props;
-      const newPlaceLength = Object.keys(places).length;
-      const newPlaceId = Object.values(places)[newPlaceLength - 1].id + 1;
       this.state = {
         title: 'New Place',
         private: false,
         owner_id: this.props.currentUser.id,
         pages: [],
       };
-      let defaultPage = {
-        title: 'Home Page',
-        place_id: newPlaceId,
-      };
       this.props.createPlace(this.state)
-        .then(() => this.props.createPage(defaultPage))
-        .then((response) => this.props.history.push(`/places/${newPlaceId}/pages/${response.page.id}`));
+        .then(response => this.makeNewPage(response.place.id))
     } else {
       this.props.receiveErrors(["You must be signed in to create new Places!"]);
     }
     if (this.props.errors !== []) {
       setTimeout(() => this.state.renderedErrors = false, 500);
     }
+  }
+
+  makeNewPage(place_id) {
+    let defaultPage = {
+      title: 'Home Page',
+      place_id: place_id,
+    }
+    this.props.createPage(defaultPage)
+      .then((response) => this.props.history.push(`/places/${place_id}/pages/${response.page.id}`));
   }
 
   renderErrors() {
