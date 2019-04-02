@@ -21,41 +21,40 @@
   background: rgb(164, 183, 221);
 }
 
-  .places-sort-dropdown ul {
-    list-style-type: none;
-    position: relative;
-    display: inline-block;
-    margin: 0;
-    padding: 0;
-    top: 30px;
-    left: 0;
-    width: 200px;
-    background-color: white;
-    position: absolute;
-    border-radius: 5px;
-    border: 2px solid #e5e5e5;
+.places-sort-dropdown ul {
+  list-style-type: none;
+  position: relative;
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  top: 30px;
+  left: 0;
+  width: 200px;
+  background-color: white;
+  position: absolute;
+  border-radius: 5px;
+  border: 2px solid #e5e5e5;
 
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
-    
-  }
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
   
-  .places-sort-dropdown ul li {
-    padding: 8px 16px;
-    text-align: left;
-    border-radius: 5px;
-  }
-  .places-sort-dropdown ul li a {
-    text-decoration: none;
-  }
-  .places-sort-dropdown ul li img {
-    height: 20px;
-    width: 20px;
-    margin-right: 10px;
-  }
-  .places-sort-dropdown ul li:hover {
-    background-color: #e5e5e5;
-  }
+.places-sort-dropdown ul li {
+  padding: 8px 16px;
+  text-align: left;
+  border-radius: 5px;
+}
+.places-sort-dropdown ul li a {
+  text-decoration: none;
+}
+.places-sort-dropdown ul li img {
+  height: 20px;
+  width: 20px;
+  margin-right: 10px;
+}
+.places-sort-dropdown ul li:hover {
+  background-color: #e5e5e5;
+}
 
 .places-sort-button {
   width:178px;
@@ -77,4 +76,64 @@
 
 .cannot-view {
   visibility: hidden;
+}
+
+.list-view-icon:hover {
+  cursor: pointer;
+}
+
+
+.places-sort-icon {
+  font-size: 14px;
+  font-family: 'Google Sans';
+  position: relative;
+  border: none;
+  cursor: pointer;
+}
+
+.places-sort-icon:hover {
+  background: #F5F5F5;
+}
+
+.places-sort-icon:active {
+  background: rgb(164, 183, 221);
+}
+
+.places-sort-icon:focus {
+  background: rgb(164, 183, 221);
+}
+
+.places-sort-icon ul {
+  list-style-type: none;
+  position: relative;
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  top: 40px;
+  left: -80px;
+  width: 200px;
+  background-color: white;
+  position: absolute;
+  border-radius: 5px;
+  border: 2px solid #e5e5e5;
+
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+  
+.places-sort-icon ul li {
+  padding: 8px 16px;
+  text-align: left;
+  border-radius: 5px;
+}
+.places-sort-icon ul li a {
+  text-decoration: none;
+}
+.places-sort-icon ul li img {
+  height: 20px;
+  width: 20px;
+  margin-right: 10px;
+}
+.places-sort-icon ul li:hover {
+  background-color: #e5e5e5;
 }

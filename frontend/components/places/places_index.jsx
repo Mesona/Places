@@ -10,6 +10,7 @@ class PlacesIndex extends React.Component {
     this.state = {
       displayMenu: false,
       displaySortMenu: false,
+      displayAZ: false,
       displayStyle: "places",
       currentDisplay: 'Owned by anyone',
       placeSelection: '',
@@ -17,9 +18,11 @@ class PlacesIndex extends React.Component {
 
     this.showDropdownMenu = this.showDropdownMenu.bind(this);
     this.hideDropdownMenu = this.hideDropdownMenu.bind(this);
+    this.showAZDropdown = this.showAZDropdown.bind(this);
+    this.hideAZDropdown = this.hideAZDropdown.bind(this);
     this.updateIndex = this.updateIndex.bind(this);
+    this.sortIndex = this.sortIndex.bind(this);
     this.swapView = this.swapView.bind(this);
-
   }
 
   componentDidMount() {
@@ -40,6 +43,19 @@ class PlacesIndex extends React.Component {
     });
   }
 
+  showAZDropdown(e) {
+    e.preventDefault();
+    this.setState({ displayAZ: true }, () => {
+      document.addEventListener('click', this.hideAZDropdown);
+    });
+  }
+
+  hideAZDropdown() {
+    this.setState({ displayAZ: false }, () => {
+      document.removeEventListener('click', this.hideAZDropdown);
+    });
+  }
+
   updateIndex(target) {
     switch (target) {
       case 'allPlaces':
@@ -53,6 +69,17 @@ class PlacesIndex extends React.Component {
       case 'otherPlaces':
         this.state.currentDisplay = 'Not owned by me';
         this.state.placeSelection = this.props.otherPlaces;
+        break;
+    }
+  }
+
+  sortIndex(target) {
+    switch (target) {
+      case 'alphabetical':
+        console.log('alpha');
+        break;
+      case 'historical':
+        console.log('hist');
         break;
     }
   }
@@ -105,9 +132,18 @@ class PlacesIndex extends React.Component {
               </span>
             </div>
 
-            <div className="places-sort-icon"><img src={window.images.placesSortIcon}></img>
-              <i className="up-arrow"></i>
-              <span className="tooltiptext">Sort options</span>
+            <div className="places-sort-icon" onClick={this.showAZDropdown}><img src={window.images.placesSortIcon}></img>
+              { this.state.displayAZ ? (
+                <ul>
+                  <li onClick={(e) => this.sortIndex('alphabetical')}>Alphabetical</li>
+                  <li onClick={(e) => this.sortIndex('historical')}>Historical</li>
+                </ul>
+              ) : (
+                <div>
+                  <i className="up-arrow"></i>
+                  <span className="tooltiptext">Sort options</span>
+                </div>
+              )}
             </div>
 
             <div className="places-sort-icon-dropdown" onClick={this.showDropdownMenu}>
