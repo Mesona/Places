@@ -25,7 +25,6 @@ class PageIndexItem extends React.Component {
 
 
   sendData(e) {
-    console.log(this.props)
   }
 
   destroyPage(e) {

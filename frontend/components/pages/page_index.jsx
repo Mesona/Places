@@ -13,7 +13,6 @@ class PageIndex extends React.Component {
   }
 
   getData () {
-    console.log(this.props)
   }
 
   componentDidMount() {
@@ -82,13 +81,9 @@ class PageIndex extends React.Component {
           </section>
 
           <section className="pages-index-footer">
-<<<<<<< HEAD
-            <button className="new-page-plus-button" onClick={this.createNewPage}><span className="new-page-plus-text">+</span></button>
-=======
             <button className="new-page-plus-button" onClick={this.createNewPage}>
               <span className="new-page-plus-text">+</span>
             </button>
->>>>>>> 4dcd6527fedeec43aa41a77d44b07f264ffa7086
           </section>
           
         </section>
