@@ -74,9 +74,8 @@ class PlacesIndex extends React.Component {
   }
 
   sortIndex(target) {
-    if (this.state.placeSelection = '') {
-      const { myPlaces, otherPlaces } = this.props;
-      this.state.allPlaces = myPlaces.concat(otherPlaces);
+    if (this.state.placeSelection === '') {
+      this.updateIndex('allPlaces');
     }
     switch (target) {
       case 'alphabetical':
@@ -85,7 +84,6 @@ class PlacesIndex extends React.Component {
           );
         break;
       case 'historical':
-        console.log(this.state.placeSelection === '');
         this.state.placeSelection = this.state.placeSelection.sort(
           function(a, b) {return new Date(b.updated_at) - new Date(a.updated_at)}
         )
