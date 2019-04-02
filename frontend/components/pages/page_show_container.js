@@ -15,7 +15,7 @@ const mapStateToProps = (state, ownProps) => {
   }
 )}
 
-const mapDispatchToProps = (dispatch, ownProps) => ({
+const mapDispatchToProps = (dispatch) => ({
   fetchPlace: (id) => dispatch(fetchPlace(id)),
   fetchPage: (id) => dispatch(fetchPage(id)),
   updatePage: (page) => dispatch(updatePage(page)),

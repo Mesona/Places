@@ -44,45 +44,64 @@ class PlaceIndexItem extends React.Component {
 
   render () {
     const { place, monthNames } = this.props;
-    const pageIdArray = typeof place.pages === 'undefined' ? '' : place.pages.map((e) => e.id);
+    const pageIdArray = typeof place.pages === 'undefined' ? 
+    '' : place.pages.map((e) => e.id);
     const firstPageId = Math.min(...pageIdArray);
       return (
         <main className="place-index-item-border">
           <Link to={`/places/${place.id}/pages/${firstPageId}`}>
+
           <section className="place-index-item-head">
             <span className="place-index-item-homepage-title">{place.title}</span>
           </section>
+
           <section className="place-index-item-body">
           </section>
+
           <section className="place-index-item-foot-main">
             <span className="place-index-item-foot-title">{place.title}</span>
+
             <section className="place-index-item-foot-icons">
               <img src={window.images.miniDoc} className="mini-doc"></img>
-              <span className={place.private === true ? 'place-index-item-hidden' : ''}><img src={window.images.sharedImg} className="mini-shared-img"></img></span>
+
+              <span className={place.private === true ?
+                'place-index-item-hidden' : ''}>
+                <img src={window.images.sharedImg} className="mini-shared-img"></img>
+              </span>
+
               <span className="mini-updated-at">
                 {monthNames[(place.updated_at.slice(5, 7) % 12)].slice(0, 3)}&nbsp;
                 {place.updated_at.slice(8, 10)},&nbsp;
                 {place.updated_at.slice(0, 4)}
               </span>
-              <span className={this.props.currentUser ===  null ? "place-index-item-hidden" : this.props.currentUser.id === this.props.place.owner_id ?  "places-hamburger-dropdown" : "place-index-item-hidden"}>
+
+              <span className={this.props.currentUser ===  null ? 
+                "place-index-item-hidden" : 
+                this.props.currentUser.id === this.props.place.owner_id ? 
+                "places-hamburger-dropdown" : "place-index-item-hidden"}>
+                
                 <button className="mini-place-index-hamburger" onClick={this.showDropdownMenu}>
-                  <img src={window.images.hamburgerDots} className="mini-place-index-hamburger-icon" />
+                  <img src={window.images.hamburgerDots}
+                    className="mini-place-index-hamburger-icon" />
                   { this.state.displayMenu ? (
                     <ul>
-                      {/* <li><img src={window.images.textIcon} />Rename</li> */}
-                      <li onClick={(e) => this.props.deletePlace(this.props.place.id)}><img src={window.images.trashIcon} />Remove</li>
-                      <li onClick={this.changePrivacy}><img src={window.images.sharedImg} />Switch Privacy</li>
+                      <li onClick={(e) => this.props.deletePlace(this.props.place.id)}>
+                        <img src={window.images.trashIcon} />Remove
+                      </li>
+                      <li onClick={this.changePrivacy}>
+                        <img src={window.images.sharedImg} />Switch Privacy
+                      </li>
                     </ul>
                   ) : (
                     null
                   )}
                 </button>
               </span>
+
             </section>
           </section>
           </Link>
           <div className="places-index-errors">
-            {/* {this.renderErrors()} */}
           </div>
         </main>
 

@@ -25,13 +25,16 @@ class NavBar extends React.Component {
     return (
       <section className="nav-sticky">
         <header className="nav-bar">
+
           <div className="logo">
             <Link className="logo-button" to='/' ><img src={window.images.headerImg}></img></Link>
             <Link className="logo-button" to='/'><p>Places</p></Link>
           </div>
+
           <div className="nav-display">
             { display }
           </div>
+
         </header>
       </section>
     );

@@ -59,11 +59,13 @@ class PageIndex extends React.Component {
       <main className="page">
         <PageShowContainer />
         <section className="pages-index">
+
           <header className="pages-index-header" onClick={this.getData}>
             Pages
             <div className="blue-knub-thingy"></div>
             <div className="bottom-border"></div>
           </header>
+
           <section className="pages-index-body">
             {topPages.map(page => <PageIndexItemContainer
               key={page.id}
@@ -72,13 +74,23 @@ class PageIndex extends React.Component {
               page={page}
               placeId = {placeId}
               firstPage = {this.props.firstPage}
-              src={page.id === firstPage.id ? window.images.homeIcon : window.images.headerImg}
+              src={page.id === firstPage.id ? 
+                window.images.homeIcon : 
+                window.images.headerImg}
               classTitle="page-index-items"
             />)}
           </section>
+
           <section className="pages-index-footer">
+<<<<<<< HEAD
             <button className="new-page-plus-button" onClick={this.createNewPage}><span className="new-page-plus-text">+</span></button>
+=======
+            <button className="new-page-plus-button" onClick={this.createNewPage}>
+              <span className="new-page-plus-text">+</span>
+            </button>
+>>>>>>> 4dcd6527fedeec43aa41a77d44b07f264ffa7086
           </section>
+          
         </section>
       </main>
     )

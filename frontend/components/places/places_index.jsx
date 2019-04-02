@@ -76,11 +76,12 @@ class PlacesIndex extends React.Component {
 
     return (
       <main className="places-index">
-        <section className="places-index-header">
+        <section className={this.props.currentUser === null ? "cannot-view" : "places-index-header"}>
           <div className="recent-sites">
             Recent sites
           </div>
-          <div className={this.props.currentUser === null ? "cannot-view" : "places-sort-dropdown"} onClick={this.showDropdownMenu}>
+
+          <div className="places-sort-dropdown" onClick={this.showDropdownMenu}>
             <div className="places-sort-button">{this.state.currentDisplay}
               { this.state.displayMenu ? (
                 <ul>
@@ -93,15 +94,22 @@ class PlacesIndex extends React.Component {
               )}
             </div>
           </div>
+
           <div className="places-list-and-view-buttons">
-            <div className="list-view-icon" onClick={this.swapView}><img src={window.images.listViewIcon}></img>
+
+            <div className="list-view-icon" onClick={this.swapView}>
+              <img src={window.images.listViewIcon}></img>
               <i className="up-arrow"></i>
-              <span className="tooltiptext">List view</span>
+              <span className="tooltiptext">
+                {this.state.displayStyle === "places" ? "List view" : "Grid view"}
+              </span>
             </div>
+
             <div className="places-sort-icon"><img src={window.images.placesSortIcon}></img>
               <i className="up-arrow"></i>
               <span className="tooltiptext">Sort options</span>
             </div>
+
             <div className="places-sort-icon-dropdown" onClick={this.showDropdownMenu}>
               { this.state.displaySortMenu ? (
                 <ul>
@@ -112,14 +120,19 @@ class PlacesIndex extends React.Component {
                 null
               )}
             </div>
+
           </div>
         </section>
         <section className={this.state.displayStyle}>
           { this.state.displayStyle === "places" ? (
-            (this.state.placeSelection === '' && this.state.allPlaces !== undefined ? this.state.allPlaces : this.state.placeSelection).map(place => <PlaceIndexItemContainer key={place.id} place={place} 
+            (this.state.placeSelection === '' &&
+              this.state.allPlaces !== undefined ? this.state.allPlaces : this.state.placeSelection
+              ).map(place => <PlaceIndexItemContainer key={place.id} place={place} 
               monthNames={monthNames} />)
           ) : (
-            (this.state.placeSelection === '' && this.state.allPlaces !== undefined ? this.state.allPlaces : this.state.placeSelection).map(place => <PlaceIndexListContainer key={place.id} place={place} 
+            (this.state.placeSelection === '' && 
+            this.state.allPlaces !== undefined ? this.state.allPlaces : this.state.placeSelection
+            ).map(place => <PlaceIndexListContainer key={place.id} place={place} 
               monthNames={monthNames} />)
           )}
         </section>
