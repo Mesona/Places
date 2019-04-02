@@ -18,7 +18,6 @@ class PageShow extends React.Component {
   }
 
   getData () {
-    // console.log(this.props)
   }
 
   componentDidMount() {
@@ -65,7 +64,6 @@ class PageShow extends React.Component {
 
 
   render () {
-    // console.warn(this.props)
     const disableClass = this.props.currentUser === null ? 'input-disabled' : '';
 
     return (

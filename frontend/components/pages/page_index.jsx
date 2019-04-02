@@ -50,9 +50,6 @@ class PageIndex extends React.Component {
 
   render () {
 
-    // const allPagesTest = this.props.otherPages;
-    // allPagesTest.unshift(this.props.firstPage);
-
     const allPages = Object.values(this.props.pages);
     const topPages = allPages.filter((e) => e.parent_page_id === null);
     const { firstPage } = this.props;
@@ -80,7 +77,6 @@ class PageIndex extends React.Component {
             />)}
           </section>
           <section className="pages-index-footer">
-            {/* <div className="new-page-plus-button" onClick={this.createNewPage}><span className="new-page-plus-text">+</span></div> */}
             <button className="new-page-plus-button" onClick={this.createNewPage}><span className="new-page-plus-text">+</span></button>
           </section>
         </section>

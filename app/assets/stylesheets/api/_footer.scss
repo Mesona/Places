@@ -3,7 +3,6 @@
   grid-area: promos;
   display: flex;
   justify-content: center;
-  // border: 2px solid green;
   display: flex;
   justify-content: space-evenly;
   padding-left: 150px;
@@ -12,20 +11,15 @@
 }
 .promo-links:hover {
     text-decoration: none;
-    // background-color: rgb(243, 243, 245);
     background-color: inherit;
 }
 
 .promo-links a {
-  // background: white;
   text-decoration: none;
   background: inherit;
 }
 
 .footer {
-  // background-color: rgb(243, 243, 245);
-  // border: 2px solid black;
-  // background: white;
   background: #FCFCFC;
   display: grid;
   grid-template-columns: 1fr 2fr 1fr;
@@ -39,7 +33,6 @@
 .footer img {
   height: 40px;
   width: 40px;
-  // border: 2px solid orange;
   cursor: pointer;
 }
 

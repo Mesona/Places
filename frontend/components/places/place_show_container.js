@@ -6,7 +6,6 @@ import { fetchPlace } from '../../actions/places_actions';
 
 
 const mapStateToProps = (state, ownProps) => ({
-  // place: state.places[ownProps.match.params.placeId],
 });
 
 const mapDispatchToProps = dispatch => ({

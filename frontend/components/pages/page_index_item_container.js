@@ -8,7 +8,6 @@ import { selectAllPages } from '../../reducers/selectors';
 
 const mapStateToProps = (state, ownProps) => ({
   children: ownProps.children,
-  // pages: state.entities.pages,
   pages: selectAllPages(state),
   currentUser: state.session.currentUser,
   thisPlace: state.entities.places[ownProps.match.params.placeId],

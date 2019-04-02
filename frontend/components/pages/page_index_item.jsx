@@ -35,17 +35,11 @@ class PageIndexItem extends React.Component {
       if (this.props.firstPage.id === this.props.pageId) {
         this.props.deletePage(this.props.page.id)
         .then(() => this.props.history.push(`/places/${this.props.placeId}/pages/${this.props.pages[1].id}`))
-        // .then(() => this.forceUpdate())
-        // .then(() => this.props.history.push(`/places/${this.props.placeId}/pages/${Object.values(this.props.thisPlace).pages[0].id}`))
-        // .then(() => this.props.history.push(`/places/${this.props.placeId}/pages/${parent}`))
 
       } else {
         let parent = this.props.page.parent_page_id === null ? this.props.firstPage.id : this.props.page.parent_page_id;
         this.props.deletePage(this.props.page.id)
-          // .then(() => this.props.history.push(`/places/${this.props.placeId}/pages/${this.props.pages[1].id}`))
-          // .then(() => this.props.history.push(`/places/${this.props.placeId}/pages/${Object.values(this.props.thisPlace).pages[0].id}`))
           .then(() => this.props.history.push(`/places/${this.props.placeId}/pages/${parent}`))
-          // .then(() => this.forceUpdate());
       }
     }
   }
@@ -77,18 +71,6 @@ class PageIndexItem extends React.Component {
       .then(() => this.props.fetchPages(this.props.match.params.placeId));
   }
 
-  componentDidUpdate(prevProps) {
-    // if (prevProps.match.params.pageId !== this.props.match.params.pageId) {
-    //   this.props.fetchPages(this.props.thisPlace.id)
-    // }
-    // console.log('UPDATE')
-    // console.log(this.props)
-    // if (prevProps.title !== this.props.title ) {
-      // this.props.fetchPages(this.props.match.params.placeId);
-      // console.log('YEP')
-    // }
-  }
-
   render () {
     const {title, src, classTitle, placeId, } = this.props; 
     const children = this.props.page === undefined ? '' : this.props.page.children;
@@ -110,7 +92,6 @@ class PageIndexItem extends React.Component {
               { this.state.displayMenu ? (
                 <ul>
                   <li onClick={this.createNewPage}><img src={window.images.headerImg} />Add Subpage</li>
-                  {/* <li onClick={this.sendData}><img src={window.images.headerImg} />Specs</li> */}
                   {this.props.currentUser.id === this.props.thisPlace.owner_id ? <li onClick={this.destroyPage}><img src={window.images.trashIcon} />Remove</li> : null }
                 </ul>
               ) : (

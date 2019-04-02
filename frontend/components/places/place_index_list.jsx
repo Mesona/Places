@@ -46,10 +46,8 @@ class PlaceIndexList extends React.Component {
     const { place, monthNames } = this.props;
     const pageIdArray = typeof place.pages === 'undefined' ? '' : place.pages.map((e) => e.id);
     const firstPageId = Math.min(...pageIdArray);
-    // debugger
       return (
         <main className="place-index-list">
-          {/* <div className="place-index-list-item"> */}
           <Link to={`/places/${place.id}/pages/${firstPageId}`}>
           <div className="place-index-body">
             <section className="mini-doc">
@@ -63,7 +61,6 @@ class PlaceIndexList extends React.Component {
             </section>
             <section className="place-index-list-owner">
               {this.state.currentUser.username === place.owner.username ? "me" : place.owner.username}
-              {/* {place.owner.username}  */}
             </section>
             <section className="place-index-list-updated-at">
               <span className="mini-updated-at">

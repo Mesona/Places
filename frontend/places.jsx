@@ -26,7 +26,6 @@ document.addEventListener('DOMContentLoaded', () => {
   // TESTING STUFF
   window.getState = store.getState;
   
-  window.fetchPlaces = PlacesAPIUtils.fetchPlaces;
   window.fetchPlace = PlacesAPIUtils.fetchPlace;
   // END TESTING STUFF
 
