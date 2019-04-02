@@ -49,10 +49,6 @@ class PageIndex extends React.Component {
   }
 
   render () {
-
-    // const allPagesTest = this.props.otherPages;
-    // allPagesTest.unshift(this.props.firstPage);
-
     const allPages = Object.values(this.props.pages);
     const topPages = allPages.filter((e) => e.parent_page_id === null);
     const { firstPage } = this.props;
@@ -62,11 +58,13 @@ class PageIndex extends React.Component {
       <main className="page">
         <PageShowContainer />
         <section className="pages-index">
+
           <header className="pages-index-header" onClick={this.getData}>
             Pages
             <div className="blue-knub-thingy"></div>
             <div className="bottom-border"></div>
           </header>
+
           <section className="pages-index-body">
             {topPages.map(page => <PageIndexItemContainer
               key={page.id}
@@ -75,14 +73,19 @@ class PageIndex extends React.Component {
               page={page}
               placeId = {placeId}
               firstPage = {this.props.firstPage}
-              src={page.id === firstPage.id ? window.images.homeIcon : window.images.headerImg}
+              src={page.id === firstPage.id ? 
+                window.images.homeIcon : 
+                window.images.headerImg}
               classTitle="page-index-items"
             />)}
           </section>
+
           <section className="pages-index-footer">
-            {/* <div className="new-page-plus-button" onClick={this.createNewPage}><span className="new-page-plus-text">+</span></div> */}
-            <button className="new-page-plus-button" onClick={this.createNewPage}><span className="new-page-plus-text">+</span></button>
+            <button className="new-page-plus-button" onClick={this.createNewPage}>
+              <span className="new-page-plus-text">+</span>
+            </button>
           </section>
+          
         </section>
       </main>
     )
