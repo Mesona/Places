@@ -1,5 +1,5 @@
-import React from 'react'
-import { withRouter } from 'react-router-dom';;
+import React from 'react';
+import { withRouter } from 'react-router-dom';
 
 class SessionForm extends React.Component {
   constructor(props) {
@@ -81,11 +81,6 @@ class SessionForm extends React.Component {
         <li>
           <span className={this.state.renderedErrors ? 'fading' : ''}>{this.props.errors[0]}</span>
         </li>
-        {/* {this.props.errors.map((error, i) => (
-          <li className="fading" key={`error-${i}`}>
-            {error}
-          </li>
-        ))} */}
       </ul>
     );
   }

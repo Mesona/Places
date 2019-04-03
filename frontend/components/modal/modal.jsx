@@ -4,6 +4,7 @@ import { connect } from 'react-redux'
 
 import SignupFormContainer from '../session/signup_form_container';
 import SigninFormContainer from '../session/signin_form_container';
+import Welcome from '../places/welcome';
 
 function Modal({modal, closeModal}) {
   const demoUser={username: 'Demo', email: 'demo@email.com', password: 'password'};
@@ -21,6 +22,10 @@ function Modal({modal, closeModal}) {
       break;
     case 'signup':
       component = <SignupFormContainer user={nullUser} />;
+      break;
+    case 'welcome':
+      // component = <SignupFormContainer user={nullUser} />;
+      component = <Welcome />;
       break;
     default:
       return null;

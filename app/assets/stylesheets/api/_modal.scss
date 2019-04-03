@@ -129,3 +129,12 @@ input {
   cursor: text;
 }
 
+.welcome-text span a {
+  text-decoration: initial;
+  color: blue;
+}
+
+.welcome-text span a:hover {
+  text-decoration: initial;
+  color: white;
+}

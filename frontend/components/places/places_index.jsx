@@ -28,6 +28,7 @@ class PlacesIndex extends React.Component {
   componentDidMount() {
     this.props.fetchPlaces();
     this.props.resetPages();
+    this.props.openModal('welcome');
   }
 
   showDropdownMenu(e) {
@@ -105,13 +106,15 @@ class PlacesIndex extends React.Component {
       "July", "August", "September", "October", "November"
     ];
     
-    const { myPlaces, otherPlaces } = this.props;
+    const { myPlaces, otherPlaces, openModal } = this.props;
     this.state.allPlaces = myPlaces.concat(otherPlaces);
 
     return (
       <main className="places-index">
         <section className={this.props.currentUser === null ? "cannot-view" : "places-index-header"}>
           <div className="recent-sites">
+          {/* <div className="recent-sites" onClick={() => openModal('welcome')}> */}
+          {/* <div className="recent-sites" onClick={() => openModal('signup')}> */}
             Recent sites
           </div>
 

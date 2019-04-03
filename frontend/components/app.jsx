@@ -15,8 +15,6 @@ const App = () => (
       <Route exact path="/" component={ PlacesIndexContainer } />
       <Route path="/places/:placeId/pages/:pageId" component={ PageIndexContainer } />
 
-      {/* TESTING ROUTES */}
-
       <Redirect from="*" to="/" />
     </Switch>
     <Route exact path="/" component={ FooterContainer } />
