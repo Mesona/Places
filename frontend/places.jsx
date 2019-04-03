@@ -4,9 +4,7 @@ import ReactDOM from 'react-dom';
 import Root from './components/root';
 import configureStore from './store/store';
 
-// TESTING IMPORTS
 import * as PlacesAPIUtils from './actions/places_actions';
-//END TESTING IMPORTS
 
 document.addEventListener('DOMContentLoaded', () => {
   const root = document.getElementById('root');
@@ -22,11 +20,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const store = configureStore(preloadedState);
 
-  // TESTING STUFF
   window.getState = store.getState;
-  
   window.fetchPlace = PlacesAPIUtils.fetchPlace;
-  // END TESTING STUFF
 
 
   ReactDOM.render(<Root store={store} />, root);

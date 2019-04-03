@@ -25,14 +25,14 @@ class PageIndex extends React.Component {
     }
     if (prevState.otherPages.length > this.props.otherPages.length ) {
       this.props.fetchPages(this.props.match.params.placeId);
-      // this.forceUpdate();
-    } // STILL NEED TO FIX SUBPAGE AUTOMATIC RENAME REFRESH
-    // if (prevState.otherPages !== this.props.otherPages ) {
-    //   this.props.fetchPages(this.props.match.params.placeId);
-    // }
-    // if (prevState !== undefined && prevState.currentPage.title !== this.props.currentPage.title ) {
-    //   this.props.fetchPages(this.props.match.params.placeId);
-    // }
+    }
+    if (prevState.currentPage !== undefined && prevState.currentPage.title !== this.props.currentPage.title) {
+    }
+    
+    // STILL NEED TO FIX SUBPAGE AUTOMATIC RENAME REFRESH
+    // THE PROBLEM IS THAT THE PARENT COMPONENT NEEDS TO BE UPDATED
+    // NOT THE SUBCOMPONENT ITSELF, BECAUSE THE PARENT IS THE ONE
+    // RENDERING THE NAME OF THE SUBCOMPONENT
   }
 
   createNewPage(e) {

@@ -1,7 +1,6 @@
 import React from 'react';
 import { NavLink, withRouter } from 'react-router-dom';
 import PageIndexItemContainer from './page_index_item_container';
-import { fetchPage } from '../../actions/pages_actions';
 
 class PageIndexItem extends React.Component {
   constructor(props) {
@@ -10,6 +9,8 @@ class PageIndexItem extends React.Component {
 
     this.state = {
       displayMenu: false,
+      thisPage: null,
+      title: '',
     }
 
     this.destroyPage = this.destroyPage.bind(this);
@@ -20,11 +21,16 @@ class PageIndexItem extends React.Component {
   }
 
   componentDidMount() {
-    this.props.fetchPages(this.props.match.params.placeId);
+    this.props.fetchPages(this.props.match.params.placeId)
+  }
+
+  componentDidUpdate(prevProps) {
+    if (prevProps.page.children !== this.props.page.children) {
+    }
   }
 
 
-  sendData(e) {
+  sendData() {
   }
 
   destroyPage(e) {
