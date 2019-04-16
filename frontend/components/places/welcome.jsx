@@ -5,7 +5,7 @@ class Welcome extends React.Component {
   render () {
     return (
       <div className="session-form">
-        <div onClick={this.props.closeModal} className="close-x">X</div><br></br><br></br>
+        {/* <div onClick={this.props.closeModal} className="close-x">X</div><br></br><br></br> */}
         <div className="modal-title">Welcome to Places!</div><br></br>
         <div className="welcome-text">
           <span>
